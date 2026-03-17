@@ -11,6 +11,34 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '9',
+    slug: 'como-doar-imoveis-para-os-filhos-e-evitar-o-inventario',
+    title: 'Como doar imóveis para os filhos e evitar o inventário',
+    excerpt:
+      'Entenda como a doação em vida com reserva de usufruto pode proteger seu patrimônio e poupar sua família dos custos e desgastes de um longo processo de inventário.',
+    content: `
+      <p>A transferência de patrimônio para os herdeiros é uma preocupação constante para quem deseja garantir a segurança e a tranquilidade da família. Entre as opções jurídicas disponíveis, a <strong>doação em vida</strong> de imóveis desponta como uma das alternativas preventivas mais eficientes para evitar o doloroso, demorado e oneroso processo de inventário.</p>
+      
+      <h3>O que é a Doação em Vida com Reserva de Usufruto?</h3>
+      <p>A doação com reserva de usufruto vitalício é um instrumento jurídico que permite que o proprietário (doador) transfira a propriedade do imóvel para seus filhos (donatários), mas mantenha para si o direito irrevogável de usar, morar ou alugar o bem e receber seus frutos até o fim de sua vida. Na prática, os filhos passam a ser os "nu-proprietários" e só terão a propriedade plena (posse e direito de uso) após o falecimento dos pais, momento em que o usufruto é extinto automaticamente no cartório, sem a necessidade de inventariar aquele bem específico.</p>
+      
+      <h3>Vantagens em Relação ao Inventário</h3>
+      <ul>
+        <li><strong>Economia Financeira e Previsibilidade:</strong> O inventário frequentemente envolve custos altos e imprevisíveis no momento do luto, como honorários advocatícios sobre o valor atualizado do patrimônio total e custas judiciais ou cartorárias. Na doação, o imposto incidente (o ITCMD - Imposto sobre Transmissão Causa Mortis e Doação) é planejado e pago antecipadamente, muitas vezes sobre uma base de cálculo mais vantajosa e sem a pressa ou multas típicas de inventários atrasados.</li>
+        <li><strong>Agilidade e Prevenção de Conflitos:</strong> Um inventário pode se arrastar por anos, bloqueando bens e contas, especialmente se houver discordância mínima entre os herdeiros. A doação já define a partilha em vida, respeitando a vontade exata do doador e mitigando o risco de litígios familiares no futuro.</li>
+        <li><strong>Proteção Avançada do Patrimônio:</strong> É perfeitamente possível incluir cláusulas restritivas de proteção no momento da doação, como a de incomunicabilidade (o imóvel não fará parte do patrimônio do cônjuge do filho em caso de casamento ou divórcio), impenhorabilidade (o bem fica blindado contra eventuais execuções e dívidas contraídas pelo filho) e inalienabilidade (o filho fica impedido de vender o imóvel sem a autorização expressa do doador).</li>
+      </ul>
+
+      <h3>Atenção aos Limites Legais e Fiscais</h3>
+      <p>Apesar de altamente recomendada, a doação requer cuidados técnicos. É fundamental respeitar a chamada "legítima": a legislação brasileira determina que 50% do patrimônio do indivíduo deve ser obrigatoriamente reservado aos herdeiros necessários (filhos, cônjuges, pais). Doações que ultrapassem esse percentual podem ser juridicamente anuladas no futuro (doação inoficiosa). Além disso, a lei proíbe a doação universal (de todos os bens) sem que o doador reserve renda ou bens suficientes para a própria subsistência.</p>
+
+      <p>Cada configuração familiar e patrimonial é única, e a legislação tributária do ITCMD varia consideravelmente de Estado para Estado. Por isso, antes de assinar qualquer escritura, é imprescindível buscar o aconselhamento de uma assessoria jurídica especializada em direito sucessório para analisar o impacto fiscal, revisar a documentação e estruturar toda a operação garantindo total segurança legal para você e sua família.</p>
+    `,
+    date: '2026-03-25',
+    category: 'Direito de Família e Sucessões',
+    imageUrl: 'https://img.usecurling.com/p/800/600?q=house%20keys&color=black&dpr=2',
+  },
+  {
     id: '1',
     slug: 'prescricao-do-credito-tributario',
     title: 'Prescrição do Crédito Tributário: Entenda seus Direitos',
