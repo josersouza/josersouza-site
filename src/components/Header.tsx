@@ -3,10 +3,12 @@ import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +19,41 @@ export function Header() {
   }, [])
 
   const navLinks = [
-    { name: 'Início', href: '#home' },
-    { name: 'O Escritório', href: '#sobre' },
-    { name: 'Áreas de Atuação', href: '#atuacao' },
-    { name: 'Contato', href: '#contato' },
+    { name: 'Início', href: '/#inicio' },
+    { name: 'O Escritório', href: '/#sobre' },
+    { name: 'Áreas de Atuação', href: '/#areas' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contato', href: '/#contato' },
   ]
+
+  const renderLink = (link: { name: string; href: string }, isMobile: boolean) => {
+    const isHomeHash = link.href.startsWith('/#')
+    const targetHref = isHomeHash && pathname === '/' ? link.href.substring(1) : link.href
+
+    const baseClass = isMobile
+      ? 'block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]'
+      : 'text-[11px] font-bold tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors uppercase'
+
+    const handleClick = () => {
+      if (isMobile) setIsMobileMenuOpen(false)
+    }
+
+    if (isHomeHash && pathname === '/') {
+      return (
+        <a href={targetHref} className={baseClass} onClick={handleClick}>
+          {link.name}
+        </a>
+      )
+    }
+
+    return (
+      <Link to={targetHref} className={baseClass} onClick={handleClick}>
+        {link.name}
+      </Link>
+    )
+  }
+
+  const contactHref = pathname === '/' ? '#contato' : '/#contato'
 
   return (
     <header
@@ -40,14 +72,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors uppercase"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+                <li key={link.name}>{renderLink(link, false)}</li>
               ))}
             </ul>
             <div className="flex items-center gap-6 border-l border-border/50 pl-6">
@@ -64,7 +89,11 @@ export function Header() {
                 className="rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12"
                 asChild
               >
-                <a href="#contato">Agendar Consulta</a>
+                {pathname === '/' ? (
+                  <a href={contactHref}>Agendar Consulta</a>
+                ) : (
+                  <Link to={contactHref}>Agendar Consulta</Link>
+                )}
               </Button>
             </div>
           </nav>
@@ -90,15 +119,7 @@ export function Header() {
         <div className="container mx-auto px-4 flex flex-col gap-8">
           <ul className="flex flex-col gap-6 text-center">
             {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              </li>
+              <li key={link.name}>{renderLink(link, true)}</li>
             ))}
           </ul>
 
@@ -117,9 +138,15 @@ export function Header() {
               size="lg"
               asChild
             >
-              <a href="#contato" onClick={() => setIsMobileMenuOpen(false)}>
-                Agendar Consulta
-              </a>
+              {pathname === '/' ? (
+                <a href={contactHref} onClick={() => setIsMobileMenuOpen(false)}>
+                  Agendar Consulta
+                </a>
+              ) : (
+                <Link to={contactHref} onClick={() => setIsMobileMenuOpen(false)}>
+                  Agendar Consulta
+                </Link>
+              )}
             </Button>
           </div>
         </div>

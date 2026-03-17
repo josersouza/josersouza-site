@@ -4,8 +4,26 @@ import { PracticeAreas } from '@/components/sections/PracticeAreas'
 import { Stats } from '@/components/sections/Stats'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Contact } from '@/components/sections/Contact'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function Index() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '')
+      const element = document.getElementById(id)
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [hash])
+
   return (
     <div className="w-full">
       <Hero />

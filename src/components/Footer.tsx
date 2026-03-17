@@ -1,7 +1,36 @@
 import { Logo } from '@/components/Logo'
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Footer() {
+  const { pathname } = useLocation()
+
+  const NavLink = ({
+    href,
+    children,
+    className,
+  }: {
+    href: string
+    children: React.ReactNode
+    className: string
+  }) => {
+    const isHomeHash = href.startsWith('/#')
+    const targetHref = isHomeHash && pathname === '/' ? href.substring(1) : href
+
+    if (isHomeHash && pathname === '/') {
+      return (
+        <a href={targetHref} className={className}>
+          {children}
+        </a>
+      )
+    }
+    return (
+      <Link to={targetHref} className={className}>
+        {children}
+      </Link>
+    )
+  }
+
   return (
     <footer className="bg-muted/30 pt-24 pb-12 border-t border-border/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,24 +68,24 @@ export function Footer() {
             <h4 className="font-bold tracking-[0.2em] uppercase text-xs text-foreground">Áreas</h4>
             <ul className="flex flex-col gap-4 text-sm text-muted-foreground font-light">
               <li>
-                <a href="#atuacao" className="hover:text-primary transition-colors">
+                <NavLink href="/#areas" className="hover:text-primary transition-colors">
                   Direito Civil
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#atuacao" className="hover:text-primary transition-colors">
+                <NavLink href="/#areas" className="hover:text-primary transition-colors">
                   Trabalhista
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#atuacao" className="hover:text-primary transition-colors">
+                <NavLink href="/#areas" className="hover:text-primary transition-colors">
                   Empresarial
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#atuacao" className="hover:text-primary transition-colors">
+                <NavLink href="/#areas" className="hover:text-primary transition-colors">
                   Família
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -65,24 +94,29 @@ export function Footer() {
             <h4 className="font-bold tracking-[0.2em] uppercase text-xs text-foreground">Menu</h4>
             <ul className="flex flex-col gap-4 text-sm text-muted-foreground font-light">
               <li>
-                <a href="#home" className="hover:text-primary transition-colors">
+                <NavLink href="/#inicio" className="hover:text-primary transition-colors">
                   Início
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#sobre" className="hover:text-primary transition-colors">
+                <NavLink href="/#sobre" className="hover:text-primary transition-colors">
                   O Escritório
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#atuacao" className="hover:text-primary transition-colors">
+                <NavLink href="/#areas" className="hover:text-primary transition-colors">
                   Atuação
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#contato" className="hover:text-primary transition-colors">
+                <Link to="/blog" className="hover:text-primary transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <NavLink href="/#contato" className="hover:text-primary transition-colors">
                   Contato
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

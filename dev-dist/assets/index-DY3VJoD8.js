@@ -16027,6 +16027,11 @@ function useOutlet(context) {
 	let outlet = import_react.useContext(RouteContext).outlet;
 	return import_react.useMemo(() => outlet && /* @__PURE__ */ import_react.createElement(OutletContext.Provider, { value: context }, outlet), [outlet, context]);
 }
+function useParams() {
+	let { matches } = import_react.useContext(RouteContext);
+	let routeMatch = matches[matches.length - 1];
+	return routeMatch ? routeMatch.params : {};
+}
 function useResolvedPath(to, { relative } = {}) {
 	let { matches } = import_react.useContext(RouteContext);
 	let { pathname: locationPathname } = useLocation();
@@ -16350,6 +16355,30 @@ function DataRoutes({ routes, future, state, isStatic, onError }) {
 		onError,
 		future
 	});
+}
+function Navigate({ to, replace: replace2, state, relative }) {
+	invariant(useInRouterContext(), `<Navigate> may be used only in the context of a <Router> component.`);
+	let { static: isStatic } = import_react.useContext(NavigationContext);
+	warning(!isStatic, `<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.`);
+	let { matches } = import_react.useContext(RouteContext);
+	let { pathname: locationPathname } = useLocation();
+	let navigate = useNavigate();
+	let path = resolveTo(to, getResolveToMatches(matches), locationPathname, relative === "path");
+	let jsonPath = JSON.stringify(path);
+	import_react.useEffect(() => {
+		navigate(JSON.parse(jsonPath), {
+			replace: replace2,
+			state,
+			relative
+		});
+	}, [
+		navigate,
+		jsonPath,
+		relative,
+		replace2,
+		state
+	]);
+	return null;
 }
 function Outlet(props) {
 	return useOutlet(props.context);
@@ -19049,6 +19078,28 @@ var Building2 = createLucideIcon("building-2", [
 		key: "16ra0t"
 	}]
 ]);
+var Calendar = createLucideIcon("calendar", [
+	["path", {
+		d: "M8 2v4",
+		key: "1cmpym"
+	}],
+	["path", {
+		d: "M16 2v4",
+		key: "4m81vk"
+	}],
+	["rect", {
+		width: "18",
+		height: "18",
+		x: "3",
+		y: "4",
+		rx: "2",
+		key: "1hopcy"
+	}],
+	["path", {
+		d: "M3 10h18",
+		key: "8toen8"
+	}]
+]);
 var CircleCheck = createLucideIcon("circle-check", [["circle", {
 	cx: "12",
 	cy: "12",
@@ -19208,6 +19259,16 @@ var ShieldAlert = createLucideIcon("shield-alert", [
 var Star = createLucideIcon("star", [["path", {
 	d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
 	key: "r04s7s"
+}]]);
+var Tag = createLucideIcon("tag", [["path", {
+	d: "M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z",
+	key: "vktsd0"
+}], ["circle", {
+	cx: "7.5",
+	cy: "7.5",
+	r: ".5",
+	fill: "currentColor",
+	key: "kqv944"
 }]]);
 var Users = createLucideIcon("users", [
 	["path", {
@@ -27257,34 +27318,474 @@ function Contact() {
 //#endregion
 //#region src/pages/Index.tsx
 function Index() {
+	const { hash } = useLocation();
+	(0, import_react.useEffect)(() => {
+		if (hash) {
+			const id = hash.replace("#", "");
+			const element = document.getElementById(id);
+			if (element) setTimeout(() => {
+				element.scrollIntoView({ behavior: "smooth" });
+			}, 100);
+		} else window.scrollTo(0, 0);
+	}, [hash]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		"data-uid": "src/pages/Index.tsx:10:5",
+		"data-uid": "src/pages/Index.tsx:28:5",
 		"data-prohibitions": "[]",
 		className: "w-full",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {
-				"data-uid": "src/pages/Index.tsx:11:7",
+				"data-uid": "src/pages/Index.tsx:29:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
-				"data-uid": "src/pages/Index.tsx:12:7",
+				"data-uid": "src/pages/Index.tsx:30:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PracticeAreas, {
-				"data-uid": "src/pages/Index.tsx:13:7",
+				"data-uid": "src/pages/Index.tsx:31:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {
-				"data-uid": "src/pages/Index.tsx:14:7",
+				"data-uid": "src/pages/Index.tsx:32:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Testimonials, {
-				"data-uid": "src/pages/Index.tsx:15:7",
+				"data-uid": "src/pages/Index.tsx:33:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {
-				"data-uid": "src/pages/Index.tsx:16:7",
+				"data-uid": "src/pages/Index.tsx:34:7",
 				"data-prohibitions": "[editContent]"
+			})
+		]
+	});
+}
+//#endregion
+//#region src/components/ui/card.tsx
+var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:8:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("rounded-lg border bg-card text-card-foreground shadow-sm", className),
+	...props
+}));
+Card.displayName = "Card";
+var CardHeader = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:19:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("flex flex-col space-y-1.5 p-6", className),
+	...props
+}));
+CardHeader.displayName = "CardHeader";
+var CardTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:26:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("text-2xl font-semibold leading-none tracking-tight", className),
+	...props
+}));
+CardTitle.displayName = "CardTitle";
+var CardDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:37:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("text-sm text-muted-foreground", className),
+	...props
+}));
+CardDescription.displayName = "CardDescription";
+var CardContent = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:44:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("p-6 pt-0", className),
+	...props
+}));
+CardContent.displayName = "CardContent";
+var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:51:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("flex items-center p-6 pt-0", className),
+	...props
+}));
+CardFooter.displayName = "CardFooter";
+//#endregion
+//#region src/components/ui/badge.tsx
+var badgeVariants = cva("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+	variants: { variant: {
+		default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+		secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+		destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+		outline: "text-foreground"
+	} },
+	defaultVariants: { variant: "default" }
+});
+function Badge({ className, variant, ...props }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		"data-uid": "src/components/ui/badge.tsx:30:10",
+		"data-prohibitions": "[editContent]",
+		className: cn$1(badgeVariants({ variant }), className),
+		...props
+	});
+}
+//#endregion
+//#region src/data/blog.ts
+var blogPosts = [
+	{
+		id: "1",
+		slug: "importancia-do-planejamento-fiscal",
+		title: "A Importância do Planejamento Fiscal para Pequenas Empresas",
+		excerpt: "Descubra como uma estruturação tributária adequada pode reduzir custos e evitar passivos na sua empresa.",
+		content: `
+      <p>O planejamento fiscal deixou de ser uma exclusividade das grandes corporações e tornou-se uma ferramenta de sobrevivência e competitividade para as pequenas e médias empresas. Em um cenário tributário complexo como o brasileiro, a desorganização pode levar a pagamentos indevidos e autuações severas.</p>
+      
+      <h3>Por que planejar?</h3>
+      <p>O principal objetivo do planejamento tributário é a economia lícita de impostos, também conhecida como elisão fiscal. Ao analisar o regime tributário mais adequado (Simples Nacional, Lucro Presumido ou Lucro Real), a empresa pode alinhar suas operações para minimizar a carga tributária dentro da lei.</p>
+      
+      <h3>Principais Benefícios:</h3>
+      <ul>
+        <li>Redução legal da carga tributária;</li>
+        <li>Prevenção contra autuações fiscais;</li>
+        <li>Melhoria no fluxo de caixa da empresa;</li>
+        <li>Maior competitividade no mercado.</li>
+      </ul>
+
+      <p>A consultoria preventiva atua mapeando as operações da empresa, identificando gargalos e oportunidades de recuperação de créditos tributários, além de assegurar que o negócio esteja totalmente <em>compliance</em> com a legislação vigente.</p>
+    `,
+		date: "2026-03-10",
+		category: "Direito Tributário",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=tax%20planning&color=black&dpr=2"
+	},
+	{
+		id: "2",
+		slug: "governanca-corporativa",
+		title: "Governança Corporativa: O que é e por que implementar?",
+		excerpt: "Entenda os pilares da governança corporativa e como ela pode atrair investimentos e profissionalizar a sua gestão.",
+		content: `
+      <p>A governança corporativa representa o sistema pelo qual as empresas e demais organizações são dirigidas, monitoradas e incentivadas. Envolve os relacionamentos entre sócios, conselho de administração, diretoria, órgãos de fiscalização e controle e demais partes interessadas.</p>
+      
+      <h3>Os Pilares da Governança</h3>
+      <p>Para uma implementação de sucesso, quatro princípios básicos devem ser observados:</p>
+      <ol>
+        <li><strong>Transparência:</strong> Mais do que a obrigação de informar, é o desejo de disponibilizar informações que sejam de interesse das partes interessadas.</li>
+        <li><strong>Equidade:</strong> Tratamento justo e isonômico de todos os sócios e demais partes interessadas (stakeholders).</li>
+        <li><strong>Prestação de Contas (Accountability):</strong> Os agentes de governança devem prestar contas de sua atuação de modo claro, conciso, compreensível e tempestivo.</li>
+        <li><strong>Responsabilidade Corporativa:</strong> Os agentes de governança devem zelar pela viabilidade econômico-financeira das organizações.</li>
+      </ol>
+
+      <p>No Direito Empresarial, a estruturação de uma boa governança mitiga conflitos societários e cria um ambiente de segurança jurídica fundamental para a captação de recursos e operações de fusões e aquisições.</p>
+    `,
+		date: "2026-02-28",
+		category: "Direito Empresarial",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=corporate%20governance&color=black&dpr=2"
+	},
+	{
+		id: "3",
+		slug: "holding-familiar",
+		title: "Holding Familiar: Estratégia de Proteção e Sucessão Patrimonial",
+		excerpt: "Como a constituição de uma holding pode proteger os bens da sua família e facilitar o processo sucessório.",
+		content: `
+      <p>A constituição de uma holding familiar tem se mostrado uma das estratégias jurídicas mais eficientes para o planejamento sucessório e a proteção patrimonial. Consiste, basicamente, na criação de uma empresa cujo objetivo principal é administrar o patrimônio de uma ou mais pessoas físicas da mesma família.</p>
+      
+      <h3>Vantagens da Holding Familiar</h3>
+      <p>Entre os principais benefícios dessa estrutura societária, destacam-se:</p>
+      <ul>
+        <li><strong>Eficiência Tributária:</strong> Em muitos casos, a tributação sobre os rendimentos (como aluguéis) e sobre a transmissão de bens é significativamente menor na pessoa jurídica do que na pessoa física.</li>
+        <li><strong>Prevenção de Conflitos:</strong> Estabelece regras claras de gestão e sucessão, evitando litígios demorados e desgastantes no processo de inventário.</li>
+        <li><strong>Proteção Patrimonial:</strong> Isola o patrimônio pessoal dos riscos inerentes à atividade empresarial operada pelos sócios.</li>
+      </ul>
+
+      <p>O planejamento deve ser altamente personalizado, avaliando a composição do patrimônio, o regime de casamento dos sócios e as regras de governança que irão reger a sociedade, garantindo que o legado familiar seja preservado através das gerações.</p>
+    `,
+		date: "2026-02-15",
+		category: "Direito Societário",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=family%20business&color=black&dpr=2"
+	}
+];
+//#endregion
+//#region src/pages/Blog.tsx
+function Blog() {
+	(0, import_react.useEffect)(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		"data-uid": "src/pages/Blog.tsx:16:5",
+		"data-prohibitions": "[editContent]",
+		className: "pt-32 pb-24 min-h-screen bg-background",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			"data-uid": "src/pages/Blog.tsx:17:7",
+			"data-prohibitions": "[editContent]",
+			className: "container mx-auto px-4",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/pages/Blog.tsx:18:9",
+				"data-prohibitions": "[]",
+				className: "max-w-3xl mb-16",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+					"data-uid": "src/pages/Blog.tsx:19:11",
+					"data-prohibitions": "[]",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+						"data-uid": "src/pages/Blog.tsx:20:13",
+						"data-prohibitions": "[]",
+						className: "text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6",
+						children: [
+							"Nosso",
+							" ",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								"data-uid": "src/pages/Blog.tsx:22:15",
+								"data-prohibitions": "[]",
+								className: "text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400",
+								children: "Blog Jurídico"
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						"data-uid": "src/pages/Blog.tsx:26:13",
+						"data-prohibitions": "[]",
+						className: "text-lg text-muted-foreground leading-relaxed",
+						children: "Artigos, atualizações e insights estratégicos sobre Direito Corporativo, Tributário e Empresarial."
+					})]
+				})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/pages/Blog.tsx:33:9",
+				"data-prohibitions": "[editContent]",
+				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+				children: blogPosts.map((post, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+					"data-uid": "src/pages/Blog.tsx:35:13",
+					"data-prohibitions": "[editContent]",
+					delay: idx * 150,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+						"data-uid": "src/pages/Blog.tsx:36:15",
+						"data-prohibitions": "[editContent]",
+						className: "h-full flex flex-col overflow-hidden hover:border-primary/50 transition-colors group bg-card border-border/50 shadow-sm hover:shadow-lg hover:shadow-primary/5",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								"data-uid": "src/pages/Blog.tsx:37:17",
+								"data-prohibitions": "[]",
+								className: "relative aspect-video overflow-hidden bg-muted",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									"data-uid": "src/pages/Blog.tsx:38:19",
+									"data-prohibitions": "[editContent]",
+									src: post.imageUrl,
+									alt: post.title,
+									className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+								"data-uid": "src/pages/Blog.tsx:44:17",
+								"data-prohibitions": "[editContent]",
+								className: "flex-1 space-y-3 p-6 pb-4",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										"data-uid": "src/pages/Blog.tsx:45:19",
+										"data-prohibitions": "[editContent]",
+										className: "flex items-center gap-3 text-xs text-muted-foreground mb-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+											"data-uid": "src/pages/Blog.tsx:46:21",
+											"data-prohibitions": "[editContent]",
+											variant: "outline",
+											className: "text-primary border-primary/30 rounded-full bg-primary/5 px-3 py-0.5",
+											children: post.category
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											"data-uid": "src/pages/Blog.tsx:52:21",
+											"data-prohibitions": "[editContent]",
+											className: "flex items-center gap-1.5 font-medium",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calendar, {
+												"data-uid": "src/pages/Blog.tsx:53:23",
+												"data-prohibitions": "[editContent]",
+												className: "w-3.5 h-3.5"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												"data-uid": "src/pages/Blog.tsx:54:23",
+												"data-prohibitions": "[editContent]",
+												children: new Date(post.date).toLocaleDateString("pt-BR")
+											})]
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										"data-uid": "src/pages/Blog.tsx:57:19",
+										"data-prohibitions": "[editContent]",
+										className: "text-xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight",
+										children: post.title
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										"data-uid": "src/pages/Blog.tsx:60:19",
+										"data-prohibitions": "[editContent]",
+										className: "text-muted-foreground text-sm line-clamp-3 leading-relaxed",
+										children: post.excerpt
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardFooter, {
+								"data-uid": "src/pages/Blog.tsx:64:17",
+								"data-prohibitions": "[]",
+								className: "p-6 pt-0 mt-auto",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									"data-uid": "src/pages/Blog.tsx:65:19",
+									"data-prohibitions": "[]",
+									variant: "ghost",
+									className: "p-0 h-auto hover:bg-transparent text-primary group-hover:text-orange-400 transition-colors font-semibold",
+									asChild: true,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+										"data-uid": "src/pages/Blog.tsx:70:21",
+										"data-prohibitions": "[]",
+										to: `/blog/${post.slug}`,
+										children: ["Ler artigo completo", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+											"data-uid": "src/pages/Blog.tsx:72:23",
+											"data-prohibitions": "[editContent]",
+											className: "ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+										})]
+									})
+								})
+							})
+						]
+					})
+				}, post.id))
+			})]
+		})
+	});
+}
+//#endregion
+//#region src/pages/BlogPost.tsx
+function BlogPost() {
+	const { slug } = useParams();
+	const post = blogPosts.find((p) => p.slug === slug);
+	(0, import_react.useEffect)(() => {
+		window.scrollTo(0, 0);
+	}, [slug]);
+	if (!post) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
+		"data-uid": "src/pages/BlogPost.tsx:18:12",
+		"data-prohibitions": "[editContent]",
+		to: "/404",
+		replace: true
+	});
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+		"data-uid": "src/pages/BlogPost.tsx:22:5",
+		"data-prohibitions": "[editContent]",
+		className: "pt-32 pb-24 min-h-screen bg-background",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/pages/BlogPost.tsx:23:7",
+				"data-prohibitions": "[editContent]",
+				className: "container mx-auto px-4 max-w-4xl",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+					"data-uid": "src/pages/BlogPost.tsx:24:9",
+					"data-prohibitions": "[editContent]",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							"data-uid": "src/pages/BlogPost.tsx:25:11",
+							"data-prohibitions": "[]",
+							variant: "ghost",
+							className: "mb-8 -ml-4 text-muted-foreground hover:text-foreground",
+							asChild: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+								"data-uid": "src/pages/BlogPost.tsx:30:13",
+								"data-prohibitions": "[]",
+								to: "/blog",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, {
+									"data-uid": "src/pages/BlogPost.tsx:31:15",
+									"data-prohibitions": "[editContent]",
+									className: "mr-2 w-4 h-4"
+								}), "Voltar para o Blog"]
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/pages/BlogPost.tsx:36:11",
+							"data-prohibitions": "[editContent]",
+							className: "flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+								"data-uid": "src/pages/BlogPost.tsx:37:13",
+								"data-prohibitions": "[editContent]",
+								className: "bg-primary/10 text-primary hover:bg-primary/20 rounded-full border-none px-3 py-1",
+								children: post.category
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/pages/BlogPost.tsx:40:13",
+								"data-prohibitions": "[editContent]",
+								className: "flex items-center gap-1.5 font-medium",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calendar, {
+									"data-uid": "src/pages/BlogPost.tsx:41:15",
+									"data-prohibitions": "[editContent]",
+									className: "w-4 h-4"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"data-uid": "src/pages/BlogPost.tsx:42:15",
+									"data-prohibitions": "[editContent]",
+									children: new Date(post.date).toLocaleDateString("pt-BR")
+								})]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+							"data-uid": "src/pages/BlogPost.tsx:46:11",
+							"data-prohibitions": "[editContent]",
+							className: "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]",
+							children: post.title
+						})
+					]
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+				"data-uid": "src/pages/BlogPost.tsx:52:7",
+				"data-prohibitions": "[]",
+				delay: 200,
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					"data-uid": "src/pages/BlogPost.tsx:53:9",
+					"data-prohibitions": "[]",
+					className: "w-full max-w-5xl mx-auto my-12 px-4",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						"data-uid": "src/pages/BlogPost.tsx:54:11",
+						"data-prohibitions": "[]",
+						className: "aspect-[21/9] overflow-hidden rounded-xl bg-muted border border-border/50",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							"data-uid": "src/pages/BlogPost.tsx:55:13",
+							"data-prohibitions": "[editContent]",
+							src: post.imageUrl,
+							alt: post.title,
+							className: "w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+						})
+					})
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/pages/BlogPost.tsx:64:7",
+				"data-prohibitions": "[editContent]",
+				className: "container mx-auto px-4 max-w-3xl",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+					"data-uid": "src/pages/BlogPost.tsx:65:9",
+					"data-prohibitions": "[editContent]",
+					delay: 400,
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						"data-uid": "src/pages/BlogPost.tsx:66:11",
+						"data-prohibitions": "[editContent]",
+						className: "prose prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-orange-400 prose-strong:text-foreground prose-li:text-muted-foreground prose-blockquote:border-l-primary prose-blockquote:bg-secondary/30 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:font-normal prose-blockquote:not-italic",
+						dangerouslySetInnerHTML: { __html: post.content }
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						"data-uid": "src/pages/BlogPost.tsx:71:11",
+						"data-prohibitions": "[editContent]",
+						className: "mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-6",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/pages/BlogPost.tsx:72:13",
+							"data-prohibitions": "[editContent]",
+							className: "flex items-center gap-2 text-sm text-muted-foreground font-medium",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tag, {
+								"data-uid": "src/pages/BlogPost.tsx:73:15",
+								"data-prohibitions": "[editContent]",
+								className: "w-4 h-4"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								"data-uid": "src/pages/BlogPost.tsx:74:15",
+								"data-prohibitions": "[editContent]",
+								children: ["Publicado em: ", post.category]
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							"data-uid": "src/pages/BlogPost.tsx:76:13",
+							"data-prohibitions": "[]",
+							asChild: true,
+							className: "rounded-full px-8 uppercase tracking-widest text-xs font-bold h-12",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								"data-uid": "src/pages/BlogPost.tsx:80:15",
+								"data-prohibitions": "[]",
+								to: "/blog",
+								children: "Ver mais artigos"
+							})
+						})]
+					})]
+				})
 			})
 		]
 	});
@@ -27368,6 +27869,7 @@ function Logo({ className }) {
 function Header() {
 	const [isScrolled, setIsScrolled] = (0, import_react.useState)(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = (0, import_react.useState)(false);
+	const { pathname } = useLocation();
 	(0, import_react.useEffect)(() => {
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 10);
@@ -27378,104 +27880,132 @@ function Header() {
 	const navLinks = [
 		{
 			name: "Início",
-			href: "#home"
+			href: "/#inicio"
 		},
 		{
 			name: "O Escritório",
-			href: "#sobre"
+			href: "/#sobre"
 		},
 		{
 			name: "Áreas de Atuação",
-			href: "#atuacao"
+			href: "/#areas"
+		},
+		{
+			name: "Blog",
+			href: "/blog"
 		},
 		{
 			name: "Contato",
-			href: "#contato"
+			href: "/#contato"
 		}
 	];
+	const renderLink = (link, isMobile) => {
+		const isHomeHash = link.href.startsWith("/#");
+		const targetHref = isHomeHash && pathname === "/" ? link.href.substring(1) : link.href;
+		const baseClass = isMobile ? "block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]" : "text-[11px] font-bold tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors uppercase";
+		const handleClick = () => {
+			if (isMobile) setIsMobileMenuOpen(false);
+		};
+		if (isHomeHash && pathname === "/") return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+			"data-uid": "src/components/Header.tsx:43:9",
+			"data-prohibitions": "[editContent]",
+			href: targetHref,
+			className: baseClass,
+			onClick: handleClick,
+			children: link.name
+		});
+		return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+			"data-uid": "src/components/Header.tsx:50:7",
+			"data-prohibitions": "[editContent]",
+			to: targetHref,
+			className: baseClass,
+			onClick: handleClick,
+			children: link.name
+		});
+	};
+	const contactHref = pathname === "/" ? "#contato" : "/#contato";
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
-		"data-uid": "src/components/Header.tsx:27:5",
+		"data-uid": "src/components/Header.tsx:59:5",
 		"data-prohibitions": "[editContent]",
 		className: cn$1("fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent", isScrolled ? "bg-background/95 backdrop-blur-md border-border/20 py-4 shadow-sm" : "bg-background/50 backdrop-blur-sm py-6"),
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/Header.tsx:35:7",
+			"data-uid": "src/components/Header.tsx:67:7",
 			"data-prohibitions": "[editContent]",
 			className: "container mx-auto px-4 sm:px-6 lg:px-8",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Header.tsx:36:9",
+				"data-uid": "src/components/Header.tsx:68:9",
 				"data-prohibitions": "[editContent]",
 				className: "flex items-center justify-between",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {
-						"data-uid": "src/components/Header.tsx:37:11",
+						"data-uid": "src/components/Header.tsx:69:11",
 						"data-prohibitions": "[editContent]"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-						"data-uid": "src/components/Header.tsx:40:11",
+						"data-uid": "src/components/Header.tsx:72:11",
 						"data-prohibitions": "[editContent]",
 						className: "hidden lg:flex items-center gap-8",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-							"data-uid": "src/components/Header.tsx:41:13",
+							"data-uid": "src/components/Header.tsx:73:13",
 							"data-prohibitions": "[editContent]",
 							className: "flex items-center gap-8",
 							children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-								"data-uid": "src/components/Header.tsx:43:17",
+								"data-uid": "src/components/Header.tsx:75:17",
 								"data-prohibitions": "[editContent]",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									"data-uid": "src/components/Header.tsx:44:19",
-									"data-prohibitions": "[editContent]",
-									href: link.href,
-									className: "text-[11px] font-bold tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors uppercase",
-									children: link.name
-								})
+								children: renderLink(link, false)
 							}, link.name))
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/components/Header.tsx:53:13",
-							"data-prohibitions": "[]",
+							"data-uid": "src/components/Header.tsx:78:13",
+							"data-prohibitions": "[editContent]",
 							className: "flex items-center gap-6 border-l border-border/50 pl-6",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								"data-uid": "src/components/Header.tsx:54:15",
+								"data-uid": "src/components/Header.tsx:79:15",
 								"data-prohibitions": "[]",
 								href: "https://wa.me/5519994691494",
 								target: "_blank",
 								rel: "noopener noreferrer",
 								className: "flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
-									"data-uid": "src/components/Header.tsx:60:17",
+									"data-uid": "src/components/Header.tsx:85:17",
 									"data-prohibitions": "[editContent]",
 									className: "w-4 h-4 text-primary"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									"data-uid": "src/components/Header.tsx:61:17",
+									"data-uid": "src/components/Header.tsx:86:17",
 									"data-prohibitions": "[]",
 									className: "tracking-widest",
 									children: "19 99469.1494"
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								"data-uid": "src/components/Header.tsx:63:15",
-								"data-prohibitions": "[]",
+								"data-uid": "src/components/Header.tsx:88:15",
+								"data-prohibitions": "[editContent]",
 								className: "rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12",
 								asChild: true,
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									"data-uid": "src/components/Header.tsx:67:17",
+								children: pathname === "/" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									"data-uid": "src/components/Header.tsx:93:19",
 									"data-prohibitions": "[]",
-									href: "#contato",
+									href: contactHref,
+									children: "Agendar Consulta"
+								}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									"data-uid": "src/components/Header.tsx:95:19",
+									"data-prohibitions": "[]",
+									to: contactHref,
 									children: "Agendar Consulta"
 								})
 							})]
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-						"data-uid": "src/components/Header.tsx:73:11",
+						"data-uid": "src/components/Header.tsx:102:11",
 						"data-prohibitions": "[editContent]",
 						className: "lg:hidden text-foreground p-2 -mr-2 hover:text-primary transition-colors",
 						onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen),
 						"aria-label": "Toggle menu",
 						children: isMobileMenuOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, {
-							"data-uid": "src/components/Header.tsx:78:33",
+							"data-uid": "src/components/Header.tsx:107:33",
 							"data-prohibitions": "[editContent]",
 							className: "w-6 h-6"
 						}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, {
-							"data-uid": "src/components/Header.tsx:78:61",
+							"data-uid": "src/components/Header.tsx:107:61",
 							"data-prohibitions": "[editContent]",
 							className: "w-6 h-6"
 						})
@@ -27483,60 +28013,59 @@ function Header() {
 				]
 			})
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/Header.tsx:84:7",
+			"data-uid": "src/components/Header.tsx:113:7",
 			"data-prohibitions": "[editContent]",
 			className: cn$1("lg:hidden fixed inset-x-0 top-[100%] bg-background/95 backdrop-blur-md border-b border-border/20 transition-all duration-300 ease-in-out overflow-hidden", isMobileMenuOpen ? "max-h-screen opacity-100 py-8 shadow-xl" : "max-h-0 opacity-0"),
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Header.tsx:90:9",
+				"data-uid": "src/components/Header.tsx:119:9",
 				"data-prohibitions": "[editContent]",
 				className: "container mx-auto px-4 flex flex-col gap-8",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-					"data-uid": "src/components/Header.tsx:91:11",
+					"data-uid": "src/components/Header.tsx:120:11",
 					"data-prohibitions": "[editContent]",
 					className: "flex flex-col gap-6 text-center",
 					children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-						"data-uid": "src/components/Header.tsx:93:15",
+						"data-uid": "src/components/Header.tsx:122:15",
 						"data-prohibitions": "[editContent]",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-							"data-uid": "src/components/Header.tsx:94:17",
-							"data-prohibitions": "[editContent]",
-							href: link.href,
-							className: "block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]",
-							onClick: () => setIsMobileMenuOpen(false),
-							children: link.name
-						})
+						children: renderLink(link, true)
 					}, link.name))
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					"data-uid": "src/components/Header.tsx:105:11",
-					"data-prohibitions": "[]",
+					"data-uid": "src/components/Header.tsx:126:11",
+					"data-prohibitions": "[editContent]",
 					className: "flex flex-col items-center gap-4 pt-4 border-t border-border/50",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						"data-uid": "src/components/Header.tsx:106:13",
+						"data-uid": "src/components/Header.tsx:127:13",
 						"data-prohibitions": "[]",
 						href: "https://wa.me/5519994691494",
 						target: "_blank",
 						rel: "noopener noreferrer",
 						className: "flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
-							"data-uid": "src/components/Header.tsx:112:15",
+							"data-uid": "src/components/Header.tsx:133:15",
 							"data-prohibitions": "[editContent]",
 							className: "w-4 h-4 text-primary"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							"data-uid": "src/components/Header.tsx:113:15",
+							"data-uid": "src/components/Header.tsx:134:15",
 							"data-prohibitions": "[]",
 							className: "tracking-widest",
 							children: "19 99469.1494"
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-						"data-uid": "src/components/Header.tsx:115:13",
-						"data-prohibitions": "[]",
+						"data-uid": "src/components/Header.tsx:136:13",
+						"data-prohibitions": "[editContent]",
 						className: "w-full rounded-none uppercase tracking-widest text-xs font-bold h-12",
 						size: "lg",
 						asChild: true,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-							"data-uid": "src/components/Header.tsx:120:15",
+						children: pathname === "/" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							"data-uid": "src/components/Header.tsx:142:17",
 							"data-prohibitions": "[]",
-							href: "#contato",
+							href: contactHref,
+							onClick: () => setIsMobileMenuOpen(false),
+							children: "Agendar Consulta"
+						}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							"data-uid": "src/components/Header.tsx:146:17",
+							"data-prohibitions": "[]",
+							to: contactHref,
 							onClick: () => setIsMobileMenuOpen(false),
 							children: "Agendar Consulta"
 						})
@@ -27549,41 +28078,60 @@ function Header() {
 //#endregion
 //#region src/components/Footer.tsx
 function Footer() {
+	const { pathname } = useLocation();
+	const NavLink = ({ href, children, className }) => {
+		const isHomeHash = href.startsWith("/#");
+		const targetHref = isHomeHash && pathname === "/" ? href.substring(1) : href;
+		if (isHomeHash && pathname === "/") return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+			"data-uid": "src/components/Footer.tsx:22:9",
+			"data-prohibitions": "[editContent]",
+			href: targetHref,
+			className,
+			children
+		});
+		return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+			"data-uid": "src/components/Footer.tsx:28:7",
+			"data-prohibitions": "[editContent]",
+			to: targetHref,
+			className,
+			children
+		});
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
-		"data-uid": "src/components/Footer.tsx:6:5",
+		"data-uid": "src/components/Footer.tsx:35:5",
 		"data-prohibitions": "[editContent]",
 		className: "bg-muted/30 pt-24 pb-12 border-t border-border/20",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/Footer.tsx:7:7",
+			"data-uid": "src/components/Footer.tsx:36:7",
 			"data-prohibitions": "[editContent]",
 			className: "container mx-auto px-4 sm:px-6 lg:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Footer.tsx:8:9",
+				"data-uid": "src/components/Footer.tsx:37:9",
 				"data-prohibitions": "[]",
 				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/Footer.tsx:9:11",
+						"data-uid": "src/components/Footer.tsx:38:11",
 						"data-prohibitions": "[]",
 						className: "lg:col-span-5 flex flex-col gap-8",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {
-								"data-uid": "src/components/Footer.tsx:10:13",
+								"data-uid": "src/components/Footer.tsx:39:13",
 								"data-prohibitions": "[editContent]",
 								className: "opacity-90"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								"data-uid": "src/components/Footer.tsx:11:13",
+								"data-uid": "src/components/Footer.tsx:40:13",
 								"data-prohibitions": "[]",
 								className: "text-muted-foreground text-sm leading-relaxed max-w-sm font-light pr-4",
 								children: "Escritório de advocacia pautado na ética e excelência. Dedicação exclusiva na defesa incansável dos direitos de nossos clientes, com atendimento estritamente personalizado."
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								"data-uid": "src/components/Footer.tsx:16:13",
+								"data-uid": "src/components/Footer.tsx:45:13",
 								"data-prohibitions": "[]",
 								className: "flex items-center gap-4",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									"data-uid": "src/components/Footer.tsx:17:15",
+									"data-uid": "src/components/Footer.tsx:46:15",
 									"data-prohibitions": "[]",
 									href: "https://instagram.com/josersouza_advogados",
 									target: "_blank",
@@ -27591,12 +28139,12 @@ function Footer() {
 									className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
 									"aria-label": "Instagram @josersouza_advogados",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Instagram, {
-										"data-uid": "src/components/Footer.tsx:24:17",
+										"data-uid": "src/components/Footer.tsx:53:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4"
 									})
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									"data-uid": "src/components/Footer.tsx:26:15",
+									"data-uid": "src/components/Footer.tsx:55:15",
 									"data-prohibitions": "[]",
 									href: "https://facebook.com/josersouza_advogados",
 									target: "_blank",
@@ -27604,7 +28152,7 @@ function Footer() {
 									className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
 									"aria-label": "Facebook @josersouza_advogados",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Facebook, {
-										"data-uid": "src/components/Footer.tsx:33:17",
+										"data-uid": "src/components/Footer.tsx:62:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4"
 									})
@@ -27613,59 +28161,59 @@ function Footer() {
 						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/Footer.tsx:38:11",
+						"data-uid": "src/components/Footer.tsx:67:11",
 						"data-prohibitions": "[]",
 						className: "lg:col-span-2 flex flex-col gap-6",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/Footer.tsx:39:13",
+							"data-uid": "src/components/Footer.tsx:68:13",
 							"data-prohibitions": "[]",
 							className: "font-bold tracking-[0.2em] uppercase text-xs text-foreground",
 							children: "Áreas"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
-							"data-uid": "src/components/Footer.tsx:40:13",
+							"data-uid": "src/components/Footer.tsx:69:13",
 							"data-prohibitions": "[]",
 							className: "flex flex-col gap-4 text-sm text-muted-foreground font-light",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:41:15",
+									"data-uid": "src/components/Footer.tsx:70:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:42:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:71:17",
 										"data-prohibitions": "[]",
-										href: "#atuacao",
+										href: "/#areas",
 										className: "hover:text-primary transition-colors",
 										children: "Direito Civil"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:46:15",
+									"data-uid": "src/components/Footer.tsx:75:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:47:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:76:17",
 										"data-prohibitions": "[]",
-										href: "#atuacao",
+										href: "/#areas",
 										className: "hover:text-primary transition-colors",
 										children: "Trabalhista"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:51:15",
+									"data-uid": "src/components/Footer.tsx:80:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:52:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:81:17",
 										"data-prohibitions": "[]",
-										href: "#atuacao",
+										href: "/#areas",
 										className: "hover:text-primary transition-colors",
 										children: "Empresarial"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:56:15",
+									"data-uid": "src/components/Footer.tsx:85:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:57:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:86:17",
 										"data-prohibitions": "[]",
-										href: "#atuacao",
+										href: "/#areas",
 										className: "hover:text-primary transition-colors",
 										children: "Família"
 									})
@@ -27674,59 +28222,70 @@ function Footer() {
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/Footer.tsx:64:11",
+						"data-uid": "src/components/Footer.tsx:93:11",
 						"data-prohibitions": "[]",
 						className: "lg:col-span-2 flex flex-col gap-6",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/Footer.tsx:65:13",
+							"data-uid": "src/components/Footer.tsx:94:13",
 							"data-prohibitions": "[]",
 							className: "font-bold tracking-[0.2em] uppercase text-xs text-foreground",
 							children: "Menu"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
-							"data-uid": "src/components/Footer.tsx:66:13",
+							"data-uid": "src/components/Footer.tsx:95:13",
 							"data-prohibitions": "[]",
 							className: "flex flex-col gap-4 text-sm text-muted-foreground font-light",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:67:15",
+									"data-uid": "src/components/Footer.tsx:96:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:68:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:97:17",
 										"data-prohibitions": "[]",
-										href: "#home",
+										href: "/#inicio",
 										className: "hover:text-primary transition-colors",
 										children: "Início"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:72:15",
+									"data-uid": "src/components/Footer.tsx:101:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:73:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:102:17",
 										"data-prohibitions": "[]",
-										href: "#sobre",
+										href: "/#sobre",
 										className: "hover:text-primary transition-colors",
 										children: "O Escritório"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:77:15",
+									"data-uid": "src/components/Footer.tsx:106:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:78:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:107:17",
 										"data-prohibitions": "[]",
-										href: "#atuacao",
+										href: "/#areas",
 										className: "hover:text-primary transition-colors",
 										children: "Atuação"
 									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-									"data-uid": "src/components/Footer.tsx:82:15",
+									"data-uid": "src/components/Footer.tsx:111:15",
 									"data-prohibitions": "[]",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:83:17",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+										"data-uid": "src/components/Footer.tsx:112:17",
 										"data-prohibitions": "[]",
-										href: "#contato",
+										to: "/blog",
+										className: "hover:text-primary transition-colors",
+										children: "Blog"
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+									"data-uid": "src/components/Footer.tsx:116:15",
+									"data-prohibitions": "[]",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavLink, {
+										"data-uid": "src/components/Footer.tsx:117:17",
+										"data-prohibitions": "[]",
+										href: "/#contato",
 										className: "hover:text-primary transition-colors",
 										children: "Contato"
 									})
@@ -27735,35 +28294,35 @@ function Footer() {
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/Footer.tsx:90:11",
+						"data-uid": "src/components/Footer.tsx:124:11",
 						"data-prohibitions": "[]",
 						className: "lg:col-span-3 flex flex-col gap-6",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/Footer.tsx:91:13",
+							"data-uid": "src/components/Footer.tsx:125:13",
 							"data-prohibitions": "[]",
 							className: "font-bold tracking-[0.2em] uppercase text-xs text-foreground",
 							children: "Contato"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
-							"data-uid": "src/components/Footer.tsx:94:13",
+							"data-uid": "src/components/Footer.tsx:128:13",
 							"data-prohibitions": "[]",
 							className: "flex flex-col gap-5 text-sm text-muted-foreground font-light",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:95:15",
+									"data-uid": "src/components/Footer.tsx:129:15",
 									"data-prohibitions": "[]",
 									className: "flex items-start gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
-										"data-uid": "src/components/Footer.tsx:96:17",
+										"data-uid": "src/components/Footer.tsx:130:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0 mt-0.5"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										"data-uid": "src/components/Footer.tsx:97:17",
+										"data-uid": "src/components/Footer.tsx:131:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors leading-relaxed",
 										children: [
 											"Rua Conceição, 233, Sala 709",
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
-												"data-uid": "src/components/Footer.tsx:99:19",
+												"data-uid": "src/components/Footer.tsx:133:19",
 												"data-prohibitions": "[editContent]"
 											}),
 											"Centro, Campinas - SP, CEP 13.010-050"
@@ -27771,30 +28330,30 @@ function Footer() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:103:15",
+									"data-uid": "src/components/Footer.tsx:137:15",
 									"data-prohibitions": "[]",
 									className: "flex items-center gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
-										"data-uid": "src/components/Footer.tsx:104:17",
+										"data-uid": "src/components/Footer.tsx:138:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/Footer.tsx:105:17",
+										"data-uid": "src/components/Footer.tsx:139:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
 										children: "19 99469.1494"
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:107:15",
+									"data-uid": "src/components/Footer.tsx:141:15",
 									"data-prohibitions": "[]",
 									className: "flex items-center gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
-										"data-uid": "src/components/Footer.tsx:108:17",
+										"data-uid": "src/components/Footer.tsx:142:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/Footer.tsx:109:17",
+										"data-uid": "src/components/Footer.tsx:143:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
 										children: "contato@josersouza.com.br"
@@ -27805,11 +28364,11 @@ function Footer() {
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Footer.tsx:117:9",
+				"data-uid": "src/components/Footer.tsx:151:9",
 				"data-prohibitions": "[editContent]",
 				className: "mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-muted-foreground font-light uppercase tracking-widest",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-					"data-uid": "src/components/Footer.tsx:118:11",
+					"data-uid": "src/components/Footer.tsx:152:11",
 					"data-prohibitions": "[editContent]",
 					children: [
 						"© ",
@@ -27817,17 +28376,17 @@ function Footer() {
 						" JOSÉ ROBERTO DE SOUZA ADVOGADOS ASSOCIADOS."
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					"data-uid": "src/components/Footer.tsx:119:11",
+					"data-uid": "src/components/Footer.tsx:153:11",
 					"data-prohibitions": "[]",
 					className: "flex gap-8",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:120:13",
+						"data-uid": "src/components/Footer.tsx:154:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
 						children: "Termos de Uso"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:123:13",
+						"data-uid": "src/components/Footer.tsx:157:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
@@ -27899,49 +28458,69 @@ function Layout() {
 //#endregion
 //#region src/App.tsx
 var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
-	"data-uid": "src/App.tsx:10:3",
+	"data-uid": "src/App.tsx:12:3",
 	"data-prohibitions": "[]",
 	future: {
 		v7_startTransition: false,
 		v7_relativeSplatPath: false
 	},
 	children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TooltipProvider, {
-		"data-uid": "src/App.tsx:11:5",
+		"data-uid": "src/App.tsx:13:5",
 		"data-prohibitions": "[]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster$2, {
-				"data-uid": "src/App.tsx:12:7",
+				"data-uid": "src/App.tsx:14:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {
-				"data-uid": "src/App.tsx:13:7",
+				"data-uid": "src/App.tsx:15:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Routes, {
-				"data-uid": "src/App.tsx:14:7",
+				"data-uid": "src/App.tsx:16:7",
 				"data-prohibitions": "[]",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
-					"data-uid": "src/App.tsx:15:9",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Route, {
+					"data-uid": "src/App.tsx:17:9",
 					"data-prohibitions": "[]",
 					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layout, {
-						"data-uid": "src/App.tsx:15:25",
+						"data-uid": "src/App.tsx:17:25",
 						"data-prohibitions": "[editContent]"
 					}),
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
-						"data-uid": "src/App.tsx:16:11",
-						"data-prohibitions": "[editContent]",
-						path: "/",
-						element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Index, {
-							"data-uid": "src/App.tsx:16:36",
-							"data-prohibitions": "[editContent]"
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+							"data-uid": "src/App.tsx:18:11",
+							"data-prohibitions": "[editContent]",
+							path: "/",
+							element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Index, {
+								"data-uid": "src/App.tsx:18:36",
+								"data-prohibitions": "[editContent]"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+							"data-uid": "src/App.tsx:19:11",
+							"data-prohibitions": "[editContent]",
+							path: "/blog",
+							element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Blog, {
+								"data-uid": "src/App.tsx:19:40",
+								"data-prohibitions": "[editContent]"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
+							"data-uid": "src/App.tsx:20:11",
+							"data-prohibitions": "[editContent]",
+							path: "/blog/:slug",
+							element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlogPost, {
+								"data-uid": "src/App.tsx:20:46",
+								"data-prohibitions": "[editContent]"
+							})
 						})
-					})
+					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Route, {
-					"data-uid": "src/App.tsx:18:9",
+					"data-uid": "src/App.tsx:22:9",
 					"data-prohibitions": "[editContent]",
 					path: "*",
 					element: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NotFound, {
-						"data-uid": "src/App.tsx:18:34",
+						"data-uid": "src/App.tsx:22:34",
 						"data-prohibitions": "[editContent]"
 					})
 				})]
@@ -27957,4 +28536,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-CpfZLQnk.js.map
+//# sourceMappingURL=index-DY3VJoD8.js.map
