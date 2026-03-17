@@ -19174,6 +19174,23 @@ var Landmark = createLucideIcon("landmark", [
 		key: "1ivflk"
 	}]
 ]);
+var Link2 = createLucideIcon("link-2", [
+	["path", {
+		d: "M9 17H7A5 5 0 0 1 7 7h2",
+		key: "8i5ue5"
+	}],
+	["path", {
+		d: "M15 7h2a5 5 0 1 1 0 10h-2",
+		key: "1b9ql8"
+	}],
+	["line", {
+		x1: "8",
+		x2: "16",
+		y1: "12",
+		y2: "12",
+		key: "1jonct"
+	}]
+]);
 var Linkedin = createLucideIcon("linkedin", [
 	["path", {
 		d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
@@ -27984,74 +28001,189 @@ function Blog() {
 }
 //#endregion
 //#region src/pages/BlogPost.tsx
+function WhatsAppIcon(props) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+		"data-uid": "src/pages/BlogPost.tsx:12:5",
+		"data-prohibitions": "[]",
+		xmlns: "http://www.w3.org/2000/svg",
+		width: "24",
+		height: "24",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "2",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		...props,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+			"data-uid": "src/pages/BlogPost.tsx:24:7",
+			"data-prohibitions": "[editContent]",
+			d: "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+		})
+	});
+}
+function LinkedInIcon(props) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		"data-uid": "src/pages/BlogPost.tsx:31:5",
+		"data-prohibitions": "[]",
+		xmlns: "http://www.w3.org/2000/svg",
+		width: "24",
+		height: "24",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "2",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		...props,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				"data-uid": "src/pages/BlogPost.tsx:43:7",
+				"data-prohibitions": "[editContent]",
+				d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("rect", {
+				"data-uid": "src/pages/BlogPost.tsx:44:7",
+				"data-prohibitions": "[editContent]",
+				width: "4",
+				height: "12",
+				x: "2",
+				y: "9"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+				"data-uid": "src/pages/BlogPost.tsx:45:7",
+				"data-prohibitions": "[editContent]",
+				cx: "4",
+				cy: "4",
+				r: "2"
+			})
+		]
+	});
+}
+function TwitterIcon(props) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+		"data-uid": "src/pages/BlogPost.tsx:52:5",
+		"data-prohibitions": "[]",
+		xmlns: "http://www.w3.org/2000/svg",
+		width: "24",
+		height: "24",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "2",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		...props,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+			"data-uid": "src/pages/BlogPost.tsx:64:7",
+			"data-prohibitions": "[editContent]",
+			d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+		})
+	});
+}
+function FacebookIcon(props) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+		"data-uid": "src/pages/BlogPost.tsx:71:5",
+		"data-prohibitions": "[]",
+		xmlns: "http://www.w3.org/2000/svg",
+		width: "24",
+		height: "24",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "2",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		...props,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+			"data-uid": "src/pages/BlogPost.tsx:83:7",
+			"data-prohibitions": "[editContent]",
+			d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+		})
+	});
+}
 function BlogPost() {
 	const { slug } = useParams();
 	const post = blogPosts.find((p) => p.slug === slug);
+	const { toast } = useToast();
 	(0, import_react.useEffect)(() => {
 		window.scrollTo(0, 0);
 	}, [slug]);
 	if (!post) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigate, {
-		"data-uid": "src/pages/BlogPost.tsx:18:12",
+		"data-uid": "src/pages/BlogPost.tsx:98:12",
 		"data-prohibitions": "[editContent]",
 		to: "/404",
 		replace: true
 	});
+	const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+	const encodedUrl = encodeURIComponent(shareUrl);
+	const encodedTitle = encodeURIComponent(post.title);
+	const shareLinks = {
+		whatsapp: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
+		linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+		twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+		facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+	};
+	const handleCopyLink = () => {
+		navigator.clipboard.writeText(shareUrl);
+		toast({ description: "Link copiado para a área de transferência!" });
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-		"data-uid": "src/pages/BlogPost.tsx:22:5",
+		"data-uid": "src/pages/BlogPost.tsx:120:5",
 		"data-prohibitions": "[editContent]",
 		className: "pt-32 pb-24 min-h-screen bg-background",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/pages/BlogPost.tsx:23:7",
+				"data-uid": "src/pages/BlogPost.tsx:121:7",
 				"data-prohibitions": "[editContent]",
 				className: "container mx-auto px-4 max-w-4xl",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
-					"data-uid": "src/pages/BlogPost.tsx:24:9",
+					"data-uid": "src/pages/BlogPost.tsx:122:9",
 					"data-prohibitions": "[editContent]",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							"data-uid": "src/pages/BlogPost.tsx:25:11",
+							"data-uid": "src/pages/BlogPost.tsx:123:11",
 							"data-prohibitions": "[]",
 							variant: "ghost",
 							className: "mb-8 -ml-4 text-muted-foreground hover:text-foreground",
 							asChild: true,
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
-								"data-uid": "src/pages/BlogPost.tsx:30:13",
+								"data-uid": "src/pages/BlogPost.tsx:128:13",
 								"data-prohibitions": "[]",
 								to: "/blog",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, {
-									"data-uid": "src/pages/BlogPost.tsx:31:15",
+									"data-uid": "src/pages/BlogPost.tsx:129:15",
 									"data-prohibitions": "[editContent]",
 									className: "mr-2 w-4 h-4"
 								}), "Voltar para o Blog"]
 							})
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/pages/BlogPost.tsx:36:11",
+							"data-uid": "src/pages/BlogPost.tsx:134:11",
 							"data-prohibitions": "[editContent]",
 							className: "flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-								"data-uid": "src/pages/BlogPost.tsx:37:13",
+								"data-uid": "src/pages/BlogPost.tsx:135:13",
 								"data-prohibitions": "[editContent]",
 								className: "bg-primary/10 text-primary hover:bg-primary/20 rounded-full border-none px-3 py-1",
 								children: post.category
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								"data-uid": "src/pages/BlogPost.tsx:40:13",
+								"data-uid": "src/pages/BlogPost.tsx:138:13",
 								"data-prohibitions": "[editContent]",
 								className: "flex items-center gap-1.5 font-medium",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calendar, {
-									"data-uid": "src/pages/BlogPost.tsx:41:15",
+									"data-uid": "src/pages/BlogPost.tsx:139:15",
 									"data-prohibitions": "[editContent]",
 									className: "w-4 h-4"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									"data-uid": "src/pages/BlogPost.tsx:42:15",
+									"data-uid": "src/pages/BlogPost.tsx:140:15",
 									"data-prohibitions": "[editContent]",
 									children: new Date(post.date).toLocaleDateString("pt-BR")
 								})]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-							"data-uid": "src/pages/BlogPost.tsx:46:11",
+							"data-uid": "src/pages/BlogPost.tsx:144:11",
 							"data-prohibitions": "[editContent]",
 							className: "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]",
 							children: post.title
@@ -28060,19 +28192,19 @@ function BlogPost() {
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-				"data-uid": "src/pages/BlogPost.tsx:52:7",
+				"data-uid": "src/pages/BlogPost.tsx:150:7",
 				"data-prohibitions": "[]",
 				delay: 200,
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					"data-uid": "src/pages/BlogPost.tsx:53:9",
+					"data-uid": "src/pages/BlogPost.tsx:151:9",
 					"data-prohibitions": "[]",
 					className: "w-full max-w-5xl mx-auto my-12 px-4",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						"data-uid": "src/pages/BlogPost.tsx:54:11",
+						"data-uid": "src/pages/BlogPost.tsx:152:11",
 						"data-prohibitions": "[]",
 						className: "aspect-[21/9] overflow-hidden rounded-xl bg-muted border border-border/50",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							"data-uid": "src/pages/BlogPost.tsx:55:13",
+							"data-uid": "src/pages/BlogPost.tsx:153:13",
 							"data-prohibitions": "[editContent]",
 							src: post.imageUrl,
 							alt: post.title,
@@ -28082,48 +28214,166 @@ function BlogPost() {
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/pages/BlogPost.tsx:64:7",
+				"data-uid": "src/pages/BlogPost.tsx:162:7",
 				"data-prohibitions": "[editContent]",
 				className: "container mx-auto px-4 max-w-3xl",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
-					"data-uid": "src/pages/BlogPost.tsx:65:9",
+					"data-uid": "src/pages/BlogPost.tsx:163:9",
 					"data-prohibitions": "[editContent]",
 					delay: 400,
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						"data-uid": "src/pages/BlogPost.tsx:66:11",
-						"data-prohibitions": "[editContent]",
-						className: "prose prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-orange-400 prose-strong:text-foreground prose-li:text-muted-foreground prose-blockquote:border-l-primary prose-blockquote:bg-secondary/30 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:font-normal prose-blockquote:not-italic",
-						dangerouslySetInnerHTML: { __html: post.content }
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/pages/BlogPost.tsx:71:11",
-						"data-prohibitions": "[editContent]",
-						className: "mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-6",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/pages/BlogPost.tsx:72:13",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							"data-uid": "src/pages/BlogPost.tsx:164:11",
 							"data-prohibitions": "[editContent]",
-							className: "flex items-center gap-2 text-sm text-muted-foreground font-medium",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tag, {
-								"data-uid": "src/pages/BlogPost.tsx:73:15",
-								"data-prohibitions": "[editContent]",
-								className: "w-4 h-4"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								"data-uid": "src/pages/BlogPost.tsx:74:15",
-								"data-prohibitions": "[editContent]",
-								children: ["Publicado em: ", post.category]
-							})]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							"data-uid": "src/pages/BlogPost.tsx:76:13",
+							className: "prose prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-orange-400 prose-strong:text-foreground prose-li:text-muted-foreground prose-blockquote:border-l-primary prose-blockquote:bg-secondary/30 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:font-normal prose-blockquote:not-italic",
+							dangerouslySetInnerHTML: { __html: post.content }
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/pages/BlogPost.tsx:169:11",
 							"data-prohibitions": "[]",
-							asChild: true,
-							className: "rounded-full px-8 uppercase tracking-widest text-xs font-bold h-12",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-								"data-uid": "src/pages/BlogPost.tsx:80:15",
+							className: "mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-6",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								"data-uid": "src/pages/BlogPost.tsx:170:13",
 								"data-prohibitions": "[]",
-								to: "/blog",
-								children: "Ver mais artigos"
-							})
-						})]
-					})]
+								className: "text-lg font-semibold tracking-tight text-foreground",
+								children: "Compartilhe este artigo"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/pages/BlogPost.tsx:173:13",
+								"data-prohibitions": "[]",
+								className: "flex flex-wrap items-center justify-center gap-3",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										"data-uid": "src/pages/BlogPost.tsx:174:15",
+										"data-prohibitions": "[]",
+										variant: "outline",
+										size: "icon",
+										className: "rounded-full hover:bg-[#25D366]/10 hover:text-[#25D366] hover:border-[#25D366]/50 transition-colors",
+										asChild: true,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											"data-uid": "src/pages/BlogPost.tsx:180:17",
+											"data-prohibitions": "[]",
+											href: shareLinks.whatsapp,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											"aria-label": "Compartilhar no WhatsApp",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, {
+												"data-uid": "src/pages/BlogPost.tsx:186:19",
+												"data-prohibitions": "[editContent]",
+												className: "w-4 h-4"
+											})
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										"data-uid": "src/pages/BlogPost.tsx:189:15",
+										"data-prohibitions": "[]",
+										variant: "outline",
+										size: "icon",
+										className: "rounded-full hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-colors",
+										asChild: true,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											"data-uid": "src/pages/BlogPost.tsx:195:17",
+											"data-prohibitions": "[]",
+											href: shareLinks.linkedin,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											"aria-label": "Compartilhar no LinkedIn",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LinkedInIcon, {
+												"data-uid": "src/pages/BlogPost.tsx:201:19",
+												"data-prohibitions": "[editContent]",
+												className: "w-4 h-4"
+											})
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										"data-uid": "src/pages/BlogPost.tsx:204:15",
+										"data-prohibitions": "[]",
+										variant: "outline",
+										size: "icon",
+										className: "rounded-full hover:bg-[#1DA1F2]/10 hover:text-[#1DA1F2] hover:border-[#1DA1F2]/50 transition-colors",
+										asChild: true,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											"data-uid": "src/pages/BlogPost.tsx:210:17",
+											"data-prohibitions": "[]",
+											href: shareLinks.twitter,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											"aria-label": "Compartilhar no X (Twitter)",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TwitterIcon, {
+												"data-uid": "src/pages/BlogPost.tsx:216:19",
+												"data-prohibitions": "[editContent]",
+												className: "w-4 h-4"
+											})
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										"data-uid": "src/pages/BlogPost.tsx:219:15",
+										"data-prohibitions": "[]",
+										variant: "outline",
+										size: "icon",
+										className: "rounded-full hover:bg-[#1877F2]/10 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors",
+										asChild: true,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											"data-uid": "src/pages/BlogPost.tsx:225:17",
+											"data-prohibitions": "[]",
+											href: shareLinks.facebook,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											"aria-label": "Compartilhar no Facebook",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FacebookIcon, {
+												"data-uid": "src/pages/BlogPost.tsx:231:19",
+												"data-prohibitions": "[editContent]",
+												className: "w-4 h-4"
+											})
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										"data-uid": "src/pages/BlogPost.tsx:234:15",
+										"data-prohibitions": "[]",
+										variant: "outline",
+										size: "icon",
+										className: "rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-colors",
+										onClick: handleCopyLink,
+										"aria-label": "Copiar link",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link2, {
+											"data-uid": "src/pages/BlogPost.tsx:241:17",
+											"data-prohibitions": "[editContent]",
+											className: "w-4 h-4"
+										})
+									})
+								]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/pages/BlogPost.tsx:246:11",
+							"data-prohibitions": "[editContent]",
+							className: "mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-6",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/pages/BlogPost.tsx:247:13",
+								"data-prohibitions": "[editContent]",
+								className: "flex items-center gap-2 text-sm text-muted-foreground font-medium",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tag, {
+									"data-uid": "src/pages/BlogPost.tsx:248:15",
+									"data-prohibitions": "[editContent]",
+									className: "w-4 h-4"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									"data-uid": "src/pages/BlogPost.tsx:249:15",
+									"data-prohibitions": "[editContent]",
+									children: ["Publicado em: ", post.category]
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								"data-uid": "src/pages/BlogPost.tsx:251:13",
+								"data-prohibitions": "[]",
+								asChild: true,
+								className: "rounded-full px-8 uppercase tracking-widest text-xs font-bold h-12",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+									"data-uid": "src/pages/BlogPost.tsx:255:15",
+									"data-prohibitions": "[]",
+									to: "/blog",
+									children: "Ver mais artigos"
+								})
+							})]
+						})
+					]
 				})
 			})
 		]
@@ -28882,4 +29132,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-j8fImkdr.js.map
+//# sourceMappingURL=index-DnqTRYL-.js.map
