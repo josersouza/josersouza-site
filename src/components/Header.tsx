@@ -1,94 +1,99 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { Logo } from './Logo'
-import { Button } from './ui/button'
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from './ui/sheet'
+import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
-
-const NAV_LINKS = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Sobre Nós', href: '#sobre' },
-  { label: 'Áreas de Atuação', href: '#areas' },
-  { label: 'Casos', href: '#casos' },
-  { label: 'Depoimentos', href: '#depoimentos' },
-]
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const navLinks = [
+    { name: 'Início', href: '#home' },
+    { name: 'O Escritório', href: '#sobre' },
+    { name: 'Áreas de Atuação', href: '#atuacao' },
+    { name: 'Contato', href: '#contato' },
+  ]
+
   return (
     <header
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'glass-header py-3' : 'bg-transparent py-5',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent',
+        isScrolled
+          ? 'bg-background/95 backdrop-blur-md border-border/20 py-4 shadow-sm'
+          : 'bg-background/50 backdrop-blur-sm py-6',
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <a
-          href="#inicio"
-          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
-        >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
           <Logo />
-        </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          <ul className="flex items-center gap-8 text-sm font-medium text-foreground/80">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-10">
+            <ul className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors uppercase"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <Button className="rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12">
+              Agendar Consulta
+            </Button>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden text-foreground p-2 -mr-2 hover:text-primary transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div
+        className={cn(
+          'lg:hidden fixed inset-x-0 top-[100%] bg-background/95 backdrop-blur-md border-b border-border/20 transition-all duration-300 ease-in-out overflow-hidden',
+          isMobileMenuOpen ? 'max-h-screen opacity-100 py-8 shadow-xl' : 'max-h-0 opacity-0',
+        )}
+      >
+        <div className="container mx-auto px-4 flex flex-col gap-8">
+          <ul className="flex flex-col gap-6 text-center">
+            {navLinks.map((link) => (
+              <li key={link.name}>
                 <a
                   href={link.href}
-                  className="hover:text-primary transition-colors focus-visible:outline-none focus-visible:text-primary"
+                  className="block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  {link.name}
                 </a>
               </li>
             ))}
           </ul>
-          <Button asChild className="rounded-full px-6 transition-transform hover:scale-105">
-            <a href="#contato">Agende uma Consulta</a>
-          </Button>
-        </nav>
-
-        {/* Mobile Nav */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon" className="hover:bg-primary/20 hover:text-primary">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="w-[300px] sm:w-[400px] border-l-border/50 bg-background/95 backdrop-blur-xl flex flex-col pt-16"
+          <Button
+            className="w-full rounded-none uppercase tracking-widest text-xs font-bold h-12"
+            size="lg"
           >
-            <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
-            <nav className="flex flex-col gap-6">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors border-b border-border/50 pb-4"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button asChild className="rounded-full w-full mt-4" size="lg">
-                <a href="#contato" onClick={() => setIsOpen(false)}>
-                  Agende uma Consulta
-                </a>
-              </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+            Agendar Consulta
+          </Button>
+        </div>
       </div>
     </header>
   )

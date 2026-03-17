@@ -1,27 +1,33 @@
+import { Link } from 'react-router-dom'
+import logoImage from '@/assets/logo-josersouza-sem-fundo-50996.png'
 import { cn } from '@/lib/utils'
 
-export function Logo({ className }: { className?: string }) {
+interface LogoProps {
+  className?: string
+}
+
+export function Logo({ className }: LogoProps) {
   return (
-    <div className={cn('flex items-center gap-3', className)}>
-      <div className="relative flex items-center justify-center w-10 h-10 shrink-0">
-        <span className="absolute text-4xl font-black text-primary/40 -translate-x-2 translate-y-0.5 tracking-tighter mix-blend-screen">
-          j
+    <Link
+      to="/"
+      className={cn(
+        'flex items-center gap-3 sm:gap-4 transition-opacity hover:opacity-80 group',
+        className,
+      )}
+    >
+      <img
+        src={logoImage}
+        alt="JOSÉ ROBERTO DE SOUZA Logo"
+        className="h-10 sm:h-12 w-auto object-contain"
+      />
+      <div className="flex flex-col justify-center">
+        <span className="font-bold tracking-[0.15em] uppercase leading-none text-foreground text-sm sm:text-base transition-colors group-hover:text-primary">
+          JOSÉ ROBERTO DE SOUZA
         </span>
-        <span className="absolute text-4xl font-black text-primary/70 -translate-x-1 translate-y-0 tracking-tighter mix-blend-screen">
-          j
-        </span>
-        <span className="absolute text-4xl font-black text-primary translate-x-1 -translate-y-0.5 tracking-tighter">
-          r
-        </span>
-      </div>
-      <div className="flex flex-col">
-        <span className="font-bold text-sm md:text-base tracking-[0.15em] text-foreground uppercase leading-none">
-          José Roberto de Souza
-        </span>
-        <span className="text-[9px] md:text-[10px] tracking-[0.25em] text-muted-foreground uppercase leading-tight mt-1">
+        <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-muted-foreground mt-1.5 uppercase leading-none font-medium">
           Advogados Associados
         </span>
       </div>
-    </div>
+    </Link>
   )
 }
