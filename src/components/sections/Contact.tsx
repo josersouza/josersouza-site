@@ -64,9 +64,16 @@ export function Contact() {
                   <div>
                     <p className="font-semibold text-foreground">Endereço</p>
                     <p className="text-muted-foreground mt-1 mb-4 leading-relaxed">
-                      Rua Conceição, 233, Sala 709
-                      <br />
-                      Centro, Campinas - SP, CEP 13.010-050
+                      <a
+                        href="https://maps.app.goo.gl/a2BZpMvCwYnwAek48"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors block"
+                      >
+                        Rua Conceição, 233, Sala 709
+                        <br />
+                        Centro, Campinas - SP, CEP 13.010-050
+                      </a>
                     </p>
                     <Button
                       variant="outline"
@@ -75,7 +82,7 @@ export function Contact() {
                       asChild
                     >
                       <a
-                        href="https://share.google/CU6Nz8LNcqZZRxPw9"
+                        href="https://maps.app.goo.gl/a2BZpMvCwYnwAek48"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

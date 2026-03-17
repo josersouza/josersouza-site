@@ -126,13 +126,20 @@ export function Footer() {
               Contato
             </h4>
             <ul className="flex flex-col gap-5 text-sm text-muted-foreground font-light">
-              <li className="flex items-start gap-4 group cursor-pointer">
-                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span className="group-hover:text-foreground transition-colors leading-relaxed">
-                  Rua Conceição, 233, Sala 709
-                  <br />
-                  Centro, Campinas - SP, CEP 13.010-050
-                </span>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/a2BZpMvCwYnwAek48"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group cursor-pointer"
+                >
+                  <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <span className="group-hover:text-foreground transition-colors leading-relaxed">
+                    Rua Conceição, 233, Sala 709
+                    <br />
+                    Centro, Campinas - SP, CEP 13.010-050
+                  </span>
+                </a>
               </li>
               <li className="flex items-center gap-4 group cursor-pointer">
                 <Phone className="w-4 h-4 text-primary shrink-0" />

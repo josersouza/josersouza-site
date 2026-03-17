@@ -27125,34 +27125,42 @@ function Contact() {
 													className: "font-semibold text-foreground",
 													children: "Endereço"
 												}),
-												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 													"data-uid": "src/components/sections/Contact.tsx:66:21",
 													"data-prohibitions": "[]",
 													className: "text-muted-foreground mt-1 mb-4 leading-relaxed",
-													children: [
-														"Rua Conceição, 233, Sala 709",
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
-															"data-uid": "src/components/sections/Contact.tsx:68:23",
-															"data-prohibitions": "[editContent]"
-														}),
-														"Centro, Campinas - SP, CEP 13.010-050"
-													]
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+														"data-uid": "src/components/sections/Contact.tsx:67:23",
+														"data-prohibitions": "[]",
+														href: "https://maps.app.goo.gl/a2BZpMvCwYnwAek48",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														className: "hover:text-primary transition-colors block",
+														children: [
+															"Rua Conceição, 233, Sala 709",
+															/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
+																"data-uid": "src/components/sections/Contact.tsx:74:25",
+																"data-prohibitions": "[editContent]"
+															}),
+															"Centro, Campinas - SP, CEP 13.010-050"
+														]
+													})
 												}),
 												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-													"data-uid": "src/components/sections/Contact.tsx:71:21",
+													"data-uid": "src/components/sections/Contact.tsx:78:21",
 													"data-prohibitions": "[]",
 													variant: "outline",
 													size: "sm",
 													className: "gap-2 text-primary hover:text-primary border-primary/20 hover:bg-primary/10",
 													asChild: true,
 													children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-														"data-uid": "src/components/sections/Contact.tsx:77:23",
+														"data-uid": "src/components/sections/Contact.tsx:84:23",
 														"data-prohibitions": "[]",
-														href: "https://share.google/CU6Nz8LNcqZZRxPw9",
+														href: "https://maps.app.goo.gl/a2BZpMvCwYnwAek48",
 														target: "_blank",
 														rel: "noopener noreferrer",
 														children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Map$1, {
-															"data-uid": "src/components/sections/Contact.tsx:82:25",
+															"data-uid": "src/components/sections/Contact.tsx:89:25",
 															"data-prohibitions": "[editContent]",
 															className: "w-4 h-4"
 														}), "Ver no Google Maps"]
@@ -27164,19 +27172,19 @@ function Contact() {
 								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								"data-uid": "src/components/sections/Contact.tsx:90:15",
+								"data-uid": "src/components/sections/Contact.tsx:97:15",
 								"data-prohibitions": "[]",
 								size: "lg",
 								className: "w-full sm:w-auto rounded-full gap-2 text-base h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white",
 								asChild: true,
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									"data-uid": "src/components/sections/Contact.tsx:95:17",
+									"data-uid": "src/components/sections/Contact.tsx:102:17",
 									"data-prohibitions": "[]",
 									href: "https://wa.me/5519994691494",
 									target: "_blank",
 									rel: "noopener noreferrer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageSquare, {
-										"data-uid": "src/components/sections/Contact.tsx:96:19",
+										"data-uid": "src/components/sections/Contact.tsx:103:19",
 										"data-prohibitions": "[editContent]",
 										className: "w-5 h-5"
 									}), "Falar via WhatsApp"]
@@ -27185,36 +27193,36 @@ function Contact() {
 						]
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/Contact.tsx:103:11",
+					"data-uid": "src/components/sections/Contact.tsx:110:11",
 					"data-prohibitions": "[]",
 					direction: "left",
 					delay: 200,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/sections/Contact.tsx:104:13",
+						"data-uid": "src/components/sections/Contact.tsx:111:13",
 						"data-prohibitions": "[]",
 						className: "bg-card border border-border/50 p-8 md:p-10 rounded-2xl shadow-xl",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/sections/Contact.tsx:105:15",
+							"data-uid": "src/components/sections/Contact.tsx:112:15",
 							"data-prohibitions": "[]",
 							className: "text-2xl font-bold text-foreground mb-6",
 							children: "Envie sua Mensagem"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
-							"data-uid": "src/components/sections/Contact.tsx:106:15",
+							"data-uid": "src/components/sections/Contact.tsx:113:15",
 							"data-prohibitions": "[]",
 							onSubmit: handleSubmit,
 							className: "space-y-6",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:107:17",
+									"data-uid": "src/components/sections/Contact.tsx:114:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:108:19",
+										"data-uid": "src/components/sections/Contact.tsx:115:19",
 										"data-prohibitions": "[]",
 										htmlFor: "name",
 										children: "Nome Completo"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:109:19",
+										"data-uid": "src/components/sections/Contact.tsx:116:19",
 										"data-prohibitions": "[editContent]",
 										id: "name",
 										required: true,
@@ -27223,20 +27231,20 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:117:17",
+									"data-uid": "src/components/sections/Contact.tsx:124:17",
 									"data-prohibitions": "[]",
 									className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:118:19",
+										"data-uid": "src/components/sections/Contact.tsx:125:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:119:21",
+											"data-uid": "src/components/sections/Contact.tsx:126:21",
 											"data-prohibitions": "[]",
 											htmlFor: "email",
 											children: "E-mail"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:120:21",
+											"data-uid": "src/components/sections/Contact.tsx:127:21",
 											"data-prohibitions": "[editContent]",
 											id: "email",
 											type: "email",
@@ -27245,16 +27253,16 @@ function Contact() {
 											className: "bg-background h-12"
 										})]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:128:19",
+										"data-uid": "src/components/sections/Contact.tsx:135:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:129:21",
+											"data-uid": "src/components/sections/Contact.tsx:136:21",
 											"data-prohibitions": "[]",
 											htmlFor: "phone",
 											children: "Telefone"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:130:21",
+											"data-uid": "src/components/sections/Contact.tsx:137:21",
 											"data-prohibitions": "[editContent]",
 											id: "phone",
 											type: "tel",
@@ -27264,16 +27272,16 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:139:17",
+									"data-uid": "src/components/sections/Contact.tsx:146:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:140:19",
+										"data-uid": "src/components/sections/Contact.tsx:147:19",
 										"data-prohibitions": "[]",
 										htmlFor: "subject",
 										children: "Assunto"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:141:19",
+										"data-uid": "src/components/sections/Contact.tsx:148:19",
 										"data-prohibitions": "[editContent]",
 										id: "subject",
 										required: true,
@@ -27282,16 +27290,16 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:149:17",
+									"data-uid": "src/components/sections/Contact.tsx:156:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:150:19",
+										"data-uid": "src/components/sections/Contact.tsx:157:19",
 										"data-prohibitions": "[]",
 										htmlFor: "message",
 										children: "Mensagem"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
-										"data-uid": "src/components/sections/Contact.tsx:151:19",
+										"data-uid": "src/components/sections/Contact.tsx:158:19",
 										"data-prohibitions": "[editContent]",
 										id: "message",
 										required: true,
@@ -27300,7 +27308,7 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									"data-uid": "src/components/sections/Contact.tsx:159:17",
+									"data-uid": "src/components/sections/Contact.tsx:166:17",
 									"data-prohibitions": "[]",
 									type: "submit",
 									size: "lg",
@@ -28307,53 +28315,60 @@ function Footer() {
 							"data-prohibitions": "[]",
 							className: "flex flex-col gap-5 text-sm text-muted-foreground font-light",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
 									"data-uid": "src/components/Footer.tsx:129:15",
 									"data-prohibitions": "[]",
-									className: "flex items-start gap-4 group cursor-pointer",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 										"data-uid": "src/components/Footer.tsx:130:17",
-										"data-prohibitions": "[editContent]",
-										className: "w-4 h-4 text-primary shrink-0 mt-0.5"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										"data-uid": "src/components/Footer.tsx:131:17",
 										"data-prohibitions": "[]",
-										className: "group-hover:text-foreground transition-colors leading-relaxed",
-										children: [
-											"Rua Conceição, 233, Sala 709",
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
-												"data-uid": "src/components/Footer.tsx:133:19",
-												"data-prohibitions": "[editContent]"
-											}),
-											"Centro, Campinas - SP, CEP 13.010-050"
-										]
-									})]
+										href: "https://maps.app.goo.gl/a2BZpMvCwYnwAek48",
+										target: "_blank",
+										rel: "noopener noreferrer",
+										className: "flex items-start gap-4 group cursor-pointer",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
+											"data-uid": "src/components/Footer.tsx:136:19",
+											"data-prohibitions": "[editContent]",
+											className: "w-4 h-4 text-primary shrink-0 mt-0.5"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+											"data-uid": "src/components/Footer.tsx:137:19",
+											"data-prohibitions": "[]",
+											className: "group-hover:text-foreground transition-colors leading-relaxed",
+											children: [
+												"Rua Conceição, 233, Sala 709",
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
+													"data-uid": "src/components/Footer.tsx:139:21",
+													"data-prohibitions": "[editContent]"
+												}),
+												"Centro, Campinas - SP, CEP 13.010-050"
+											]
+										})]
+									})
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:137:15",
+									"data-uid": "src/components/Footer.tsx:144:15",
 									"data-prohibitions": "[]",
 									className: "flex items-center gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
-										"data-uid": "src/components/Footer.tsx:138:17",
+										"data-uid": "src/components/Footer.tsx:145:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/Footer.tsx:139:17",
+										"data-uid": "src/components/Footer.tsx:146:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
 										children: "19 99469.1494"
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:141:15",
+									"data-uid": "src/components/Footer.tsx:148:15",
 									"data-prohibitions": "[]",
 									className: "flex items-center gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
-										"data-uid": "src/components/Footer.tsx:142:17",
+										"data-uid": "src/components/Footer.tsx:149:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/Footer.tsx:143:17",
+										"data-uid": "src/components/Footer.tsx:150:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
 										children: "contato@josersouza.com.br"
@@ -28364,11 +28379,11 @@ function Footer() {
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Footer.tsx:151:9",
+				"data-uid": "src/components/Footer.tsx:158:9",
 				"data-prohibitions": "[editContent]",
 				className: "mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-muted-foreground font-light uppercase tracking-widest",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-					"data-uid": "src/components/Footer.tsx:152:11",
+					"data-uid": "src/components/Footer.tsx:159:11",
 					"data-prohibitions": "[editContent]",
 					children: [
 						"© ",
@@ -28376,17 +28391,17 @@ function Footer() {
 						" JOSÉ ROBERTO DE SOUZA ADVOGADOS ASSOCIADOS."
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					"data-uid": "src/components/Footer.tsx:153:11",
+					"data-uid": "src/components/Footer.tsx:160:11",
 					"data-prohibitions": "[]",
 					className: "flex gap-8",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:154:13",
+						"data-uid": "src/components/Footer.tsx:161:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
 						children: "Termos de Uso"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:157:13",
+						"data-uid": "src/components/Footer.tsx:164:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
@@ -28536,4 +28551,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-DY3VJoD8.js.map
+//# sourceMappingURL=index-BzMkTDEE.js.map
