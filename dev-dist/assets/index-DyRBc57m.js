@@ -24941,147 +24941,138 @@ var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @_
 CardFooter.displayName = "CardFooter";
 //#endregion
 //#region src/components/sections/Team.tsx
-var team = [
-	{
-		name: "Dr. José Roberto de Souza",
-		role: "Sócio Fundador",
-		image: whatsapp_image_2026_02_26_at_12_02_46_1_ca4fe_default,
-		bio: "Especialista em Direito com vasta experiência em casos de alta complexidade. Reconhecido por sua atuação estratégica e compromisso inabalável com os clientes.",
+var teamMembers = [{
+	name: "José Roberto de Souza",
+	role: "Sócio Fundador",
+	image: "https://img.usecurling.com/ppl/large?gender=male&seed=jose-roberto",
+	description: "Com vasta experiência no mercado jurídico, lidera a equipe com foco em excelência, ética e resultados expressivos para nossos clientes.",
+	social: {
 		linkedin: "#",
-		email: "mailto:contato@joseroberto.adv.br"
-	},
-	{
-		name: "Dr. Valdomiro Gomes de Medeiros",
-		role: "Sócio",
-		image: "https://img.usecurling.com/ppl/large?gender=male&seed=2",
-		bio: "Advogado dedicado com profunda especialização técnica, focado em trazer as melhores soluções jurídicas preventivas e contenciosas.",
-		linkedin: "#",
-		email: "mailto:contato@joseroberto.adv.br"
-	},
-	{
-		name: "Dr. Emanuel Rodolpho Santana da Silva",
-		role: "Sócio",
-		image: "https://img.usecurling.com/ppl/large?gender=male&seed=3",
-		bio: "Profissional dinâmico com olhar atento às inovações jurídicas, garantindo representação moderna e eficiente aos nossos parceiros.",
-		linkedin: "#",
-		email: "mailto:contato@joseroberto.adv.br"
+		email: "contato@joserobertodesouza.com.br"
 	}
-];
+}, {
+	name: "Emanuel Rodolpho Santana da Silva",
+	role: "Advogado Associado",
+	image: "/assets/whatsapp-image-2026-03-17-at-09.43.58-1-aa055-w9wSHIgT.jpeg",
+	description: "Profissional dedicado a entregar as melhores soluções jurídicas, atuando com agilidade e compromisso em cada caso.",
+	social: {
+		linkedin: "#",
+		email: "emanuel@joserobertodesouza.com.br"
+	}
+}];
 function Team() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		"data-uid": "src/components/sections/Team.tsx:35:5",
+		"data-uid": "src/components/sections/Team.tsx:33:5",
 		"data-prohibitions": "[editContent]",
 		id: "equipe",
-		className: "py-24 bg-zinc-950",
+		className: "py-24 bg-background",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/sections/Team.tsx:36:7",
+			"data-uid": "src/components/sections/Team.tsx:34:7",
 			"data-prohibitions": "[editContent]",
-			className: "container px-4 md:px-6 mx-auto max-w-7xl",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-				"data-uid": "src/components/sections/Team.tsx:37:9",
+			className: "container mx-auto px-4 md:px-6",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Team.tsx:35:9",
 				"data-prohibitions": "[]",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					"data-uid": "src/components/sections/Team.tsx:38:11",
+				className: "flex flex-col items-center text-center mb-16",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+					"data-uid": "src/components/sections/Team.tsx:36:11",
 					"data-prohibitions": "[]",
-					className: "flex flex-col items-center justify-center space-y-4 text-center mb-16",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-							"data-uid": "src/components/sections/Team.tsx:39:13",
+							"data-uid": "src/components/sections/Team.tsx:37:13",
 							"data-prohibitions": "[]",
-							className: "text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100",
+							className: "text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground",
 							children: "Nossa Equipe"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							"data-uid": "src/components/sections/Team.tsx:42:13",
-							"data-prohibitions": "[editContent]",
-							className: "h-1 w-20 bg-primary mx-auto rounded-full"
+							"data-uid": "src/components/sections/Team.tsx:40:13",
+							"data-prohibitions": "[]",
+							className: "w-20 h-1 bg-primary mx-auto mb-6"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							"data-uid": "src/components/sections/Team.tsx:43:13",
+							"data-uid": "src/components/sections/Team.tsx:41:13",
 							"data-prohibitions": "[]",
-							className: "max-w-[700px] text-zinc-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed mt-4",
-							children: "Profissionais altamente qualificados e dedicados à excelência jurídica, prontos para defender seus interesses."
+							className: "text-muted-foreground max-w-2xl text-lg",
+							children: "Conheça os profissionais dedicados a proteger seus direitos e garantir a melhor representação jurídica."
 						})
 					]
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/components/sections/Team.tsx:50:9",
+				"data-uid": "src/components/sections/Team.tsx:48:9",
 				"data-prohibitions": "[editContent]",
-				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-				children: team.map((member, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/Team.tsx:52:13",
+				className: "grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto",
+				children: teamMembers.map((member, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+					"data-uid": "src/components/sections/Team.tsx:50:13",
 					"data-prohibitions": "[editContent]",
 					delay: index * 150,
 					className: "h-full",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						"data-uid": "src/components/sections/Team.tsx:53:15",
+						"data-uid": "src/components/sections/Team.tsx:51:15",
 						"data-prohibitions": "[editContent]",
-						className: "bg-zinc-900 border-zinc-800/50 overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-300",
+						className: "h-full overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/components/sections/Team.tsx:54:17",
+							"data-uid": "src/components/sections/Team.tsx:52:17",
 							"data-prohibitions": "[]",
-							className: "aspect-[4/5] relative overflow-hidden bg-zinc-800",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								"data-uid": "src/components/sections/Team.tsx:55:19",
+							className: "aspect-[3/4] relative overflow-hidden group",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								"data-uid": "src/components/sections/Team.tsx:53:19",
+								"data-prohibitions": "[]",
+								className: "absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-80"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								"data-uid": "src/components/sections/Team.tsx:54:19",
 								"data-prohibitions": "[editContent]",
 								src: member.image,
 								alt: member.name,
-								className: "object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/Team.tsx:60:19",
-								"data-prohibitions": "[editContent]",
-								className: "absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"
+								className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
-							"data-uid": "src/components/sections/Team.tsx:62:17",
+							"data-uid": "src/components/sections/Team.tsx:60:17",
 							"data-prohibitions": "[editContent]",
-							className: "p-6 flex flex-col flex-grow relative z-10 -mt-8",
+							className: "p-8 relative z-20 -mt-20 pt-10",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									"data-uid": "src/components/sections/Team.tsx:63:19",
+									"data-uid": "src/components/sections/Team.tsx:61:19",
 									"data-prohibitions": "[editContent]",
-									className: "text-xl font-bold text-zinc-100 mb-1",
+									className: "text-2xl font-bold mb-1 text-foreground",
 									children: member.name
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									"data-uid": "src/components/sections/Team.tsx:64:19",
+									"data-uid": "src/components/sections/Team.tsx:62:19",
 									"data-prohibitions": "[editContent]",
-									className: "text-primary font-medium mb-4 text-sm uppercase tracking-wider",
+									className: "text-primary font-medium mb-4 uppercase tracking-wider text-sm",
 									children: member.role
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									"data-uid": "src/components/sections/Team.tsx:67:19",
+									"data-uid": "src/components/sections/Team.tsx:65:19",
 									"data-prohibitions": "[editContent]",
-									className: "text-zinc-400 text-sm mb-6 flex-grow leading-relaxed",
-									children: member.bio
+									className: "text-muted-foreground mb-6 leading-relaxed",
+									children: member.description
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Team.tsx:71:19",
+									"data-uid": "src/components/sections/Team.tsx:66:19",
 									"data-prohibitions": "[]",
-									className: "flex gap-4 pt-4 border-t border-zinc-800",
+									className: "flex gap-4",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/sections/Team.tsx:72:21",
+										"data-uid": "src/components/sections/Team.tsx:67:21",
 										"data-prohibitions": "[]",
-										href: member.linkedin,
-										className: "text-zinc-500 hover:text-primary transition-colors p-2 -ml-2",
-										target: "_blank",
-										rel: "noopener noreferrer",
+										href: member.social.linkedin,
+										className: "text-muted-foreground hover:text-primary transition-colors",
 										"aria-label": `LinkedIn de ${member.name}`,
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Linkedin, {
-											"data-uid": "src/components/sections/Team.tsx:79:23",
+											"data-uid": "src/components/sections/Team.tsx:72:23",
 											"data-prohibitions": "[editContent]",
-											className: "h-5 w-5"
+											className: "w-5 h-5"
 										})
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/sections/Team.tsx:81:21",
+										"data-uid": "src/components/sections/Team.tsx:74:21",
 										"data-prohibitions": "[]",
-										href: member.email,
-										className: "text-zinc-500 hover:text-primary transition-colors p-2",
+										href: `mailto:${member.social.email}`,
+										className: "text-muted-foreground hover:text-primary transition-colors",
 										"aria-label": `Email para ${member.name}`,
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
-											"data-uid": "src/components/sections/Team.tsx:86:23",
+											"data-uid": "src/components/sections/Team.tsx:79:23",
 											"data-prohibitions": "[editContent]",
-											className: "h-5 w-5"
+											className: "w-5 h-5"
 										})
 									})]
 								})
@@ -28750,4 +28741,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-cgviYmrV.js.map
+//# sourceMappingURL=index-DyRBc57m.js.map
