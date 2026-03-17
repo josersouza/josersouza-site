@@ -19106,25 +19106,6 @@ var Instagram = createLucideIcon("instagram", [
 		key: "r4j83e"
 	}]
 ]);
-var Linkedin = createLucideIcon("linkedin", [
-	["path", {
-		d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
-		key: "c2jq9f"
-	}],
-	["rect", {
-		width: "4",
-		height: "12",
-		x: "2",
-		y: "9",
-		key: "mk3on5"
-	}],
-	["circle", {
-		cx: "4",
-		cy: "4",
-		r: "2",
-		key: "bt5ra8"
-	}]
-]);
 var Mail = createLucideIcon("mail", [["path", {
 	d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7",
 	key: "132q7q"
@@ -24543,7 +24524,7 @@ function About() {
 										"data-uid": "src/components/sections/About.tsx:33:19",
 										"data-prohibitions": "[]",
 										className: "text-4xl md:text-5xl font-bold text-foreground",
-										children: "25+"
+										children: "20+"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 										"data-uid": "src/components/sections/About.tsx:34:19",
 										"data-prohibitions": "[]",
@@ -24837,7 +24818,7 @@ function AnimatedCounter({ end, duration = 2e3, suffix = "", prefix = "", classN
 //#region src/components/sections/Stats.tsx
 var STATS = [
 	{
-		value: 15,
+		value: 20,
 		suffix: "+",
 		label: "Anos de Experiência",
 		description: "Tradição e excelência"
@@ -24849,7 +24830,7 @@ var STATS = [
 		description: "Taxa de sucesso histórico"
 	},
 	{
-		value: 500,
+		value: 1500,
 		suffix: "+",
 		label: "Clientes Satisfeitos",
 		description: "Parcerias duradouras"
@@ -27013,7 +26994,7 @@ function Contact() {
 												"data-uid": "src/components/sections/Contact.tsx:48:21",
 												"data-prohibitions": "[]",
 												className: "text-muted-foreground mt-1",
-												children: "+55 (11) 3000-0000"
+												children: "19 99469.1494"
 											})]
 										})]
 									}),
@@ -27042,7 +27023,7 @@ function Contact() {
 												"data-uid": "src/components/sections/Contact.tsx:57:21",
 												"data-prohibitions": "[]",
 												className: "text-muted-foreground mt-1",
-												children: "contato@joseroberto.adv.br"
+												children: "contato@josersouza.com.br"
 											})]
 										})]
 									}),
@@ -27072,62 +27053,70 @@ function Contact() {
 												"data-prohibitions": "[]",
 												className: "text-muted-foreground mt-1",
 												children: [
-													"Av. Paulista, 1000, Cj 150",
+													"Rua Conceição, 233, Sala 709",
 													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
 														"data-uid": "src/components/sections/Contact.tsx:68:23",
 														"data-prohibitions": "[editContent]"
 													}),
-													"São Paulo, SP - 01310-100"
+													"Centro, Campinas - SP, CEP 13.010-050"
 												]
 											})]
 										})]
 									})
 								]
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 								"data-uid": "src/components/sections/Contact.tsx:75:15",
 								"data-prohibitions": "[]",
 								size: "lg",
 								className: "w-full sm:w-auto rounded-full gap-2 text-base h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageSquare, {
-									"data-uid": "src/components/sections/Contact.tsx:79:17",
-									"data-prohibitions": "[editContent]",
-									className: "w-5 h-5"
-								}), "Falar via WhatsApp"]
+								asChild: true,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									"data-uid": "src/components/sections/Contact.tsx:80:17",
+									"data-prohibitions": "[]",
+									href: "https://wa.me/5519994691494",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageSquare, {
+										"data-uid": "src/components/sections/Contact.tsx:81:19",
+										"data-prohibitions": "[editContent]",
+										className: "w-5 h-5"
+									}), "Falar via WhatsApp"]
+								})
 							})
 						]
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/Contact.tsx:85:11",
+					"data-uid": "src/components/sections/Contact.tsx:88:11",
 					"data-prohibitions": "[]",
 					direction: "left",
 					delay: 200,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/sections/Contact.tsx:86:13",
+						"data-uid": "src/components/sections/Contact.tsx:89:13",
 						"data-prohibitions": "[]",
 						className: "bg-card border border-border/50 p-8 md:p-10 rounded-2xl shadow-xl",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/sections/Contact.tsx:87:15",
+							"data-uid": "src/components/sections/Contact.tsx:90:15",
 							"data-prohibitions": "[]",
 							className: "text-2xl font-bold text-foreground mb-6",
 							children: "Envie sua Mensagem"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
-							"data-uid": "src/components/sections/Contact.tsx:88:15",
+							"data-uid": "src/components/sections/Contact.tsx:91:15",
 							"data-prohibitions": "[]",
 							onSubmit: handleSubmit,
 							className: "space-y-6",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:89:17",
+									"data-uid": "src/components/sections/Contact.tsx:92:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:90:19",
+										"data-uid": "src/components/sections/Contact.tsx:93:19",
 										"data-prohibitions": "[]",
 										htmlFor: "name",
 										children: "Nome Completo"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:91:19",
+										"data-uid": "src/components/sections/Contact.tsx:94:19",
 										"data-prohibitions": "[editContent]",
 										id: "name",
 										required: true,
@@ -27136,20 +27125,20 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:99:17",
+									"data-uid": "src/components/sections/Contact.tsx:102:17",
 									"data-prohibitions": "[]",
 									className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:100:19",
+										"data-uid": "src/components/sections/Contact.tsx:103:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:101:21",
+											"data-uid": "src/components/sections/Contact.tsx:104:21",
 											"data-prohibitions": "[]",
 											htmlFor: "email",
 											children: "E-mail"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:102:21",
+											"data-uid": "src/components/sections/Contact.tsx:105:21",
 											"data-prohibitions": "[editContent]",
 											id: "email",
 											type: "email",
@@ -27158,35 +27147,35 @@ function Contact() {
 											className: "bg-background h-12"
 										})]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:110:19",
+										"data-uid": "src/components/sections/Contact.tsx:113:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:111:21",
+											"data-uid": "src/components/sections/Contact.tsx:114:21",
 											"data-prohibitions": "[]",
 											htmlFor: "phone",
 											children: "Telefone"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:112:21",
+											"data-uid": "src/components/sections/Contact.tsx:115:21",
 											"data-prohibitions": "[editContent]",
 											id: "phone",
 											type: "tel",
-											placeholder: "(11) 90000-0000",
+											placeholder: "(19) 90000-0000",
 											className: "bg-background h-12"
 										})]
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:121:17",
+									"data-uid": "src/components/sections/Contact.tsx:124:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:122:19",
+										"data-uid": "src/components/sections/Contact.tsx:125:19",
 										"data-prohibitions": "[]",
 										htmlFor: "subject",
 										children: "Assunto"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:123:19",
+										"data-uid": "src/components/sections/Contact.tsx:126:19",
 										"data-prohibitions": "[editContent]",
 										id: "subject",
 										required: true,
@@ -27195,16 +27184,16 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:131:17",
+									"data-uid": "src/components/sections/Contact.tsx:134:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:132:19",
+										"data-uid": "src/components/sections/Contact.tsx:135:19",
 										"data-prohibitions": "[]",
 										htmlFor: "message",
 										children: "Mensagem"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
-										"data-uid": "src/components/sections/Contact.tsx:133:19",
+										"data-uid": "src/components/sections/Contact.tsx:136:19",
 										"data-prohibitions": "[editContent]",
 										id: "message",
 										required: true,
@@ -27213,7 +27202,7 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									"data-uid": "src/components/sections/Contact.tsx:141:17",
+									"data-uid": "src/components/sections/Contact.tsx:144:17",
 									"data-prohibitions": "[]",
 									type: "submit",
 									size: "lg",
@@ -27332,7 +27321,7 @@ function Logo({ className }) {
 				"data-uid": "src/components/Logo.tsx:27:9",
 				"data-prohibitions": "[]",
 				className: "text-[9px] sm:text-[10px] tracking-[0.25em] text-muted-foreground mt-1.5 uppercase leading-none font-medium",
-				children: "Advogados Associados"
+				children: "ADVOGADOS ASSOCIADOS"
 			})]
 		})]
 	});
@@ -27387,7 +27376,7 @@ function Header() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
 						"data-uid": "src/components/Header.tsx:40:11",
 						"data-prohibitions": "[editContent]",
-						className: "hidden lg:flex items-center gap-10",
+						className: "hidden lg:flex items-center gap-8",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 							"data-uid": "src/components/Header.tsx:41:13",
 							"data-prohibitions": "[editContent]",
@@ -27403,25 +27392,53 @@ function Header() {
 									children: link.name
 								})
 							}, link.name))
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							"data-uid": "src/components/Header.tsx:53:13",
 							"data-prohibitions": "[]",
-							className: "rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12",
-							children: "Agendar Consulta"
+							className: "flex items-center gap-6 border-l border-border/50 pl-6",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								"data-uid": "src/components/Header.tsx:54:15",
+								"data-prohibitions": "[]",
+								href: "https://wa.me/5519994691494",
+								target: "_blank",
+								rel: "noopener noreferrer",
+								className: "flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
+									"data-uid": "src/components/Header.tsx:60:17",
+									"data-prohibitions": "[editContent]",
+									className: "w-4 h-4 text-primary"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"data-uid": "src/components/Header.tsx:61:17",
+									"data-prohibitions": "[]",
+									className: "tracking-widest",
+									children: "19 99469.1494"
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								"data-uid": "src/components/Header.tsx:63:15",
+								"data-prohibitions": "[]",
+								className: "rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12",
+								asChild: true,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									"data-uid": "src/components/Header.tsx:67:17",
+									"data-prohibitions": "[]",
+									href: "#contato",
+									children: "Agendar Consulta"
+								})
+							})]
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-						"data-uid": "src/components/Header.tsx:59:11",
+						"data-uid": "src/components/Header.tsx:73:11",
 						"data-prohibitions": "[editContent]",
 						className: "lg:hidden text-foreground p-2 -mr-2 hover:text-primary transition-colors",
 						onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen),
 						"aria-label": "Toggle menu",
 						children: isMobileMenuOpen ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, {
-							"data-uid": "src/components/Header.tsx:64:33",
+							"data-uid": "src/components/Header.tsx:78:33",
 							"data-prohibitions": "[editContent]",
 							className: "w-6 h-6"
 						}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, {
-							"data-uid": "src/components/Header.tsx:64:61",
+							"data-uid": "src/components/Header.tsx:78:61",
 							"data-prohibitions": "[editContent]",
 							className: "w-6 h-6"
 						})
@@ -27429,22 +27446,22 @@ function Header() {
 				]
 			})
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/Header.tsx:70:7",
+			"data-uid": "src/components/Header.tsx:84:7",
 			"data-prohibitions": "[editContent]",
 			className: cn$1("lg:hidden fixed inset-x-0 top-[100%] bg-background/95 backdrop-blur-md border-b border-border/20 transition-all duration-300 ease-in-out overflow-hidden", isMobileMenuOpen ? "max-h-screen opacity-100 py-8 shadow-xl" : "max-h-0 opacity-0"),
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Header.tsx:76:9",
+				"data-uid": "src/components/Header.tsx:90:9",
 				"data-prohibitions": "[editContent]",
 				className: "container mx-auto px-4 flex flex-col gap-8",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-					"data-uid": "src/components/Header.tsx:77:11",
+					"data-uid": "src/components/Header.tsx:91:11",
 					"data-prohibitions": "[editContent]",
 					className: "flex flex-col gap-6 text-center",
 					children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
-						"data-uid": "src/components/Header.tsx:79:15",
+						"data-uid": "src/components/Header.tsx:93:15",
 						"data-prohibitions": "[editContent]",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-							"data-uid": "src/components/Header.tsx:80:17",
+							"data-uid": "src/components/Header.tsx:94:17",
 							"data-prohibitions": "[editContent]",
 							href: link.href,
 							className: "block text-sm font-bold text-foreground hover:text-primary transition-colors uppercase tracking-[0.15em]",
@@ -27452,12 +27469,41 @@ function Header() {
 							children: link.name
 						})
 					}, link.name))
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-					"data-uid": "src/components/Header.tsx:90:11",
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					"data-uid": "src/components/Header.tsx:105:11",
 					"data-prohibitions": "[]",
-					className: "w-full rounded-none uppercase tracking-widest text-xs font-bold h-12",
-					size: "lg",
-					children: "Agendar Consulta"
+					className: "flex flex-col items-center gap-4 pt-4 border-t border-border/50",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						"data-uid": "src/components/Header.tsx:106:13",
+						"data-prohibitions": "[]",
+						href: "https://wa.me/5519994691494",
+						target: "_blank",
+						rel: "noopener noreferrer",
+						className: "flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, {
+							"data-uid": "src/components/Header.tsx:112:15",
+							"data-prohibitions": "[editContent]",
+							className: "w-4 h-4 text-primary"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							"data-uid": "src/components/Header.tsx:113:15",
+							"data-prohibitions": "[]",
+							className: "tracking-widest",
+							children: "19 99469.1494"
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						"data-uid": "src/components/Header.tsx:115:13",
+						"data-prohibitions": "[]",
+						className: "w-full rounded-none uppercase tracking-widest text-xs font-bold h-12",
+						size: "lg",
+						asChild: true,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							"data-uid": "src/components/Header.tsx:120:15",
+							"data-prohibitions": "[]",
+							href: "#contato",
+							onClick: () => setIsMobileMenuOpen(false),
+							children: "Agendar Consulta"
+						})
+					})]
 				})]
 			})
 		})]
@@ -27499,41 +27545,33 @@ function Footer() {
 								"data-uid": "src/components/Footer.tsx:16:13",
 								"data-prohibitions": "[]",
 								className: "flex items-center gap-4",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:17:15",
-										"data-prohibitions": "[]",
-										href: "#",
-										className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Instagram, {
-											"data-uid": "src/components/Footer.tsx:21:17",
-											"data-prohibitions": "[editContent]",
-											className: "w-4 h-4"
-										})
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:23:15",
-										"data-prohibitions": "[]",
-										href: "#",
-										className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Linkedin, {
-											"data-uid": "src/components/Footer.tsx:27:17",
-											"data-prohibitions": "[editContent]",
-											className: "w-4 h-4"
-										})
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										"data-uid": "src/components/Footer.tsx:29:15",
-										"data-prohibitions": "[]",
-										href: "#",
-										className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Facebook, {
-											"data-uid": "src/components/Footer.tsx:33:17",
-											"data-prohibitions": "[editContent]",
-											className: "w-4 h-4"
-										})
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									"data-uid": "src/components/Footer.tsx:17:15",
+									"data-prohibitions": "[]",
+									href: "https://instagram.com/josersouza_advogados",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
+									"aria-label": "Instagram @josersouza_advogados",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Instagram, {
+										"data-uid": "src/components/Footer.tsx:24:17",
+										"data-prohibitions": "[editContent]",
+										className: "w-4 h-4"
 									})
-								]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									"data-uid": "src/components/Footer.tsx:26:15",
+									"data-prohibitions": "[]",
+									href: "https://facebook.com/josersouza_advogados",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: "w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none",
+									"aria-label": "Facebook @josersouza_advogados",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Facebook, {
+										"data-uid": "src/components/Footer.tsx:33:17",
+										"data-prohibitions": "[editContent]",
+										className: "w-4 h-4"
+									})
+								})]
 							})
 						]
 					}),
@@ -27686,12 +27724,12 @@ function Footer() {
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors leading-relaxed",
 										children: [
-											"Av. Paulista, 1000 - Bela Vista",
+											"Rua Conceição, 233, Sala 709",
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
 												"data-uid": "src/components/Footer.tsx:99:19",
 												"data-prohibitions": "[editContent]"
 											}),
-											"São Paulo - SP, 01310-100"
+											"Centro, Campinas - SP, CEP 13.010-050"
 										]
 									})]
 								}),
@@ -27707,22 +27745,22 @@ function Footer() {
 										"data-uid": "src/components/Footer.tsx:105:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
-										children: "(11) 99999-9999"
+										children: "19 99469.1494"
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/Footer.tsx:109:15",
+									"data-uid": "src/components/Footer.tsx:107:15",
 									"data-prohibitions": "[]",
 									className: "flex items-center gap-4 group cursor-pointer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
-										"data-uid": "src/components/Footer.tsx:110:17",
+										"data-uid": "src/components/Footer.tsx:108:17",
 										"data-prohibitions": "[editContent]",
 										className: "w-4 h-4 text-primary shrink-0"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/Footer.tsx:111:17",
+										"data-uid": "src/components/Footer.tsx:109:17",
 										"data-prohibitions": "[]",
 										className: "group-hover:text-foreground transition-colors",
-										children: "contato@joserobertodesouza.com.br"
+										children: "contato@josersouza.com.br"
 									})]
 								})
 							]
@@ -27730,11 +27768,11 @@ function Footer() {
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/Footer.tsx:119:9",
+				"data-uid": "src/components/Footer.tsx:117:9",
 				"data-prohibitions": "[editContent]",
 				className: "mt-24 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-muted-foreground font-light uppercase tracking-widest",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-					"data-uid": "src/components/Footer.tsx:120:11",
+					"data-uid": "src/components/Footer.tsx:118:11",
 					"data-prohibitions": "[editContent]",
 					children: [
 						"© ",
@@ -27742,17 +27780,17 @@ function Footer() {
 						" JOSÉ ROBERTO DE SOUZA ADVOGADOS ASSOCIADOS."
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					"data-uid": "src/components/Footer.tsx:121:11",
+					"data-uid": "src/components/Footer.tsx:119:11",
 					"data-prohibitions": "[]",
 					className: "flex gap-8",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:122:13",
+						"data-uid": "src/components/Footer.tsx:120:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
 						children: "Termos de Uso"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						"data-uid": "src/components/Footer.tsx:125:13",
+						"data-uid": "src/components/Footer.tsx:123:13",
 						"data-prohibitions": "[]",
 						href: "#",
 						className: "hover:text-foreground transition-colors",
@@ -27852,4 +27890,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-Dl9RktlB.js.map
+//# sourceMappingURL=index--MfG8Ixb.js.map

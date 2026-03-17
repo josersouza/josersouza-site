@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
@@ -37,7 +37,7 @@ export function Header() {
           <Logo />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8">
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -50,9 +50,23 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <Button className="rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12">
-              Agendar Consulta
-            </Button>
+            <div className="flex items-center gap-6 border-l border-border/50 pl-6">
+              <a
+                href="https://wa.me/5519994691494"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="tracking-widest">19 99469.1494</span>
+              </a>
+              <Button
+                className="rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12"
+                asChild
+              >
+                <a href="#contato">Agendar Consulta</a>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -87,12 +101,27 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <Button
-            className="w-full rounded-none uppercase tracking-widest text-xs font-bold h-12"
-            size="lg"
-          >
-            Agendar Consulta
-          </Button>
+
+          <div className="flex flex-col items-center gap-4 pt-4 border-t border-border/50">
+            <a
+              href="https://wa.me/5519994691494"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2"
+            >
+              <Phone className="w-4 h-4 text-primary" />
+              <span className="tracking-widest">19 99469.1494</span>
+            </a>
+            <Button
+              className="w-full rounded-none uppercase tracking-widest text-xs font-bold h-12"
+              size="lg"
+              asChild
+            >
+              <a href="#contato" onClick={() => setIsMobileMenuOpen(false)}>
+                Agendar Consulta
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

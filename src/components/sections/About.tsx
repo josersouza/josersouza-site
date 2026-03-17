@@ -30,7 +30,7 @@ export function About() {
 
               <div className="absolute -bottom-8 -right-4 md:-right-8 bg-background border border-border/50 p-6 z-20 shadow-2xl">
                 <div className="flex flex-col gap-1">
-                  <span className="text-4xl md:text-5xl font-bold text-foreground">25+</span>
+                  <span className="text-4xl md:text-5xl font-bold text-foreground">20+</span>
                   <span className="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] leading-tight mt-1">
                     Anos de
                     <br />

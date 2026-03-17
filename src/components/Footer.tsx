@@ -1,5 +1,5 @@
 import { Logo } from '@/components/Logo'
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from 'lucide-react'
+import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -15,20 +15,20 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://instagram.com/josersouza_advogados"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none"
+                aria-label="Instagram @josersouza_advogados"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://facebook.com/josersouza_advogados"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 border border-border/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors rounded-none"
+                aria-label="Facebook @josersouza_advogados"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -95,21 +95,19 @@ export function Footer() {
               <li className="flex items-start gap-4 group cursor-pointer">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span className="group-hover:text-foreground transition-colors leading-relaxed">
-                  Av. Paulista, 1000 - Bela Vista
+                  Rua Conceição, 233, Sala 709
                   <br />
-                  São Paulo - SP, 01310-100
+                  Centro, Campinas - SP, CEP 13.010-050
                 </span>
               </li>
               <li className="flex items-center gap-4 group cursor-pointer">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span className="group-hover:text-foreground transition-colors">
-                  (11) 99999-9999
-                </span>
+                <span className="group-hover:text-foreground transition-colors">19 99469.1494</span>
               </li>
               <li className="flex items-center gap-4 group cursor-pointer">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <span className="group-hover:text-foreground transition-colors">
-                  contato@joserobertodesouza.com.br
+                  contato@josersouza.com.br
                 </span>
               </li>
             </ul>

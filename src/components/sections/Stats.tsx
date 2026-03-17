@@ -2,9 +2,9 @@ import { FadeIn } from '@/components/ui/fade-in'
 import { AnimatedCounter } from '@/components/ui/animated-counter'
 
 const STATS = [
-  { value: 15, suffix: '+', label: 'Anos de Experiência', description: 'Tradição e excelência' },
+  { value: 20, suffix: '+', label: 'Anos de Experiência', description: 'Tradição e excelência' },
   { value: 98, suffix: '%', label: 'Casos Resolvidos', description: 'Taxa de sucesso histórico' },
-  { value: 500, suffix: '+', label: 'Clientes Satisfeitos', description: 'Parcerias duradouras' },
+  { value: 1500, suffix: '+', label: 'Clientes Satisfeitos', description: 'Parcerias duradouras' },
   { value: 24, suffix: '/7', label: 'Disponibilidade', description: 'Atendimento emergencial' },
 ]
 

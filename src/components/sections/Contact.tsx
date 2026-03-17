@@ -45,7 +45,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Telefone</p>
-                    <p className="text-muted-foreground mt-1">+55 (11) 3000-0000</p>
+                    <p className="text-muted-foreground mt-1">19 99469.1494</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -54,7 +54,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">E-mail</p>
-                    <p className="text-muted-foreground mt-1">contato@joseroberto.adv.br</p>
+                    <p className="text-muted-foreground mt-1">contato@josersouza.com.br</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -64,9 +64,9 @@ export function Contact() {
                   <div>
                     <p className="font-semibold text-foreground">Endereço</p>
                     <p className="text-muted-foreground mt-1">
-                      Av. Paulista, 1000, Cj 150
+                      Rua Conceição, 233, Sala 709
                       <br />
-                      São Paulo, SP - 01310-100
+                      Centro, Campinas - SP, CEP 13.010-050
                     </p>
                   </div>
                 </div>
@@ -75,9 +75,12 @@ export function Contact() {
               <Button
                 size="lg"
                 className="w-full sm:w-auto rounded-full gap-2 text-base h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white"
+                asChild
               >
-                <MessageSquare className="w-5 h-5" />
-                Falar via WhatsApp
+                <a href="https://wa.me/5519994691494" target="_blank" rel="noopener noreferrer">
+                  <MessageSquare className="w-5 h-5" />
+                  Falar via WhatsApp
+                </a>
               </Button>
             </div>
           </FadeIn>
@@ -112,7 +115,7 @@ export function Contact() {
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="(11) 90000-0000"
+                      placeholder="(19) 90000-0000"
                       className="bg-background h-12"
                     />
                   </div>

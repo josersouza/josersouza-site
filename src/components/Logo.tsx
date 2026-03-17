@@ -25,7 +25,7 @@ export function Logo({ className }: LogoProps) {
           JOSÉ ROBERTO DE SOUZA
         </span>
         <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-muted-foreground mt-1.5 uppercase leading-none font-medium">
-          Advogados Associados
+          ADVOGADOS ASSOCIADOS
         </span>
       </div>
     </Link>
