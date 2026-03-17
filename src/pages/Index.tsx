@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { PracticeAreas } from '@/components/sections/PracticeAreas'
+import { Team } from '@/components/sections/Team'
 import { Stats } from '@/components/sections/Stats'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Contact } from '@/components/sections/Contact'
@@ -29,6 +30,7 @@ export default function Index() {
       <Hero />
       <About />
       <PracticeAreas />
+      <Team />
       <Stats />
       <Testimonials />
       <Contact />

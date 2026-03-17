@@ -90,9 +90,12 @@ export function About() {
                 <Button
                   size="lg"
                   className="group uppercase tracking-widest text-xs font-bold rounded-none h-14 px-8"
+                  asChild
                 >
-                  Conheça nossa equipe
-                  <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <a href="#equipe">
+                    Conheça nossa equipe
+                    <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
                 </Button>
               </div>
             </div>

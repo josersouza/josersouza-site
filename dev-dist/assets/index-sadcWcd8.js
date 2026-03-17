@@ -24710,16 +24710,22 @@ function About() {
 								"data-uid": "src/components/sections/About.tsx:89:15",
 								"data-prohibitions": "[]",
 								className: "mt-4",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 									"data-uid": "src/components/sections/About.tsx:90:17",
 									"data-prohibitions": "[]",
 									size: "lg",
 									className: "group uppercase tracking-widest text-xs font-bold rounded-none h-14 px-8",
-									children: ["Conheça nossa equipe", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+									asChild: true,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 										"data-uid": "src/components/sections/About.tsx:95:19",
-										"data-prohibitions": "[editContent]",
-										className: "ml-3 w-4 h-4 transition-transform group-hover:translate-x-1"
-									})]
+										"data-prohibitions": "[]",
+										href: "#equipe",
+										children: ["Conheça nossa equipe", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+											"data-uid": "src/components/sections/About.tsx:97:21",
+											"data-prohibitions": "[editContent]",
+											className: "ml-3 w-4 h-4 transition-transform group-hover:translate-x-1"
+										})]
+									})
 								})
 							})
 						]
@@ -24844,6 +24850,171 @@ function PracticeAreas() {
 						]
 					})
 				}, area.title))
+			})]
+		})
+	});
+}
+//#endregion
+//#region src/components/ui/card.tsx
+var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:8:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("rounded-lg border bg-card text-card-foreground shadow-sm", className),
+	...props
+}));
+Card.displayName = "Card";
+var CardHeader = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:19:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("flex flex-col space-y-1.5 p-6", className),
+	...props
+}));
+CardHeader.displayName = "CardHeader";
+var CardTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:26:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("text-2xl font-semibold leading-none tracking-tight", className),
+	...props
+}));
+CardTitle.displayName = "CardTitle";
+var CardDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:37:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("text-sm text-muted-foreground", className),
+	...props
+}));
+CardDescription.displayName = "CardDescription";
+var CardContent = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:44:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("p-6 pt-0", className),
+	...props
+}));
+CardContent.displayName = "CardContent";
+var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	"data-uid": "src/components/ui/card.tsx:51:5",
+	"data-prohibitions": "[editContent]",
+	ref,
+	className: cn$1("flex items-center p-6 pt-0", className),
+	...props
+}));
+CardFooter.displayName = "CardFooter";
+//#endregion
+//#region src/components/sections/Team.tsx
+var TEAM = [
+	{
+		name: "José Roberto de Souza",
+		role: "Sócio Fundador",
+		image: whatsapp_image_2026_02_26_at_12_02_45_5a224_default
+	},
+	{
+		name: "Valdomiro Gomes de Medeiros",
+		role: "Associado",
+		image: "https://img.usecurling.com/ppl/large?gender=male&seed=valdomiro"
+	},
+	{
+		name: "Emanuel Rodolpho Santana da Silva",
+		role: "Associado",
+		image: "https://img.usecurling.com/ppl/large?gender=male&seed=emanuel"
+	}
+];
+function Team() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		"data-uid": "src/components/sections/Team.tsx:25:5",
+		"data-prohibitions": "[editContent]",
+		id: "equipe",
+		className: "py-24 lg:py-32 bg-secondary/10 relative border-t border-border/10",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			"data-uid": "src/components/sections/Team.tsx:29:7",
+			"data-prohibitions": "[editContent]",
+			className: "container mx-auto px-4",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Team.tsx:30:9",
+				"data-prohibitions": "[]",
+				className: "text-center max-w-2xl mx-auto mb-16",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+					"data-uid": "src/components/sections/Team.tsx:31:11",
+					"data-prohibitions": "[]",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+							"data-uid": "src/components/sections/Team.tsx:32:13",
+							"data-prohibitions": "[]",
+							className: "text-sm font-bold tracking-widest text-primary uppercase mb-3",
+							children: "Corpo Jurídico"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							"data-uid": "src/components/sections/Team.tsx:35:13",
+							"data-prohibitions": "[]",
+							className: "text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4",
+							children: "Conheça Nossa Equipe"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							"data-uid": "src/components/sections/Team.tsx:38:13",
+							"data-prohibitions": "[]",
+							className: "text-muted-foreground text-lg",
+							children: "Profissionais altamente qualificados e comprometidos com a excelência técnica e resultados consistentes para nossos clientes."
+						})
+					]
+				})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Team.tsx:45:9",
+				"data-prohibitions": "[editContent]",
+				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto",
+				children: TEAM.map((member, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+					"data-uid": "src/components/sections/Team.tsx:47:13",
+					"data-prohibitions": "[editContent]",
+					delay: idx * 150,
+					className: "h-full",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+						"data-uid": "src/components/sections/Team.tsx:48:15",
+						"data-prohibitions": "[editContent]",
+						className: "h-full overflow-hidden border-border/50 bg-card group hover:border-primary/50 transition-all duration-500 rounded-none border-t-4 border-t-transparent hover:border-t-primary hover:shadow-lg hover:shadow-primary/5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/components/sections/Team.tsx:49:17",
+							"data-prohibitions": "[]",
+							className: "aspect-[4/5] overflow-hidden relative bg-muted",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								"data-uid": "src/components/sections/Team.tsx:50:19",
+								"data-prohibitions": "[editContent]",
+								src: member.image,
+								alt: member.name,
+								className: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								"data-uid": "src/components/sections/Team.tsx:55:19",
+								"data-prohibitions": "[editContent]",
+								className: "absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+							"data-uid": "src/components/sections/Team.tsx:57:17",
+							"data-prohibitions": "[editContent]",
+							className: "p-8 text-center bg-card relative z-10 flex flex-col items-center justify-center",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+									"data-uid": "src/components/sections/Team.tsx:58:19",
+									"data-prohibitions": "[editContent]",
+									className: "text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors",
+									children: member.name
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									"data-uid": "src/components/sections/Team.tsx:61:19",
+									"data-prohibitions": "[editContent]",
+									className: "h-[1px] w-8 bg-primary/30 mb-3 group-hover:w-16 transition-all duration-500"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									"data-uid": "src/components/sections/Team.tsx:62:19",
+									"data-prohibitions": "[editContent]",
+									className: "text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary/80 transition-colors",
+									children: member.role
+								})
+							]
+						})]
+					})
+				}, member.name))
 			})]
 		})
 	});
@@ -27337,87 +27508,41 @@ function Index() {
 		} else window.scrollTo(0, 0);
 	}, [hash]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		"data-uid": "src/pages/Index.tsx:28:5",
+		"data-uid": "src/pages/Index.tsx:29:5",
 		"data-prohibitions": "[]",
 		className: "w-full",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {
-				"data-uid": "src/pages/Index.tsx:29:7",
-				"data-prohibitions": "[editContent]"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
 				"data-uid": "src/pages/Index.tsx:30:7",
 				"data-prohibitions": "[editContent]"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PracticeAreas, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
 				"data-uid": "src/pages/Index.tsx:31:7",
 				"data-prohibitions": "[editContent]"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PracticeAreas, {
 				"data-uid": "src/pages/Index.tsx:32:7",
 				"data-prohibitions": "[editContent]"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Testimonials, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Team, {
 				"data-uid": "src/pages/Index.tsx:33:7",
 				"data-prohibitions": "[editContent]"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {
 				"data-uid": "src/pages/Index.tsx:34:7",
+				"data-prohibitions": "[editContent]"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Testimonials, {
+				"data-uid": "src/pages/Index.tsx:35:7",
+				"data-prohibitions": "[editContent]"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {
+				"data-uid": "src/pages/Index.tsx:36:7",
 				"data-prohibitions": "[editContent]"
 			})
 		]
 	});
 }
-//#endregion
-//#region src/components/ui/card.tsx
-var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:8:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("rounded-lg border bg-card text-card-foreground shadow-sm", className),
-	...props
-}));
-Card.displayName = "Card";
-var CardHeader = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:19:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("flex flex-col space-y-1.5 p-6", className),
-	...props
-}));
-CardHeader.displayName = "CardHeader";
-var CardTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:26:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("text-2xl font-semibold leading-none tracking-tight", className),
-	...props
-}));
-CardTitle.displayName = "CardTitle";
-var CardDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:37:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("text-sm text-muted-foreground", className),
-	...props
-}));
-CardDescription.displayName = "CardDescription";
-var CardContent = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:44:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("p-6 pt-0", className),
-	...props
-}));
-CardContent.displayName = "CardContent";
-var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-	"data-uid": "src/components/ui/card.tsx:51:5",
-	"data-prohibitions": "[editContent]",
-	ref,
-	className: cn$1("flex items-center p-6 pt-0", className),
-	...props
-}));
-CardFooter.displayName = "CardFooter";
 //#endregion
 //#region src/components/ui/badge.tsx
 var badgeVariants = cva("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
@@ -28551,4 +28676,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-BzMkTDEE.js.map
+//# sourceMappingURL=index-sadcWcd8.js.map
