@@ -27747,6 +27747,99 @@ var blogPosts = [
 		date: "2026-03-01",
 		category: "Direito de Família e Sucessões",
 		imageUrl: "https://img.usecurling.com/p/800/600?q=family%20wealth&color=black&dpr=2"
+	},
+	{
+		id: "5",
+		slug: "reforma-tributaria-impactos-empresas",
+		title: "Reforma Tributária: Impactos para as Empresas",
+		excerpt: "Entenda as principais mudanças propostas pela Reforma Tributária e como preparar sua empresa para o novo cenário fiscal brasileiro.",
+		content: `
+      <p>A Reforma Tributária tem sido um dos temas mais debatidos no cenário econômico brasileiro. Com o objetivo de simplificar o complexo sistema de impostos do país, a proposta traz mudanças significativas que impactarão diretamente o dia a dia das empresas.</p>
+      
+      <h3>Principais Mudanças</h3>
+      <p>O foco central da reforma é a unificação de impostos. Tributos como PIS, COFINS, IPI, ICMS e ISS devem ser substituídos pelo Imposto sobre Bens e Serviços (IBS) e pela Contribuição sobre Bens e Serviços (CBS), adotando o modelo de Imposto sobre Valor Agregado (IVA).</p>
+      
+      <h3>Como se Preparar</h3>
+      <ul>
+        <li><strong>Revisão de Planejamento Tributário:</strong> É essencial que as empresas revisem seus planejamentos atuais.</li>
+        <li><strong>Atualização de Sistemas:</strong> Os sistemas contábeis precisarão ser adaptados para as novas regras de apuração.</li>
+        <li><strong>Análise de Impacto nos Preços:</strong> A mudança na carga tributária pode exigir uma reprecificação de produtos e serviços.</li>
+      </ul>
+      <p>Contar com uma assessoria jurídica especializada é fundamental para atravessar esse período de transição com segurança e buscar as melhores alternativas legais para o seu negócio.</p>
+    `,
+		date: "2026-02-15",
+		category: "Direito Tributário",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=tax%20business&color=black&dpr=2"
+	},
+	{
+		id: "6",
+		slug: "compliance-trabalhista-evitando-passivos",
+		title: "Compliance Trabalhista: Como Evitar Passivos",
+		excerpt: "Descubra a importância de implementar um programa de compliance trabalhista para mitigar riscos e evitar processos judiciais na sua empresa.",
+		content: `
+      <p>O passivo trabalhista é uma das maiores preocupações dos empresários brasileiros. A complexidade da legislação e as constantes mudanças nas regras exigem uma atenção redobrada das empresas para evitar multas e condenações judiciais.</p>
+      
+      <h3>O que é Compliance Trabalhista?</h3>
+      <p>Compliance trabalhista consiste em um conjunto de práticas e políticas internas adotadas pela empresa para garantir o estrito cumprimento das normas de saúde, segurança e direitos dos trabalhadores, alinhando a conduta corporativa à legislação vigente.</p>
+      
+      <h3>Vantagens da Implementação</h3>
+      <ul>
+        <li>Redução drástica de processos e reclamações trabalhistas;</li>
+        <li>Melhoria do clima organizacional e retenção de talentos;</li>
+        <li>Maior segurança jurídica nas tomadas de decisão pelo RH;</li>
+        <li>Preservação da imagem e reputação da empresa no mercado.</li>
+      </ul>
+      <p>Investir de forma preventiva em auditorias e adequação de contratos é infinitamente mais econômico do que arcar com os custos de condenações na Justiça do Trabalho.</p>
+    `,
+		date: "2026-01-20",
+		category: "Direito do Trabalho",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=office%20meeting&color=black&dpr=2"
+	},
+	{
+		id: "7",
+		slug: "lei-geral-de-protecao-de-dados-lgpd",
+		title: "LGPD nas Empresas: Adequação e Riscos",
+		excerpt: "A Lei Geral de Proteção de Dados (LGPD) já está em pleno vigor. Saiba quais são os riscos de não adequar sua empresa à nova realidade.",
+		content: `
+      <p>A Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018) transformou a maneira como as empresas lidam com as informações pessoais de clientes, funcionários e parceiros. Apesar de já estar em vigor há algum tempo, muitas organizações ainda não estão totalmente adequadas.</p>
+      
+      <h3>Os Riscos da Não Conformidade</h3>
+      <p>As penalidades para o descumprimento da LGPD podem ser severas. A Autoridade Nacional de Proteção de Dados (ANPD) pode aplicar desde advertências até multas que podem chegar a 2% do faturamento da empresa (limitadas a R$ 50 milhões por infração).</p>
+      
+      <h3>Passos para Adequação</h3>
+      <ol>
+        <li><strong>Mapeamento de Dados:</strong> Identificar onde e como os dados são coletados, armazenados e processados;</li>
+        <li><strong>Revisão de Contratos:</strong> Atualizar termos de uso, políticas de privacidade e contratos com fornecedores;</li>
+        <li><strong>Treinamento:</strong> Conscientizar a equipe sobre a importância da proteção de dados;</li>
+        <li><strong>Nomeação do DPO:</strong> Designar o Encarregado pelo Tratamento de Dados Pessoais.</li>
+      </ol>
+      <p>A adequação não é apenas uma obrigação legal, mas um diferencial competitivo que demonstra transparência e respeito aos titulares dos dados.</p>
+    `,
+		date: "2025-12-10",
+		category: "Direito Digital",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=data%20privacy&color=black&dpr=2"
+	},
+	{
+		id: "8",
+		slug: "contratos-empresariais-cuidados",
+		title: "Contratos Empresariais: Principais Cuidados",
+		excerpt: "Saiba quais são as cláusulas fundamentais e os cuidados essenciais na elaboração de contratos empresariais seguros e bem estruturados.",
+		content: `
+      <p>Os contratos são a base das relações comerciais. Um contrato mal redigido ou omisso pode gerar interpretações dúbias e resultar em longos litígios judiciais, comprometendo a saúde financeira e a operação da empresa.</p>
+      
+      <h3>Cláusulas Essenciais</h3>
+      <p>Para garantir a segurança jurídica das partes, alguns elementos não podem faltar em um bom contrato empresarial:</p>
+      <ul>
+        <li><strong>Objeto Claro e Definido:</strong> Especificar com riqueza de detalhes o que está sendo contratado;</li>
+        <li><strong>Prazos e Condições de Pagamento:</strong> Estabelecer cronogramas realistas e multas por atraso;</li>
+        <li><strong>Rescisão e Penalidades:</strong> Prever as hipóteses de término antecipado do contrato e as respectivas multas;</li>
+        <li><strong>Foro de Eleição ou Cláusula Arbitral:</strong> Definir onde eventuais conflitos serão resolvidos.</li>
+      </ul>
+      <p>A revisão por um advogado especializado em direito contratual e empresarial é indispensável antes de qualquer assinatura. O custo da prevenção é sempre menor que o custo de um litígio.</p>
+    `,
+		date: "2025-11-05",
+		category: "Direito Empresarial",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=signing%20contract&color=black&dpr=2"
 	}
 ];
 //#endregion
@@ -28789,4 +28882,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-BOO4GzQ7.js.map
+//# sourceMappingURL=index-j8fImkdr.js.map
