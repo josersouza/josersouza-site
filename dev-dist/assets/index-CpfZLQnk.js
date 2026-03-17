@@ -24698,7 +24698,7 @@ var AREAS = [
 	},
 	{
 		title: "Direito Tributário",
-		description: "Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas.",
+		description: "Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas e pessoas físicas.",
 		icon: FileText
 	}
 ];
@@ -27957,4 +27957,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-MaNc-Nvq.js.map
+//# sourceMappingURL=index-CpfZLQnk.js.map

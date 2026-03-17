@@ -35,7 +35,7 @@ const AREAS = [
   {
     title: 'Direito Tributário',
     description:
-      'Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas.',
+      'Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas e pessoas físicas.',
     icon: FileText,
   },
 ]
