@@ -24692,7 +24692,7 @@ var AREAS = [
 		icon: ShieldAlert
 	},
 	{
-		title: "Direito Societário",
+		title: "Direito Empresarial",
 		description: "Estruturação de negócios, fusões, aquisições e governança corporativa para empresas de todos os portes.",
 		icon: Building2
 	},
@@ -24702,8 +24702,8 @@ var AREAS = [
 		icon: Users
 	},
 	{
-		title: "Compliance",
-		description: "Implementação de programas de integridade e adequação à LGPD para garantir conformidade legal.",
+		title: "Direito Tributário",
+		description: "Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas.",
 		icon: FileText
 	}
 ];
@@ -27852,4 +27852,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-hLdl2W7b.js.map
+//# sourceMappingURL=index-Dl9RktlB.js.map

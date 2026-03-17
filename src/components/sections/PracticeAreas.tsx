@@ -21,7 +21,7 @@ const AREAS = [
     icon: ShieldAlert,
   },
   {
-    title: 'Direito Societário',
+    title: 'Direito Empresarial',
     description:
       'Estruturação de negócios, fusões, aquisições e governança corporativa para empresas de todos os portes.',
     icon: Building2,
@@ -33,9 +33,9 @@ const AREAS = [
     icon: Users,
   },
   {
-    title: 'Compliance',
+    title: 'Direito Tributário',
     description:
-      'Implementação de programas de integridade e adequação à LGPD para garantir conformidade legal.',
+      'Consultoria preventiva, planejamento fiscal e atuação no contencioso administrativo e judicial para empresas.',
     icon: FileText,
   },
 ]
