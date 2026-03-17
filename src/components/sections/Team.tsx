@@ -1,18 +1,30 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { FadeIn } from '@/components/ui/fade-in'
 import { Linkedin, Mail } from 'lucide-react'
-import emanuelImg from '../../assets/whatsapp-image-2026-03-17-at-09.43.58-1-aa055.jpeg'
+import emanuelImg from '@/assets/whatsapp-image-2026-03-17-at-09.43.58-1-aa055.jpeg'
+import founderImg from '@/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe.jpeg'
 
 const teamMembers = [
   {
     name: 'José Roberto de Souza',
     role: 'Sócio Fundador',
-    image: 'https://img.usecurling.com/ppl/large?gender=male&seed=jose-roberto',
+    image: founderImg,
     description:
       'Com vasta experiência no mercado jurídico, lidera a equipe com foco em excelência, ética e resultados expressivos para nossos clientes.',
     social: {
       linkedin: '#',
       email: 'contato@joserobertodesouza.com.br',
+    },
+  },
+  {
+    name: 'Valdomiro Gomes de Medeiros',
+    role: 'Advogado Associado',
+    image: 'https://img.usecurling.com/ppl/large?gender=male&seed=valdomiro',
+    description:
+      'Especialista dedicado a garantir a melhor defesa dos interesses de nossos clientes com técnica e precisão estratégica.',
+    social: {
+      linkedin: '#',
+      email: 'valdomiro@joserobertodesouza.com.br',
     },
   },
   {
@@ -45,11 +57,11 @@ export function Team() {
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {teamMembers.map((member, index) => (
             <FadeIn key={member.name} delay={index * 150} className="h-full">
-              <Card className="h-full overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card">
-                <div className="aspect-[3/4] relative overflow-hidden group">
+              <Card className="h-full flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card">
+                <div className="aspect-[3/4] relative overflow-hidden group shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-80"></div>
                   <img
                     src={member.image}
@@ -57,12 +69,14 @@ export function Team() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <CardContent className="p-8 relative z-20 -mt-20 pt-10">
+                <CardContent className="p-8 relative z-20 -mt-20 pt-10 flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold mb-1 text-foreground">{member.name}</h3>
                   <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
                     {member.role}
                   </p>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{member.description}</p>
+                  <p className="text-muted-foreground mb-6 leading-relaxed flex-1">
+                    {member.description}
+                  </p>
                   <div className="flex gap-4">
                     <a
                       href={member.social.linkedin}
