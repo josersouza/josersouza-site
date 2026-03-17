@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { useToast } from '@/hooks/use-toast'
-import { MapPin, Phone, Mail, MessageSquare } from 'lucide-react'
+import { MapPin, Phone, Mail, MessageSquare, Map } from 'lucide-react'
 
 export function Contact() {
   const { toast } = useToast()
@@ -38,7 +38,7 @@ export function Contact() {
                 Preencha o formulário ou utilize nossos canais diretos.
               </p>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-8 mb-10">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
@@ -63,11 +63,26 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Endereço</p>
-                    <p className="text-muted-foreground mt-1">
+                    <p className="text-muted-foreground mt-1 mb-4 leading-relaxed">
                       Rua Conceição, 233, Sala 709
                       <br />
                       Centro, Campinas - SP, CEP 13.010-050
                     </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 text-primary hover:text-primary border-primary/20 hover:bg-primary/10"
+                      asChild
+                    >
+                      <a
+                        href="https://share.google/CU6Nz8LNcqZZRxPw9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Map className="w-4 h-4" />
+                        Ver no Google Maps
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>

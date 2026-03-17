@@ -19126,6 +19126,20 @@ var MapPin = createLucideIcon("map-pin", [["path", {
 	r: "3",
 	key: "ilqhr7"
 }]]);
+var Map$1 = createLucideIcon("map", [
+	["path", {
+		d: "M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z",
+		key: "169xi5"
+	}],
+	["path", {
+		d: "M15 5.764v15",
+		key: "1pn4in"
+	}],
+	["path", {
+		d: "M9 3.236v15",
+		key: "1uimfh"
+	}]
+]);
 var Menu = createLucideIcon("menu", [
 	["path", {
 		d: "M4 5h16",
@@ -26967,7 +26981,7 @@ function Contact() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								"data-uid": "src/components/sections/Contact.tsx:41:15",
 								"data-prohibitions": "[]",
-								className: "space-y-6 mb-10",
+								className: "space-y-8 mb-10",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										"data-uid": "src/components/sections/Contact.tsx:42:17",
@@ -27043,42 +27057,65 @@ function Contact() {
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											"data-uid": "src/components/sections/Contact.tsx:64:19",
 											"data-prohibitions": "[]",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-												"data-uid": "src/components/sections/Contact.tsx:65:21",
-												"data-prohibitions": "[]",
-												className: "font-semibold text-foreground",
-												children: "Endereço"
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-												"data-uid": "src/components/sections/Contact.tsx:66:21",
-												"data-prohibitions": "[]",
-												className: "text-muted-foreground mt-1",
-												children: [
-													"Rua Conceição, 233, Sala 709",
-													/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
-														"data-uid": "src/components/sections/Contact.tsx:68:23",
-														"data-prohibitions": "[editContent]"
-													}),
-													"Centro, Campinas - SP, CEP 13.010-050"
-												]
-											})]
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+													"data-uid": "src/components/sections/Contact.tsx:65:21",
+													"data-prohibitions": "[]",
+													className: "font-semibold text-foreground",
+													children: "Endereço"
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+													"data-uid": "src/components/sections/Contact.tsx:66:21",
+													"data-prohibitions": "[]",
+													className: "text-muted-foreground mt-1 mb-4 leading-relaxed",
+													children: [
+														"Rua Conceição, 233, Sala 709",
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
+															"data-uid": "src/components/sections/Contact.tsx:68:23",
+															"data-prohibitions": "[editContent]"
+														}),
+														"Centro, Campinas - SP, CEP 13.010-050"
+													]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+													"data-uid": "src/components/sections/Contact.tsx:71:21",
+													"data-prohibitions": "[]",
+													variant: "outline",
+													size: "sm",
+													className: "gap-2 text-primary hover:text-primary border-primary/20 hover:bg-primary/10",
+													asChild: true,
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+														"data-uid": "src/components/sections/Contact.tsx:77:23",
+														"data-prohibitions": "[]",
+														href: "https://share.google/CU6Nz8LNcqZZRxPw9",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Map$1, {
+															"data-uid": "src/components/sections/Contact.tsx:82:25",
+															"data-prohibitions": "[editContent]",
+															className: "w-4 h-4"
+														}), "Ver no Google Maps"]
+													})
+												})
+											]
 										})]
 									})
 								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								"data-uid": "src/components/sections/Contact.tsx:75:15",
+								"data-uid": "src/components/sections/Contact.tsx:90:15",
 								"data-prohibitions": "[]",
 								size: "lg",
 								className: "w-full sm:w-auto rounded-full gap-2 text-base h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white",
 								asChild: true,
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									"data-uid": "src/components/sections/Contact.tsx:80:17",
+									"data-uid": "src/components/sections/Contact.tsx:95:17",
 									"data-prohibitions": "[]",
 									href: "https://wa.me/5519994691494",
 									target: "_blank",
 									rel: "noopener noreferrer",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MessageSquare, {
-										"data-uid": "src/components/sections/Contact.tsx:81:19",
+										"data-uid": "src/components/sections/Contact.tsx:96:19",
 										"data-prohibitions": "[editContent]",
 										className: "w-5 h-5"
 									}), "Falar via WhatsApp"]
@@ -27087,36 +27124,36 @@ function Contact() {
 						]
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/Contact.tsx:88:11",
+					"data-uid": "src/components/sections/Contact.tsx:103:11",
 					"data-prohibitions": "[]",
 					direction: "left",
 					delay: 200,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/sections/Contact.tsx:89:13",
+						"data-uid": "src/components/sections/Contact.tsx:104:13",
 						"data-prohibitions": "[]",
 						className: "bg-card border border-border/50 p-8 md:p-10 rounded-2xl shadow-xl",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							"data-uid": "src/components/sections/Contact.tsx:90:15",
+							"data-uid": "src/components/sections/Contact.tsx:105:15",
 							"data-prohibitions": "[]",
 							className: "text-2xl font-bold text-foreground mb-6",
 							children: "Envie sua Mensagem"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
-							"data-uid": "src/components/sections/Contact.tsx:91:15",
+							"data-uid": "src/components/sections/Contact.tsx:106:15",
 							"data-prohibitions": "[]",
 							onSubmit: handleSubmit,
 							className: "space-y-6",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:92:17",
+									"data-uid": "src/components/sections/Contact.tsx:107:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:93:19",
+										"data-uid": "src/components/sections/Contact.tsx:108:19",
 										"data-prohibitions": "[]",
 										htmlFor: "name",
 										children: "Nome Completo"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:94:19",
+										"data-uid": "src/components/sections/Contact.tsx:109:19",
 										"data-prohibitions": "[editContent]",
 										id: "name",
 										required: true,
@@ -27125,20 +27162,20 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:102:17",
+									"data-uid": "src/components/sections/Contact.tsx:117:17",
 									"data-prohibitions": "[]",
 									className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:103:19",
+										"data-uid": "src/components/sections/Contact.tsx:118:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:104:21",
+											"data-uid": "src/components/sections/Contact.tsx:119:21",
 											"data-prohibitions": "[]",
 											htmlFor: "email",
 											children: "E-mail"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:105:21",
+											"data-uid": "src/components/sections/Contact.tsx:120:21",
 											"data-prohibitions": "[editContent]",
 											id: "email",
 											type: "email",
@@ -27147,16 +27184,16 @@ function Contact() {
 											className: "bg-background h-12"
 										})]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Contact.tsx:113:19",
+										"data-uid": "src/components/sections/Contact.tsx:128:19",
 										"data-prohibitions": "[]",
 										className: "space-y-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-											"data-uid": "src/components/sections/Contact.tsx:114:21",
+											"data-uid": "src/components/sections/Contact.tsx:129:21",
 											"data-prohibitions": "[]",
 											htmlFor: "phone",
 											children: "Telefone"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											"data-uid": "src/components/sections/Contact.tsx:115:21",
+											"data-uid": "src/components/sections/Contact.tsx:130:21",
 											"data-prohibitions": "[editContent]",
 											id: "phone",
 											type: "tel",
@@ -27166,16 +27203,16 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:124:17",
+									"data-uid": "src/components/sections/Contact.tsx:139:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:125:19",
+										"data-uid": "src/components/sections/Contact.tsx:140:19",
 										"data-prohibitions": "[]",
 										htmlFor: "subject",
 										children: "Assunto"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										"data-uid": "src/components/sections/Contact.tsx:126:19",
+										"data-uid": "src/components/sections/Contact.tsx:141:19",
 										"data-prohibitions": "[editContent]",
 										id: "subject",
 										required: true,
@@ -27184,16 +27221,16 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/Contact.tsx:134:17",
+									"data-uid": "src/components/sections/Contact.tsx:149:17",
 									"data-prohibitions": "[]",
 									className: "space-y-2",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										"data-uid": "src/components/sections/Contact.tsx:135:19",
+										"data-uid": "src/components/sections/Contact.tsx:150:19",
 										"data-prohibitions": "[]",
 										htmlFor: "message",
 										children: "Mensagem"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
-										"data-uid": "src/components/sections/Contact.tsx:136:19",
+										"data-uid": "src/components/sections/Contact.tsx:151:19",
 										"data-prohibitions": "[editContent]",
 										id: "message",
 										required: true,
@@ -27202,7 +27239,7 @@ function Contact() {
 									})]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									"data-uid": "src/components/sections/Contact.tsx:144:17",
+									"data-uid": "src/components/sections/Contact.tsx:159:17",
 									"data-prohibitions": "[]",
 									type: "submit",
 									size: "lg",
@@ -27802,28 +27839,58 @@ function Footer() {
 	});
 }
 //#endregion
+//#region src/components/FloatingWhatsApp.tsx
+function FloatingWhatsApp() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+		"data-uid": "src/components/FloatingWhatsApp.tsx:3:5",
+		"data-prohibitions": "[]",
+		href: "https://wa.me/5519994691494",
+		target: "_blank",
+		rel: "noopener noreferrer",
+		className: "fixed bottom-6 right-6 z-50 flex h-14 w-14 animate-fade-in-up items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110 hover:bg-[#20bd5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-background md:bottom-8 md:right-8",
+		"aria-label": "Falar via WhatsApp",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+			"data-uid": "src/components/FloatingWhatsApp.tsx:10:7",
+			"data-prohibitions": "[]",
+			xmlns: "http://www.w3.org/2000/svg",
+			viewBox: "0 0 24 24",
+			fill: "currentColor",
+			className: "h-7 w-7",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+				"data-uid": "src/components/FloatingWhatsApp.tsx:16:9",
+				"data-prohibitions": "[editContent]",
+				d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+			})
+		})
+	});
+}
+//#endregion
 //#region src/components/Layout.tsx
 function Layout() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		"data-uid": "src/components/Layout.tsx:7:5",
+		"data-uid": "src/components/Layout.tsx:8:5",
 		"data-prohibitions": "[]",
-		className: "flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden",
+		className: "flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden relative",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {
-				"data-uid": "src/components/Layout.tsx:8:7",
+				"data-uid": "src/components/Layout.tsx:9:7",
 				"data-prohibitions": "[editContent]"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
-				"data-uid": "src/components/Layout.tsx:9:7",
+				"data-uid": "src/components/Layout.tsx:10:7",
 				"data-prohibitions": "[]",
 				className: "flex-1",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {
-					"data-uid": "src/components/Layout.tsx:10:9",
+					"data-uid": "src/components/Layout.tsx:11:9",
 					"data-prohibitions": "[editContent]"
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {
-				"data-uid": "src/components/Layout.tsx:12:7",
+				"data-uid": "src/components/Layout.tsx:13:7",
+				"data-prohibitions": "[editContent]"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FloatingWhatsApp, {
+				"data-uid": "src/components/Layout.tsx:14:7",
 				"data-prohibitions": "[editContent]"
 			})
 		]
@@ -27890,4 +27957,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index--MfG8Ixb.js.map
+//# sourceMappingURL=index-MaNc-Nvq.js.map
