@@ -1,102 +1,82 @@
 import { FadeIn } from '@/components/ui/fade-in'
-import { Button } from '@/components/ui/button'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import founderImage from '@/assets/whatsapp-image-2026-02-26-at-12.02.45-5a224.jpeg'
-
-const benefits = [
-  'Especialistas em causas de alta complexidade',
-  'Mais de duas décadas de experiência',
-  'Atendimento estritamente personalizado',
-  'Sigilo e rigorosa ética profissional',
-]
+import { Scale, Shield, Landmark } from 'lucide-react'
+import founderImage from '@/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe.jpeg'
 
 export function About() {
+  const values = [
+    {
+      icon: <Scale className="h-6 w-6 text-primary" />,
+      title: 'Justiça',
+      description: 'Compromisso com a verdade e a equidade.',
+    },
+    {
+      icon: <Shield className="h-6 w-6 text-primary" />,
+      title: 'Segurança',
+      description: 'Proteção sólida para seus interesses.',
+    },
+    {
+      icon: <Landmark className="h-6 w-6 text-primary" />,
+      title: 'Tradição',
+      description: 'Anos de experiência e resultados comprovados.',
+    },
+  ]
+
   return (
-    <section id="sobre" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+    <section id="sobre" className="py-24 bg-zinc-900 relative overflow-hidden">
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <FadeIn direction="right">
-            <div className="relative max-w-md mx-auto lg:max-w-none">
-              <div className="aspect-[3/4] overflow-hidden rounded-sm bg-muted relative z-10">
-                <img
-                  src={founderImage}
-                  alt="José Roberto de Souza - Sócio Fundador"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                />
+      <div className="container px-4 md:px-6 mx-auto max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <FadeIn>
+            <div className="relative rounded-sm overflow-hidden aspect-[4/5] lg:aspect-[3/4] shadow-2xl bg-zinc-800">
+              <img
+                src={founderImage}
+                alt="Dr. José Roberto de Souza - Sócio Fundador"
+                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <p className="text-primary font-bold text-lg mb-1">Dr. José Roberto de Souza</p>
+                <p className="text-zinc-300 text-sm uppercase tracking-widest">Sócio Fundador</p>
               </div>
-
-              <div className="absolute -bottom-8 -right-4 md:-right-8 bg-background border border-border/50 p-6 z-20 shadow-2xl">
-                <div className="flex flex-col gap-1">
-                  <span className="text-4xl md:text-5xl font-bold text-foreground">20+</span>
-                  <span className="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] leading-tight mt-1">
-                    Anos de
-                    <br />
-                    Experiência
-                  </span>
-                </div>
-              </div>
-
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 -z-10" />
             </div>
           </FadeIn>
 
-          <FadeIn direction="left">
-            <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="h-[1px] w-12 bg-primary" />
-                  <h2 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
-                    O Escritório
-                  </h2>
-                </div>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
-                  Tradição e excelência na defesa dos seus direitos.
+          <FadeIn delay={200}>
+            <div className="flex flex-col space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-sm font-bold tracking-widest text-primary uppercase">
+                  Sobre o Escritório
+                </h2>
+                <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100 leading-tight">
+                  Tradição, Excelência e <br />
+                  <span className="text-primary">Compromisso Ético</span>
                 </h3>
+                <div className="h-1 w-20 bg-primary rounded-full" />
               </div>
 
-              <div className="flex flex-col gap-6 text-muted-foreground text-lg leading-relaxed font-light">
+              <div className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                 <p>
-                  O escritório{' '}
-                  <strong className="font-semibold text-foreground">
-                    JOSÉ ROBERTO DE SOUZA Advogados Associados
-                  </strong>{' '}
-                  destaca-se pela prestação de serviços jurídicos com um rigoroso padrão de
-                  qualidade, focado em resultados consistentes para nossos clientes.
+                  O escritório <strong>JOSÉ ROBERTO DE SOUZA Advogados Associados</strong> possui
+                  uma trajetória marcada pela defesa incansável e intransigente dos direitos de seus
+                  clientes.
                 </p>
                 <p>
-                  Com uma atuação pautada na transparência e no compromisso inabalável com a
-                  justiça, analisamos cada caso com profundidade e estratégia, buscando sempre as
-                  melhores e mais eficazes soluções jurídicas.
+                  Fundado pelo Dr. José Roberto de Souza, nosso escritório se destaca pela
+                  excelência técnica e pelo compromisso ético inabalável. Atuamos em casos de alta
+                  complexidade, oferecendo soluções jurídicas sofisticadas, eficientes e
+                  personalizadas.
                 </p>
               </div>
 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mt-2">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-4 group">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary transition-colors">
-                      <CheckCircle2 className="w-3 h-3 text-primary group-hover:text-primary-foreground transition-colors" />
-                    </div>
-                    <span className="text-foreground text-sm font-medium tracking-wide leading-snug">
-                      {benefit}
-                    </span>
-                  </li>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-zinc-800/50">
+                {values.map((value, index) => (
+                  <div key={index} className="flex flex-col space-y-2">
+                    <div className="p-3 bg-zinc-800/50 rounded-lg w-fit">{value.icon}</div>
+                    <h4 className="text-zinc-100 font-semibold">{value.title}</h4>
+                    <p className="text-zinc-500 text-sm">{value.description}</p>
+                  </div>
                 ))}
-              </ul>
-
-              <div className="mt-4">
-                <Button
-                  size="lg"
-                  className="group uppercase tracking-widest text-xs font-bold rounded-none h-14 px-8"
-                  asChild
-                >
-                  <a href="#equipe">
-                    Conheça nossa equipe
-                    <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
               </div>
             </div>
           </FadeIn>

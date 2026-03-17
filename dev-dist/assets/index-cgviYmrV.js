@@ -19100,15 +19100,6 @@ var Calendar = createLucideIcon("calendar", [
 		key: "8toen8"
 	}]
 ]);
-var CircleCheck = createLucideIcon("circle-check", [["circle", {
-	cx: "12",
-	cy: "12",
-	r: "10",
-	key: "1mglay"
-}], ["path", {
-	d: "m9 12 2 2 4-4",
-	key: "dzmm74"
-}]]);
 var Facebook = createLucideIcon("facebook", [["path", {
 	d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
 	key: "1jg4f8"
@@ -19155,6 +19146,51 @@ var Instagram = createLucideIcon("instagram", [
 		y1: "6.5",
 		y2: "6.5",
 		key: "r4j83e"
+	}]
+]);
+var Landmark = createLucideIcon("landmark", [
+	["path", {
+		d: "M10 18v-7",
+		key: "wt116b"
+	}],
+	["path", {
+		d: "M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z",
+		key: "1m329m"
+	}],
+	["path", {
+		d: "M14 18v-7",
+		key: "vav6t3"
+	}],
+	["path", {
+		d: "M18 18v-7",
+		key: "aexdmj"
+	}],
+	["path", {
+		d: "M3 22h18",
+		key: "8prr45"
+	}],
+	["path", {
+		d: "M6 18v-7",
+		key: "1ivflk"
+	}]
+]);
+var Linkedin = createLucideIcon("linkedin", [
+	["path", {
+		d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+		key: "c2jq9f"
+	}],
+	["rect", {
+		width: "4",
+		height: "12",
+		x: "2",
+		y: "9",
+		key: "mk3on5"
+	}],
+	["circle", {
+		cx: "4",
+		cy: "4",
+		r: "2",
+		key: "bt5ra8"
 	}]
 ]);
 var Mail = createLucideIcon("mail", [["path", {
@@ -19256,6 +19292,10 @@ var ShieldAlert = createLucideIcon("shield-alert", [
 		key: "1drbdi"
 	}]
 ]);
+var Shield = createLucideIcon("shield", [["path", {
+	d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+	key: "oel41y"
+}]]);
 var Star = createLucideIcon("star", [["path", {
 	d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
 	key: "r04s7s"
@@ -24375,34 +24415,33 @@ var Button = import_react.forwardRef(({ className, variant, size, asChild = fals
 Button.displayName = "Button";
 //#endregion
 //#region src/components/ui/fade-in.tsx
-function FadeIn({ children, className, delay = 0, direction = "up" }) {
-	const ref = (0, import_react.useRef)(null);
+function FadeIn({ children, delay = 0, direction = "up", fullWidth = false, className, ...props }) {
 	const [isVisible, setIsVisible] = (0, import_react.useState)(false);
+	const ref = (0, import_react.useRef)(null);
 	(0, import_react.useEffect)(() => {
 		const observer = new IntersectionObserver(([entry]) => {
 			if (entry.isIntersecting) {
 				setIsVisible(true);
-				observer.disconnect();
+				observer.unobserve(entry.target);
 			}
 		}, { threshold: .1 });
 		if (ref.current) observer.observe(ref.current);
 		return () => observer.disconnect();
 	}, []);
-	const getDirectionClasses = () => {
-		switch (direction) {
-			case "up": return "translate-y-8";
-			case "down": return "-translate-y-8";
-			case "left": return "translate-x-8";
-			case "right": return "-translate-x-8";
-			default: return "";
-		}
+	const directionClasses = {
+		up: "translate-y-8",
+		down: "-translate-y-8",
+		left: "translate-x-8",
+		right: "-translate-x-8",
+		none: "translate-y-0 translate-x-0"
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		"data-uid": "src/components/ui/fade-in.tsx:45:5",
+		"data-uid": "src/components/ui/fade-in.tsx:50:5",
 		"data-prohibitions": "[editContent]",
 		ref,
-		className: cn$1("transition-all duration-1000 ease-out", isVisible ? "opacity-100 translate-y-0 translate-x-0" : `opacity-0 ${getDirectionClasses()}`, className),
 		style: { transitionDelay: `${delay}ms` },
+		className: cn$1("transition-all duration-1000 ease-out", isVisible ? "opacity-100 translate-y-0 translate-x-0" : "opacity-0", !isVisible && directionClasses[direction], fullWidth ? "w-full" : "", className),
+		...props,
 		children
 	});
 }
@@ -24538,195 +24577,191 @@ function Hero() {
 	});
 }
 //#endregion
-//#region src/assets/whatsapp-image-2026-02-26-at-12.02.45-5a224.jpeg
-var whatsapp_image_2026_02_26_at_12_02_45_5a224_default = "/assets/whatsapp-image-2026-02-26-at-12.02.45-5a224-DDKIe4UT.jpeg";
+//#region src/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe.jpeg
+var whatsapp_image_2026_02_26_at_12_02_46_1_ca4fe_default = "/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe-C2eJlSdb.jpeg";
 //#endregion
 //#region src/components/sections/About.tsx
-var benefits = [
-	"Especialistas em causas de alta complexidade",
-	"Mais de duas décadas de experiência",
-	"Atendimento estritamente personalizado",
-	"Sigilo e rigorosa ética profissional"
-];
 function About() {
+	const values = [
+		{
+			icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scale, {
+				"data-uid": "src/components/sections/About.tsx:8:13",
+				"data-prohibitions": "[editContent]",
+				className: "h-6 w-6 text-primary"
+			}),
+			title: "Justiça",
+			description: "Compromisso com a verdade e a equidade."
+		},
+		{
+			icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Shield, {
+				"data-uid": "src/components/sections/About.tsx:13:13",
+				"data-prohibitions": "[editContent]",
+				className: "h-6 w-6 text-primary"
+			}),
+			title: "Segurança",
+			description: "Proteção sólida para seus interesses."
+		},
+		{
+			icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Landmark, {
+				"data-uid": "src/components/sections/About.tsx:18:13",
+				"data-prohibitions": "[editContent]",
+				className: "h-6 w-6 text-primary"
+			}),
+			title: "Tradição",
+			description: "Anos de experiência e resultados comprovados."
+		}
+	];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		"data-uid": "src/components/sections/About.tsx:15:5",
+		"data-uid": "src/components/sections/About.tsx:25:5",
 		"data-prohibitions": "[editContent]",
 		id: "sobre",
-		className: "py-24 md:py-32 bg-background relative overflow-hidden",
+		className: "py-24 bg-zinc-900 relative overflow-hidden",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/sections/About.tsx:17:7",
+			"data-uid": "src/components/sections/About.tsx:26:7",
 			"data-prohibitions": "[editContent]",
-			className: "absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"
+			className: "absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none"
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/sections/About.tsx:19:7",
+			"data-uid": "src/components/sections/About.tsx:28:7",
 			"data-prohibitions": "[editContent]",
-			className: "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10",
+			className: "container px-4 md:px-6 mx-auto max-w-7xl relative z-10",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/sections/About.tsx:20:9",
+				"data-uid": "src/components/sections/About.tsx:29:9",
 				"data-prohibitions": "[editContent]",
-				className: "grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center",
+				className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/About.tsx:21:11",
+					"data-uid": "src/components/sections/About.tsx:30:11",
 					"data-prohibitions": "[]",
-					direction: "right",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/sections/About.tsx:22:13",
+						"data-uid": "src/components/sections/About.tsx:31:13",
 						"data-prohibitions": "[]",
-						className: "relative max-w-md mx-auto lg:max-w-none",
+						className: "relative rounded-sm overflow-hidden aspect-[4/5] lg:aspect-[3/4] shadow-2xl bg-zinc-800",
 						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/About.tsx:23:15",
-								"data-prohibitions": "[]",
-								className: "aspect-[3/4] overflow-hidden rounded-sm bg-muted relative z-10",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-									"data-uid": "src/components/sections/About.tsx:24:17",
-									"data-prohibitions": "[editContent]",
-									src: whatsapp_image_2026_02_26_at_12_02_45_5a224_default,
-									alt: "José Roberto de Souza - Sócio Fundador",
-									className: "w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
-								})
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/About.tsx:31:15",
-								"data-prohibitions": "[]",
-								className: "absolute -bottom-8 -right-4 md:-right-8 bg-background border border-border/50 p-6 z-20 shadow-2xl",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/About.tsx:32:17",
-									"data-prohibitions": "[]",
-									className: "flex flex-col gap-1",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/sections/About.tsx:33:19",
-										"data-prohibitions": "[]",
-										className: "text-4xl md:text-5xl font-bold text-foreground",
-										children: "20+"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-										"data-uid": "src/components/sections/About.tsx:34:19",
-										"data-prohibitions": "[]",
-										className: "text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] leading-tight mt-1",
-										children: [
-											"Anos de",
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
-												"data-uid": "src/components/sections/About.tsx:36:21",
-												"data-prohibitions": "[editContent]"
-											}),
-											"Experiência"
-										]
-									})]
-								})
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/About.tsx:42:15",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								"data-uid": "src/components/sections/About.tsx:32:15",
 								"data-prohibitions": "[editContent]",
-								className: "absolute -top-6 -left-6 w-32 h-32 bg-primary/10 -z-10"
+								src: whatsapp_image_2026_02_26_at_12_02_46_1_ca4fe_default,
+								alt: "Dr. José Roberto de Souza - Sócio Fundador",
+								className: "object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								"data-uid": "src/components/sections/About.tsx:37:15",
+								"data-prohibitions": "[editContent]",
+								className: "absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/components/sections/About.tsx:38:15",
+								"data-prohibitions": "[]",
+								className: "absolute bottom-0 left-0 p-8",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									"data-uid": "src/components/sections/About.tsx:39:17",
+									"data-prohibitions": "[]",
+									className: "text-primary font-bold text-lg mb-1",
+									children: "Dr. José Roberto de Souza"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									"data-uid": "src/components/sections/About.tsx:40:17",
+									"data-prohibitions": "[]",
+									className: "text-zinc-300 text-sm uppercase tracking-widest",
+									children: "Sócio Fundador"
+								})]
 							})
 						]
 					})
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/About.tsx:46:11",
+					"data-uid": "src/components/sections/About.tsx:45:11",
 					"data-prohibitions": "[editContent]",
-					direction: "left",
+					delay: 200,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						"data-uid": "src/components/sections/About.tsx:47:13",
+						"data-uid": "src/components/sections/About.tsx:46:13",
 						"data-prohibitions": "[editContent]",
-						className: "flex flex-col gap-10",
+						className: "flex flex-col space-y-8",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								"data-uid": "src/components/sections/About.tsx:48:15",
+								"data-uid": "src/components/sections/About.tsx:47:15",
 								"data-prohibitions": "[]",
-								className: "flex flex-col gap-6",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									"data-uid": "src/components/sections/About.tsx:49:17",
-									"data-prohibitions": "[]",
-									className: "flex items-center gap-4",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										"data-uid": "src/components/sections/About.tsx:50:19",
-										"data-prohibitions": "[editContent]",
-										className: "h-[1px] w-12 bg-primary"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-										"data-uid": "src/components/sections/About.tsx:51:19",
+								className: "space-y-4",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+										"data-uid": "src/components/sections/About.tsx:48:17",
 										"data-prohibitions": "[]",
-										className: "text-xs font-bold tracking-[0.3em] text-primary uppercase",
-										children: "O Escritório"
-									})]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-									"data-uid": "src/components/sections/About.tsx:55:17",
-									"data-prohibitions": "[]",
-									className: "text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.15]",
-									children: "Tradição e excelência na defesa dos seus direitos."
-								})]
+										className: "text-sm font-bold tracking-widest text-primary uppercase",
+										children: "Sobre o Escritório"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
+										"data-uid": "src/components/sections/About.tsx:51:17",
+										"data-prohibitions": "[]",
+										className: "text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100 leading-tight",
+										children: [
+											"Tradição, Excelência e ",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {
+												"data-uid": "src/components/sections/About.tsx:52:42",
+												"data-prohibitions": "[editContent]"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												"data-uid": "src/components/sections/About.tsx:53:19",
+												"data-prohibitions": "[]",
+												className: "text-primary",
+												children: "Compromisso Ético"
+											})
+										]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										"data-uid": "src/components/sections/About.tsx:55:17",
+										"data-prohibitions": "[editContent]",
+										className: "h-1 w-20 bg-primary rounded-full"
+									})
+								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								"data-uid": "src/components/sections/About.tsx:60:15",
+								"data-uid": "src/components/sections/About.tsx:58:15",
 								"data-prohibitions": "[]",
-								className: "flex flex-col gap-6 text-muted-foreground text-lg leading-relaxed font-light",
+								className: "space-y-6 text-zinc-400 leading-relaxed text-lg",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-									"data-uid": "src/components/sections/About.tsx:61:17",
+									"data-uid": "src/components/sections/About.tsx:59:17",
 									"data-prohibitions": "[]",
 									children: [
-										"O escritório",
-										" ",
+										"O escritório ",
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-											"data-uid": "src/components/sections/About.tsx:63:19",
+											"data-uid": "src/components/sections/About.tsx:60:32",
 											"data-prohibitions": "[]",
-											className: "font-semibold text-foreground",
 											children: "JOSÉ ROBERTO DE SOUZA Advogados Associados"
 										}),
-										" ",
-										"destaca-se pela prestação de serviços jurídicos com um rigoroso padrão de qualidade, focado em resultados consistentes para nossos clientes."
+										" possui uma trajetória marcada pela defesa incansável e intransigente dos direitos de seus clientes."
 									]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									"data-uid": "src/components/sections/About.tsx:69:17",
+									"data-uid": "src/components/sections/About.tsx:64:17",
 									"data-prohibitions": "[]",
-									children: "Com uma atuação pautada na transparência e no compromisso inabalável com a justiça, analisamos cada caso com profundidade e estratégia, buscando sempre as melhores e mais eficazes soluções jurídicas."
+									children: "Fundado pelo Dr. José Roberto de Souza, nosso escritório se destaca pela excelência técnica e pelo compromisso ético inabalável. Atuamos em casos de alta complexidade, oferecendo soluções jurídicas sofisticadas, eficientes e personalizadas."
 								})]
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-								"data-uid": "src/components/sections/About.tsx:76:15",
-								"data-prohibitions": "[editContent]",
-								className: "grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mt-2",
-								children: benefits.map((benefit, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-									"data-uid": "src/components/sections/About.tsx:78:19",
-									"data-prohibitions": "[editContent]",
-									className: "flex items-start gap-4 group",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										"data-uid": "src/components/sections/About.tsx:79:21",
-										"data-prohibitions": "[]",
-										className: "w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary transition-colors",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, {
-											"data-uid": "src/components/sections/About.tsx:80:23",
-											"data-prohibitions": "[editContent]",
-											className: "w-3 h-3 text-primary group-hover:text-primary-foreground transition-colors"
-										})
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										"data-uid": "src/components/sections/About.tsx:82:21",
-										"data-prohibitions": "[editContent]",
-										className: "text-foreground text-sm font-medium tracking-wide leading-snug",
-										children: benefit
-									})]
-								}, index))
-							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/About.tsx:89:15",
-								"data-prohibitions": "[]",
-								className: "mt-4",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									"data-uid": "src/components/sections/About.tsx:90:17",
-									"data-prohibitions": "[]",
-									size: "lg",
-									className: "group uppercase tracking-widest text-xs font-bold rounded-none h-14 px-8",
-									asChild: true,
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-										"data-uid": "src/components/sections/About.tsx:95:19",
-										"data-prohibitions": "[]",
-										href: "#equipe",
-										children: ["Conheça nossa equipe", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
-											"data-uid": "src/components/sections/About.tsx:97:21",
+								"data-uid": "src/components/sections/About.tsx:72:15",
+								"data-prohibitions": "[editContent]",
+								className: "grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-zinc-800/50",
+								children: values.map((value, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									"data-uid": "src/components/sections/About.tsx:74:19",
+									"data-prohibitions": "[editContent]",
+									className: "flex flex-col space-y-2",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											"data-uid": "src/components/sections/About.tsx:75:21",
 											"data-prohibitions": "[editContent]",
-											className: "ml-3 w-4 h-4 transition-transform group-hover:translate-x-1"
-										})]
-									})
-								})
+											className: "p-3 bg-zinc-800/50 rounded-lg w-fit",
+											children: value.icon
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+											"data-uid": "src/components/sections/About.tsx:76:21",
+											"data-prohibitions": "[editContent]",
+											className: "text-zinc-100 font-semibold",
+											children: value.title
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											"data-uid": "src/components/sections/About.tsx:77:21",
+											"data-prohibitions": "[editContent]",
+											className: "text-zinc-500 text-sm",
+											children: value.description
+										})
+									]
+								}, index))
 							})
 						]
 					})
@@ -24906,110 +24941,149 @@ var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @_
 CardFooter.displayName = "CardFooter";
 //#endregion
 //#region src/components/sections/Team.tsx
-var TEAM = [
+var team = [
 	{
-		name: "José Roberto de Souza",
+		name: "Dr. José Roberto de Souza",
 		role: "Sócio Fundador",
-		image: whatsapp_image_2026_02_26_at_12_02_45_5a224_default
+		image: whatsapp_image_2026_02_26_at_12_02_46_1_ca4fe_default,
+		bio: "Especialista em Direito com vasta experiência em casos de alta complexidade. Reconhecido por sua atuação estratégica e compromisso inabalável com os clientes.",
+		linkedin: "#",
+		email: "mailto:contato@joseroberto.adv.br"
 	},
 	{
-		name: "Valdomiro Gomes de Medeiros",
-		role: "Associado",
-		image: "https://img.usecurling.com/ppl/large?gender=male&seed=valdomiro"
+		name: "Dr. Valdomiro Gomes de Medeiros",
+		role: "Sócio",
+		image: "https://img.usecurling.com/ppl/large?gender=male&seed=2",
+		bio: "Advogado dedicado com profunda especialização técnica, focado em trazer as melhores soluções jurídicas preventivas e contenciosas.",
+		linkedin: "#",
+		email: "mailto:contato@joseroberto.adv.br"
 	},
 	{
-		name: "Emanuel Rodolpho Santana da Silva",
-		role: "Associado",
-		image: "https://img.usecurling.com/ppl/large?gender=male&seed=emanuel"
+		name: "Dr. Emanuel Rodolpho Santana da Silva",
+		role: "Sócio",
+		image: "https://img.usecurling.com/ppl/large?gender=male&seed=3",
+		bio: "Profissional dinâmico com olhar atento às inovações jurídicas, garantindo representação moderna e eficiente aos nossos parceiros.",
+		linkedin: "#",
+		email: "mailto:contato@joseroberto.adv.br"
 	}
 ];
 function Team() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		"data-uid": "src/components/sections/Team.tsx:25:5",
+		"data-uid": "src/components/sections/Team.tsx:35:5",
 		"data-prohibitions": "[editContent]",
 		id: "equipe",
-		className: "py-24 lg:py-32 bg-secondary/10 relative border-t border-border/10",
+		className: "py-24 bg-zinc-950",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/sections/Team.tsx:29:7",
+			"data-uid": "src/components/sections/Team.tsx:36:7",
 			"data-prohibitions": "[editContent]",
-			className: "container mx-auto px-4",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/components/sections/Team.tsx:30:9",
+			className: "container px-4 md:px-6 mx-auto max-w-7xl",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+				"data-uid": "src/components/sections/Team.tsx:37:9",
 				"data-prohibitions": "[]",
-				className: "text-center max-w-2xl mx-auto mb-16",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
-					"data-uid": "src/components/sections/Team.tsx:31:11",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					"data-uid": "src/components/sections/Team.tsx:38:11",
 					"data-prohibitions": "[]",
+					className: "flex flex-col items-center justify-center space-y-4 text-center mb-16",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-							"data-uid": "src/components/sections/Team.tsx:32:13",
+							"data-uid": "src/components/sections/Team.tsx:39:13",
 							"data-prohibitions": "[]",
-							className: "text-sm font-bold tracking-widest text-primary uppercase mb-3",
-							children: "Corpo Jurídico"
+							className: "text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100",
+							children: "Nossa Equipe"
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							"data-uid": "src/components/sections/Team.tsx:35:13",
-							"data-prohibitions": "[]",
-							className: "text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4",
-							children: "Conheça Nossa Equipe"
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							"data-uid": "src/components/sections/Team.tsx:42:13",
+							"data-prohibitions": "[editContent]",
+							className: "h-1 w-20 bg-primary mx-auto rounded-full"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							"data-uid": "src/components/sections/Team.tsx:38:13",
+							"data-uid": "src/components/sections/Team.tsx:43:13",
 							"data-prohibitions": "[]",
-							className: "text-muted-foreground text-lg",
-							children: "Profissionais altamente qualificados e comprometidos com a excelência técnica e resultados consistentes para nossos clientes."
+							className: "max-w-[700px] text-zinc-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed mt-4",
+							children: "Profissionais altamente qualificados e dedicados à excelência jurídica, prontos para defender seus interesses."
 						})
 					]
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/components/sections/Team.tsx:45:9",
+				"data-uid": "src/components/sections/Team.tsx:50:9",
 				"data-prohibitions": "[editContent]",
-				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto",
-				children: TEAM.map((member, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-					"data-uid": "src/components/sections/Team.tsx:47:13",
+				className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+				children: team.map((member, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
+					"data-uid": "src/components/sections/Team.tsx:52:13",
 					"data-prohibitions": "[editContent]",
-					delay: idx * 150,
+					delay: index * 150,
 					className: "h-full",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-						"data-uid": "src/components/sections/Team.tsx:48:15",
+						"data-uid": "src/components/sections/Team.tsx:53:15",
 						"data-prohibitions": "[editContent]",
-						className: "h-full overflow-hidden border-border/50 bg-card group hover:border-primary/50 transition-all duration-500 rounded-none border-t-4 border-t-transparent hover:border-t-primary hover:shadow-lg hover:shadow-primary/5",
+						className: "bg-zinc-900 border-zinc-800/50 overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-300",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/components/sections/Team.tsx:49:17",
+							"data-uid": "src/components/sections/Team.tsx:54:17",
 							"data-prohibitions": "[]",
-							className: "aspect-[4/5] overflow-hidden relative bg-muted",
+							className: "aspect-[4/5] relative overflow-hidden bg-zinc-800",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								"data-uid": "src/components/sections/Team.tsx:50:19",
+								"data-uid": "src/components/sections/Team.tsx:55:19",
 								"data-prohibitions": "[editContent]",
 								src: member.image,
 								alt: member.name,
-								className: "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+								className: "object-cover w-full h-full transition-transform duration-700 hover:scale-105"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								"data-uid": "src/components/sections/Team.tsx:55:19",
+								"data-uid": "src/components/sections/Team.tsx:60:19",
 								"data-prohibitions": "[editContent]",
-								className: "absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"
+								className: "absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
-							"data-uid": "src/components/sections/Team.tsx:57:17",
+							"data-uid": "src/components/sections/Team.tsx:62:17",
 							"data-prohibitions": "[editContent]",
-							className: "p-8 text-center bg-card relative z-10 flex flex-col items-center justify-center",
+							className: "p-6 flex flex-col flex-grow relative z-10 -mt-8",
 							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-									"data-uid": "src/components/sections/Team.tsx:58:19",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									"data-uid": "src/components/sections/Team.tsx:63:19",
 									"data-prohibitions": "[editContent]",
-									className: "text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors",
+									className: "text-xl font-bold text-zinc-100 mb-1",
 									children: member.name
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									"data-uid": "src/components/sections/Team.tsx:61:19",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									"data-uid": "src/components/sections/Team.tsx:64:19",
 									"data-prohibitions": "[editContent]",
-									className: "h-[1px] w-8 bg-primary/30 mb-3 group-hover:w-16 transition-all duration-500"
+									className: "text-primary font-medium mb-4 text-sm uppercase tracking-wider",
+									children: member.role
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									"data-uid": "src/components/sections/Team.tsx:62:19",
+									"data-uid": "src/components/sections/Team.tsx:67:19",
 									"data-prohibitions": "[editContent]",
-									className: "text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary/80 transition-colors",
-									children: member.role
+									className: "text-zinc-400 text-sm mb-6 flex-grow leading-relaxed",
+									children: member.bio
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									"data-uid": "src/components/sections/Team.tsx:71:19",
+									"data-prohibitions": "[]",
+									className: "flex gap-4 pt-4 border-t border-zinc-800",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										"data-uid": "src/components/sections/Team.tsx:72:21",
+										"data-prohibitions": "[]",
+										href: member.linkedin,
+										className: "text-zinc-500 hover:text-primary transition-colors p-2 -ml-2",
+										target: "_blank",
+										rel: "noopener noreferrer",
+										"aria-label": `LinkedIn de ${member.name}`,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Linkedin, {
+											"data-uid": "src/components/sections/Team.tsx:79:23",
+											"data-prohibitions": "[editContent]",
+											className: "h-5 w-5"
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										"data-uid": "src/components/sections/Team.tsx:81:21",
+										"data-prohibitions": "[]",
+										href: member.email,
+										className: "text-zinc-500 hover:text-primary transition-colors p-2",
+										"aria-label": `Email para ${member.name}`,
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {
+											"data-uid": "src/components/sections/Team.tsx:86:23",
+											"data-prohibitions": "[editContent]",
+											className: "h-5 w-5"
+										})
+									})]
 								})
 							]
 						})]
@@ -28676,4 +28750,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-sadcWcd8.js.map
+//# sourceMappingURL=index-cgviYmrV.js.map
