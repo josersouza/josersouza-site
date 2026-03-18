@@ -1938,10 +1938,6 @@ body::selection{
   min-height: 150px;
 }
 
-.min-h-\[4rem\]{
-  min-height: 4rem;
-}
-
 .min-h-\[80px\]{
   min-height: 80px;
 }

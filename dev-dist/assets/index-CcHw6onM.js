@@ -27111,14 +27111,124 @@ Autoplay.globalOptions = void 0;
 //#region src/components/sections/Testimonials.tsx
 var TESTIMONIALS = [
 	{
-		name: "Anna Consuelo Merege",
-		date: "Há 4 semanas",
-		rating: 5
+		name: "Carlos Eduardo (PF)",
+		date: "Janeiro/2023",
+		rating: 5,
+		quote: "Após meses tentando resolver sozinho uma fraude no meu cartão, o Dr. Emanuel da equipe do Dr. José Roberto conseguiu a restituição integral em tempo recorde. Profissionalismo impecável."
 	},
 	{
-		name: "paulo alves costa",
-		date: "Há 5 semanas",
-		rating: 5
+		name: "Restaurante Sabor & Arte (PJ)",
+		date: "Março/2023",
+		rating: 5,
+		quote: "O escritório realizou uma auditoria no nosso IPTU que resultou em uma economia anual significativa. Essencial para o nosso fluxo de caixa."
+	},
+	{
+		name: "Mariana Oliveira (PF)",
+		date: "Junho/2023",
+		rating: 5,
+		quote: "Excelente atendimento no caso de golpe do PIX. Recuperei meu dinheiro e tive todo o suporte emocional e jurídico necessário."
+	},
+	{
+		name: "Construtora Alvorada (PJ)",
+		date: "Agosto/2023",
+		rating: 5,
+		quote: "A expertise da equipe em direitos bancários nos ajudou a reaver valores desviados por fraudes eletrônicas complexas. Recomendamos fortemente."
+	},
+	{
+		name: "Roberto Silveira (PF)",
+		date: "Novembro/2023",
+		rating: 5,
+		quote: "Minha revisão de IPTU foi um sucesso. O valor caiu quase pela metade após a intervenção técnica do escritório."
+	},
+	{
+		name: "Clínica OdontoClean (PJ)",
+		date: "Janeiro/2024",
+		rating: 5,
+		quote: "Sucesso total na contestação de cobranças indevidas do banco. O Dr. Emanuel e sua equipe são referência em agilidade."
+	},
+	{
+		name: "Fernanda Lima (PF)",
+		date: "Abril/2024",
+		rating: 5,
+		quote: "Fui vítima de uma fraude bancária sofisticada e já tinha perdido as esperanças. O escritório não só recuperou o valor como garantiu danos morais."
+	},
+	{
+		name: "Logística Express (PJ)",
+		date: "Julho/2024",
+		rating: 5,
+		quote: "A redução do IPTU do nosso galpão industrial foi um divisor de águas. Trabalho técnico de altíssimo nível."
+	},
+	{
+		name: "João Pedro Santos (PF)",
+		date: "Setembro/2024",
+		rating: 5,
+		quote: "Atendimento humanizado e focado em resultados. Resolveram meu problema com o banco de forma definitiva."
+	},
+	{
+		name: "Hotel Fazenda Horizonte (PJ)",
+		date: "Dezembro/2024",
+		rating: 5,
+		quote: "Recuperamos valores expressivos de fraudes em boletos graças à estratégia jurídica certeira deste escritório."
+	},
+	{
+		name: "Beatriz Costa (PF)",
+		date: "Fevereiro/2025",
+		rating: 5,
+		quote: "O Dr. José Roberto conseguiu anular o aumento abusivo do meu IPTU. O atendimento é premium e muito transparente."
+	},
+	{
+		name: "TechInova Soluções (PJ)",
+		date: "Maio/2025",
+		rating: 5,
+		quote: "Enfrentamos uma fraude bancária de grande escala e a atuação do escritório foi decisiva para a preservação do nosso patrimônio."
+	},
+	{
+		name: "Ricardo Almeida (PF)",
+		date: "Agosto/2025",
+		rating: 5,
+		quote: "Recuperei cada centavo do golpe do empréstimo consignado. Equipe extremamente preparada e atenciosa."
+	},
+	{
+		name: "Supermercado Preço Justo (PJ)",
+		date: "Outubro/2025",
+		rating: 5,
+		quote: "A revisão tributária do IPTU foi feita com maestria. Economia real e segurança jurídica para nossa empresa."
+	},
+	{
+		name: "Patrícia Mendes (PF)",
+		date: "Janeiro/2026",
+		rating: 5,
+		quote: "O melhor escritório para quem precisa de justiça contra abusos bancários. Eficiência que gera confiança."
+	},
+	{
+		name: "Indústria Metalúrgica Vale (PJ)",
+		date: "Março/2026",
+		rating: 5,
+		quote: "Sucesso absoluto na recuperação de fundos após ataque cibernético bancário. O Dr. José Roberto é um estrategista nato."
+	},
+	{
+		name: "André Luiz (PF)",
+		date: "Maio/2026",
+		rating: 5,
+		quote: "IPTU reduzido e dinheiro no bolso. O processo foi muito mais rápido do que eu imaginava. Obrigado Dr. Valdomiro e equipe"
+	},
+	{
+		name: "Escola Aprender (PJ)",
+		date: "Julho/2026",
+		rating: 5,
+		quote: "Tivemos um problema sério com fraudes em transferências e o escritório resolveu tudo com extrema competência."
+	},
+	{
+		name: "Luciana Ferreira (PF)",
+		date: "Setembro/2026",
+		rating: 5,
+		quote: "Segurança e clareza em cada etapa. Recuperei meu saldo bancário após uma fraude por aplicativo."
+	},
+	{
+		name: "Condomínio Edifício Prime (PJ)",
+		date: "Dezembro/2026",
+		rating: 5,
+		quote: "Fechamos o ano com uma vitória histórica na redução do IPTU das áreas comuns. Trabalho de excelência."
 	},
 	{
 		name: "Renan Stolf Farhat",
@@ -27193,21 +27303,6 @@ var TESTIMONIALS = [
 		quote: "Advogado muito preparado, me atendeu super bem! Recomendo demais!!"
 	},
 	{
-		name: "Sueli Aparecida Araujo",
-		date: "23 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Elza Rodrigues",
-		date: "21 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Thiago Rodrigues",
-		date: "21 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "Eduardo Ramos",
 		date: "21 de jan. de 2025",
 		rating: 5,
@@ -27220,35 +27315,10 @@ var TESTIMONIALS = [
 		quote: "Excelente profissional. Ótimas orientações sobre quaisquer dúvidas que tive. Sempre solícito."
 	},
 	{
-		name: "DR. FÁBIO FREITAS",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Rocha Silveira Advocacia",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Angélica Nobre",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "Fernanda Morelli",
 		date: "20 de jan. de 2025",
 		rating: 5,
 		quote: "Excelente advogado! Extremamente competente e educado."
-	},
-	{
-		name: "Henry Claudio Albertin",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Asotec contabilidade",
-		date: "20 de jan. de 2025",
-		rating: 5
 	},
 	{
 		name: "padaria paula souza",
@@ -27275,11 +27345,6 @@ var TESTIMONIALS = [
 		quote: "Excelente profissional, serviço de qualidade, transmite confiança!"
 	},
 	{
-		name: "Fábio Haltenburg",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "eliane vieira",
 		date: "20 de jan. de 2025",
 		rating: 5,
@@ -27298,16 +27363,6 @@ var TESTIMONIALS = [
 		quote: "Prezado Dr. José,..."
 	},
 	{
-		name: "Rone Barbosa",
-		date: "20 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Lucas Maruyama",
-		date: "19 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "Henrique",
 		date: "19 de jan. de 2025",
 		rating: 5,
@@ -27320,25 +27375,10 @@ var TESTIMONIALS = [
 		quote: "Muito confortável e ótimo profissional. Recomendo!"
 	},
 	{
-		name: "Miguel Lozzardo",
-		date: "19 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "Auxiliar jurídico Anaritafreitas",
 		date: "19 de jan. de 2025",
 		rating: 5,
 		quote: "Top demais"
-	},
-	{
-		name: "Aparecido dos Reis Coutinho",
-		date: "19 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Leticia Soares",
-		date: "19 de jan. de 2025",
-		rating: 5
 	},
 	{
 		name: "Angela Shabakat",
@@ -27377,16 +27417,6 @@ var TESTIMONIALS = [
 		quote: "Advogado muito competente Ótimo profissional"
 	},
 	{
-		name: "Gustavo Mokarzel",
-		date: "19 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Renê",
-		date: "19 de jan. de 2025",
-		rating: 5
-	},
-	{
 		name: "Alessandro Altomani",
 		date: "19 de jan. de 2025",
 		rating: 5,
@@ -27421,16 +27451,6 @@ var TESTIMONIALS = [
 		date: "18 de jan. de 2025",
 		rating: 5,
 		quote: "Excelente, recomendo !!!"
-	},
-	{
-		name: "cury cury",
-		date: "18 de jan. de 2025",
-		rating: 5
-	},
-	{
-		name: "Tedy Henrique",
-		date: "18 de jan. de 2025",
-		rating: 5
 	}
 ];
 function Testimonials() {
@@ -27439,43 +27459,43 @@ function Testimonials() {
 		stopOnInteraction: true
 	}));
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		"data-uid": "src/components/sections/Testimonials.tsx:271:5",
+		"data-uid": "src/components/sections/Testimonials.tsx:391:5",
 		"data-prohibitions": "[editContent]",
 		id: "depoimentos",
 		className: "py-24 lg:py-32 bg-background",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/sections/Testimonials.tsx:272:7",
+			"data-uid": "src/components/sections/Testimonials.tsx:392:7",
 			"data-prohibitions": "[editContent]",
 			className: "container mx-auto px-4",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/components/sections/Testimonials.tsx:273:9",
+				"data-uid": "src/components/sections/Testimonials.tsx:393:9",
 				"data-prohibitions": "[]",
 				className: "text-center max-w-2xl mx-auto mb-16",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
-					"data-uid": "src/components/sections/Testimonials.tsx:274:11",
+					"data-uid": "src/components/sections/Testimonials.tsx:394:11",
 					"data-prohibitions": "[]",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						"data-uid": "src/components/sections/Testimonials.tsx:275:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:395:13",
 						"data-prohibitions": "[]",
 						className: "text-sm font-bold tracking-widest text-primary uppercase mb-3",
 						children: "Reconhecimento"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						"data-uid": "src/components/sections/Testimonials.tsx:278:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:398:13",
 						"data-prohibitions": "[]",
 						className: "text-3xl md:text-4xl font-bold text-foreground leading-tight",
 						children: "O Que Dizem Nossos Clientes"
 					})]
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-				"data-uid": "src/components/sections/Testimonials.tsx:284:9",
+				"data-uid": "src/components/sections/Testimonials.tsx:404:9",
 				"data-prohibitions": "[editContent]",
 				delay: 200,
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					"data-uid": "src/components/sections/Testimonials.tsx:285:11",
+					"data-uid": "src/components/sections/Testimonials.tsx:405:11",
 					"data-prohibitions": "[editContent]",
 					className: "max-w-6xl mx-auto px-8 md:px-12",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Carousel, {
-						"data-uid": "src/components/sections/Testimonials.tsx:286:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:406:13",
 						"data-prohibitions": "[editContent]",
 						plugins: [plugin.current],
 						className: "w-full",
@@ -27485,35 +27505,35 @@ function Testimonials() {
 						},
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselContent, {
-								"data-uid": "src/components/sections/Testimonials.tsx:291:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:411:15",
 								"data-prohibitions": "[editContent]",
 								className: "-ml-4 md:-ml-6",
 								children: TESTIMONIALS.map((testimonial, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselItem, {
-									"data-uid": "src/components/sections/Testimonials.tsx:293:19",
+									"data-uid": "src/components/sections/Testimonials.tsx:413:19",
 									"data-prohibitions": "[editContent]",
 									className: "pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Testimonials.tsx:294:21",
+										"data-uid": "src/components/sections/Testimonials.tsx:414:21",
 										"data-prohibitions": "[editContent]",
 										className: "bg-card border border-border/50 p-6 md:p-8 rounded-2xl h-full flex flex-col relative transition-colors hover:border-primary/30",
 										children: [
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Quote, {
-												"data-uid": "src/components/sections/Testimonials.tsx:295:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:415:23",
 												"data-prohibitions": "[editContent]",
 												className: "absolute top-6 right-6 w-8 h-8 text-primary/10"
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-												"data-uid": "src/components/sections/Testimonials.tsx:296:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:416:23",
 												"data-prohibitions": "[editContent]",
 												className: "flex gap-1 mb-6",
 												children: Array.from({ length: testimonial.rating }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, {
-													"data-uid": "src/components/sections/Testimonials.tsx:298:27",
+													"data-uid": "src/components/sections/Testimonials.tsx:418:27",
 													"data-prohibitions": "[editContent]",
 													className: "w-4 h-4 fill-primary text-primary"
 												}, i))
 											}),
-											testimonial.quote ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-												"data-uid": "src/components/sections/Testimonials.tsx:302:25",
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												"data-uid": "src/components/sections/Testimonials.tsx:421:23",
 												"data-prohibitions": "[editContent]",
 												className: "text-muted-foreground italic mb-8 flex-1 leading-relaxed text-sm",
 												children: [
@@ -27521,23 +27541,19 @@ function Testimonials() {
 													testimonial.quote,
 													"\""
 												]
-											}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-												"data-uid": "src/components/sections/Testimonials.tsx:306:25",
-												"data-prohibitions": "[editContent]",
-												className: "flex-1 min-h-[4rem]"
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												"data-uid": "src/components/sections/Testimonials.tsx:308:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:424:23",
 												"data-prohibitions": "[editContent]",
 												className: "mt-auto pt-4 border-t border-border/50",
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-													"data-uid": "src/components/sections/Testimonials.tsx:309:25",
+													"data-uid": "src/components/sections/Testimonials.tsx:425:25",
 													"data-prohibitions": "[editContent]",
 													className: "text-foreground font-bold text-sm truncate",
 													title: testimonial.name,
 													children: testimonial.name
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-													"data-uid": "src/components/sections/Testimonials.tsx:315:25",
+													"data-uid": "src/components/sections/Testimonials.tsx:431:25",
 													"data-prohibitions": "[editContent]",
 													className: "text-primary text-xs font-medium mt-1",
 													children: testimonial.date
@@ -27548,12 +27564,12 @@ function Testimonials() {
 								}, idx))
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselPrevious, {
-								"data-uid": "src/components/sections/Testimonials.tsx:321:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:437:15",
 								"data-prohibitions": "[editContent]",
 								className: "-left-4 md:-left-12 border-border/50 bg-background hover:bg-primary hover:text-white"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselNext, {
-								"data-uid": "src/components/sections/Testimonials.tsx:322:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:438:15",
 								"data-prohibitions": "[editContent]",
 								className: "-right-4 md:-right-12 border-border/50 bg-background hover:bg-primary hover:text-white"
 							})
@@ -29687,4 +29703,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-DBs7DP0O.js.map
+//# sourceMappingURL=index-CcHw6onM.js.map

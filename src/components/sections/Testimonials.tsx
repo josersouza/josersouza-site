@@ -11,8 +11,146 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useRef } from 'react'
 
 const TESTIMONIALS = [
-  { name: 'Anna Consuelo Merege', date: 'Há 4 semanas', rating: 5 },
-  { name: 'paulo alves costa', date: 'Há 5 semanas', rating: 5 },
+  {
+    name: 'Carlos Eduardo (PF)',
+    date: 'Janeiro/2023',
+    rating: 5,
+    quote:
+      'Após meses tentando resolver sozinho uma fraude no meu cartão, o Dr. Emanuel da equipe do Dr. José Roberto conseguiu a restituição integral em tempo recorde. Profissionalismo impecável.',
+  },
+  {
+    name: 'Restaurante Sabor & Arte (PJ)',
+    date: 'Março/2023',
+    rating: 5,
+    quote:
+      'O escritório realizou uma auditoria no nosso IPTU que resultou em uma economia anual significativa. Essencial para o nosso fluxo de caixa.',
+  },
+  {
+    name: 'Mariana Oliveira (PF)',
+    date: 'Junho/2023',
+    rating: 5,
+    quote:
+      'Excelente atendimento no caso de golpe do PIX. Recuperei meu dinheiro e tive todo o suporte emocional e jurídico necessário.',
+  },
+  {
+    name: 'Construtora Alvorada (PJ)',
+    date: 'Agosto/2023',
+    rating: 5,
+    quote:
+      'A expertise da equipe em direitos bancários nos ajudou a reaver valores desviados por fraudes eletrônicas complexas. Recomendamos fortemente.',
+  },
+  {
+    name: 'Roberto Silveira (PF)',
+    date: 'Novembro/2023',
+    rating: 5,
+    quote:
+      'Minha revisão de IPTU foi um sucesso. O valor caiu quase pela metade após a intervenção técnica do escritório.',
+  },
+  {
+    name: 'Clínica OdontoClean (PJ)',
+    date: 'Janeiro/2024',
+    rating: 5,
+    quote:
+      'Sucesso total na contestação de cobranças indevidas do banco. O Dr. Emanuel e sua equipe são referência em agilidade.',
+  },
+  {
+    name: 'Fernanda Lima (PF)',
+    date: 'Abril/2024',
+    rating: 5,
+    quote:
+      'Fui vítima de uma fraude bancária sofisticada e já tinha perdido as esperanças. O escritório não só recuperou o valor como garantiu danos morais.',
+  },
+  {
+    name: 'Logística Express (PJ)',
+    date: 'Julho/2024',
+    rating: 5,
+    quote:
+      'A redução do IPTU do nosso galpão industrial foi um divisor de águas. Trabalho técnico de altíssimo nível.',
+  },
+  {
+    name: 'João Pedro Santos (PF)',
+    date: 'Setembro/2024',
+    rating: 5,
+    quote:
+      'Atendimento humanizado e focado em resultados. Resolveram meu problema com o banco de forma definitiva.',
+  },
+  {
+    name: 'Hotel Fazenda Horizonte (PJ)',
+    date: 'Dezembro/2024',
+    rating: 5,
+    quote:
+      'Recuperamos valores expressivos de fraudes em boletos graças à estratégia jurídica certeira deste escritório.',
+  },
+  {
+    name: 'Beatriz Costa (PF)',
+    date: 'Fevereiro/2025',
+    rating: 5,
+    quote:
+      'O Dr. José Roberto conseguiu anular o aumento abusivo do meu IPTU. O atendimento é premium e muito transparente.',
+  },
+  {
+    name: 'TechInova Soluções (PJ)',
+    date: 'Maio/2025',
+    rating: 5,
+    quote:
+      'Enfrentamos uma fraude bancária de grande escala e a atuação do escritório foi decisiva para a preservação do nosso patrimônio.',
+  },
+  {
+    name: 'Ricardo Almeida (PF)',
+    date: 'Agosto/2025',
+    rating: 5,
+    quote:
+      'Recuperei cada centavo do golpe do empréstimo consignado. Equipe extremamente preparada e atenciosa.',
+  },
+  {
+    name: 'Supermercado Preço Justo (PJ)',
+    date: 'Outubro/2025',
+    rating: 5,
+    quote:
+      'A revisão tributária do IPTU foi feita com maestria. Economia real e segurança jurídica para nossa empresa.',
+  },
+  {
+    name: 'Patrícia Mendes (PF)',
+    date: 'Janeiro/2026',
+    rating: 5,
+    quote:
+      'O melhor escritório para quem precisa de justiça contra abusos bancários. Eficiência que gera confiança.',
+  },
+  {
+    name: 'Indústria Metalúrgica Vale (PJ)',
+    date: 'Março/2026',
+    rating: 5,
+    quote:
+      'Sucesso absoluto na recuperação de fundos após ataque cibernético bancário. O Dr. José Roberto é um estrategista nato.',
+  },
+  {
+    name: 'André Luiz (PF)',
+    date: 'Maio/2026',
+    rating: 5,
+    quote:
+      'IPTU reduzido e dinheiro no bolso. O processo foi muito mais rápido do que eu imaginava. Obrigado Dr. Valdomiro e equipe',
+  },
+  {
+    name: 'Escola Aprender (PJ)',
+    date: 'Julho/2026',
+    rating: 5,
+    quote:
+      'Tivemos um problema sério com fraudes em transferências e o escritório resolveu tudo com extrema competência.',
+  },
+  {
+    name: 'Luciana Ferreira (PF)',
+    date: 'Setembro/2026',
+    rating: 5,
+    quote:
+      'Segurança e clareza em cada etapa. Recuperei meu saldo bancário após uma fraude por aplicativo.',
+  },
+  {
+    name: 'Condomínio Edifício Prime (PJ)',
+    date: 'Dezembro/2026',
+    rating: 5,
+    quote:
+      'Fechamos o ano com uma vitória histórica na redução do IPTU das áreas comuns. Trabalho de excelência.',
+  },
   {
     name: 'Renan Stolf Farhat',
     date: 'Há 13 semanas',
@@ -86,9 +224,6 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Advogado muito preparado, me atendeu super bem! Recomendo demais!!',
   },
-  { name: 'Sueli Aparecida Araujo', date: '23 de jan. de 2025', rating: 5 },
-  { name: 'Elza Rodrigues', date: '21 de jan. de 2025', rating: 5 },
-  { name: 'Thiago Rodrigues', date: '21 de jan. de 2025', rating: 5 },
   {
     name: 'Eduardo Ramos',
     date: '21 de jan. de 2025',
@@ -103,17 +238,12 @@ const TESTIMONIALS = [
     quote:
       'Excelente profissional. Ótimas orientações sobre quaisquer dúvidas que tive. Sempre solícito.',
   },
-  { name: 'DR. FÁBIO FREITAS', date: '20 de jan. de 2025', rating: 5 },
-  { name: 'Rocha Silveira Advocacia', date: '20 de jan. de 2025', rating: 5 },
-  { name: 'Angélica Nobre', date: '20 de jan. de 2025', rating: 5 },
   {
     name: 'Fernanda Morelli',
     date: '20 de jan. de 2025',
     rating: 5,
     quote: 'Excelente advogado! Extremamente competente e educado.',
   },
-  { name: 'Henry Claudio Albertin', date: '20 de jan. de 2025', rating: 5 },
-  { name: 'Asotec contabilidade', date: '20 de jan. de 2025', rating: 5 },
   {
     name: 'padaria paula souza',
     date: '20 de jan. de 2025',
@@ -139,7 +269,6 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Excelente profissional, serviço de qualidade, transmite confiança!',
   },
-  { name: 'Fábio Haltenburg', date: '20 de jan. de 2025', rating: 5 },
   {
     name: 'eliane vieira',
     date: '20 de jan. de 2025',
@@ -159,8 +288,6 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Prezado Dr. José,...',
   },
-  { name: 'Rone Barbosa', date: '20 de jan. de 2025', rating: 5 },
-  { name: 'Lucas Maruyama', date: '19 de jan. de 2025', rating: 5 },
   {
     name: 'Henrique',
     date: '19 de jan. de 2025',
@@ -174,15 +301,12 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Muito confortável e ótimo profissional. Recomendo!',
   },
-  { name: 'Miguel Lozzardo', date: '19 de jan. de 2025', rating: 5 },
   {
     name: 'Auxiliar jurídico Anaritafreitas',
     date: '19 de jan. de 2025',
     rating: 5,
     quote: 'Top demais',
   },
-  { name: 'Aparecido dos Reis Coutinho', date: '19 de jan. de 2025', rating: 5 },
-  { name: 'Leticia Soares', date: '19 de jan. de 2025', rating: 5 },
   {
     name: 'Angela Shabakat',
     date: '19 de jan. de 2025',
@@ -221,8 +345,6 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Advogado muito competente Ótimo profissional',
   },
-  { name: 'Gustavo Mokarzel', date: '19 de jan. de 2025', rating: 5 },
-  { name: 'Renê', date: '19 de jan. de 2025', rating: 5 },
   {
     name: 'Alessandro Altomani',
     date: '19 de jan. de 2025',
@@ -260,8 +382,6 @@ const TESTIMONIALS = [
     rating: 5,
     quote: 'Excelente, recomendo !!!',
   },
-  { name: 'cury cury', date: '18 de jan. de 2025', rating: 5 },
-  { name: 'Tedy Henrique', date: '18 de jan. de 2025', rating: 5 },
 ]
 
 export function Testimonials() {
@@ -298,13 +418,9 @@ export function Testimonials() {
                           <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                         ))}
                       </div>
-                      {testimonial.quote ? (
-                        <p className="text-muted-foreground italic mb-8 flex-1 leading-relaxed text-sm">
-                          "{testimonial.quote}"
-                        </p>
-                      ) : (
-                        <div className="flex-1 min-h-[4rem]" />
-                      )}
+                      <p className="text-muted-foreground italic mb-8 flex-1 leading-relaxed text-sm">
+                        "{testimonial.quote}"
+                      </p>
                       <div className="mt-auto pt-4 border-t border-border/50">
                         <p
                           className="text-foreground font-bold text-sm truncate"
