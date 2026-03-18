@@ -27758,6 +27758,134 @@ function Badge({ className, variant, ...props }) {
 //#region src/data/blog.ts
 var blogPosts = [
 	{
+		id: "10",
+		slug: "desjudicializacao-execucao-civil-pl-6204-2019",
+		title: "A Desjudicialização da Execução Civil e o Impacto do PL 6.204/2019",
+		excerpt: "Entenda como o PL 6.204/2019 propõe transferir atos executivos para cartórios de protesto, agilizando a recuperação de crédito e redefinindo o papel do advogado.",
+		content: `
+      <p>A morosidade do sistema judiciário brasileiro é um desafio histórico, especialmente na fase de execução, onde a satisfação do crédito frequentemente esbarra em gargalos burocráticos. Neste cenário, o <strong>Projeto de Lei nº 6.204/2019</strong> surge como um marco transformador ao propor a desjudicialização da execução civil.</p>
+      
+      <h3>O Papel dos Tabelionatos de Protesto</h3>
+      <p>O PL visa transferir os atos executivos para os cartórios de protesto (tabelionatos), conferindo aos tabeliães a competência para conduzir a execução de títulos executivos judiciais e extrajudiciais. A premissa é simples: retirar do Judiciário atos de cobrança e expropriação de bens que não possuem natureza estritamente jurisdicional, agilizando a recuperação de crédito e desafogando os tribunais.</p>
+      
+      <h3>Impactos na Celeridade Processual</h3>
+      <p>Com a desjudicialização, espera-se uma redução drástica no tempo médio das execuções. Ferramentas de busca de bens e sistemas integrados poderão ser acessados diretamente pelos tabeliães, conferindo maior dinamismo. A intervenção do juiz ficará restrita a situações de litígio efetivo, como a análise de exceções de pré-executividade ou embargos, garantindo que o magistrado foque apenas na resolução de conflitos de direitos.</p>
+      
+      <h3>O Novo Papel do Advogado</h3>
+      <p>Longe de esvaziar a função do advogado, este novo ecossistema extrajudicial exige uma atuação ainda mais estratégica. O profissional do direito será fundamental na análise prévia de solvência do devedor, na escolha da via mais adequada (judicial ou extrajudicial) e na condução técnica do procedimento perante o cartório, zelando pela conformidade legal dos atos expropriatórios e pela defesa dos interesses de credores e devedores.</p>
+    `,
+		date: "2026-04-10",
+		category: "Processo Civil",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=legal%20documents&color=black&dpr=2"
+	},
+	{
+		id: "11",
+		slug: "inteligencia-artificial-responsabilidade-civil-profissional",
+		title: "Inteligência Artificial Generativa e Responsabilidade Civil Profissional",
+		excerpt: "Os desafios éticos e jurídicos do uso de IA por advogados, o risco de \"alucinações\" em peças e a responsabilidade civil perante o CDC e o Estatuto da OAB.",
+		content: `
+      <p>A integração de ferramentas de Inteligência Artificial (IA) generativa no dia a dia dos escritórios de advocacia já é uma realidade irrefutável. Contudo, a facilidade na automação da redação de peças, contratos e pareceres traz consigo desafios éticos e jurídicos sem precedentes, especialmente no tocante à responsabilidade civil do profissional.</p>
+      
+      <h3>O Dever de Diligência e as "Alucinações" da IA</h3>
+      <p>Sistemas de IA baseados em grandes modelos de linguagem (LLMs) são suscetíveis a "alucinações" — a geração de informações factualmente incorretas ou invenção de jurisprudência inexistente. O advogado que utiliza essas ferramentas sem a devida revisão crítica viola frontalmente seu <strong>dever de diligência</strong>. A responsabilidade pela peça assinada é indelegável à máquina. O uso acrítico da tecnologia pode resultar na indução de juízes a erro, configurando litigância de má-fé e infração ético-disciplinar grave.</p>
+      
+      <h3>Responsabilidade perante o CDC e o Estatuto da OAB</h3>
+      <p>A relação entre o advogado e seu cliente é regida pelas normas do Código de Defesa do Consumidor (CDC) e pelo Estatuto da OAB. A falha na prestação do serviço decorrente do uso inadequado de IA caracteriza culpa (negligência ou imperícia), sujeitando o profissional à reparação por danos materiais e morais causados ao cliente, como a perda de uma chance (teoria da <em>perte d'une chance</em>) em caso de insucesso na demanda por falha técnica.</p>
+      
+      <h3>Boas Práticas e Compliance Tecnológico</h3>
+      <p>Para mitigar esses riscos, é imperativo que os escritórios adotem políticas de governança no uso de IA. Isso inclui a validação humana obrigatória de toda pesquisa jurisprudencial gerada por algoritmos, o treinamento contínuo das equipes e a transparência com os clientes quanto ao emprego de tecnologias auxiliares na elaboração dos serviços jurídicos contratados.</p>
+    `,
+		date: "2026-04-05",
+		category: "Direito Digital",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=artificial%20intelligence&color=black&dpr=2"
+	},
+	{
+		id: "12",
+		slug: "implementacao-reforma-tributaria-2026-desafios-transicao",
+		title: "A Implementação da Reforma Tributária em 2026: Desafios da Transição",
+		excerpt: "Um guia prático sobre as regras de transição para o novo IVA Dual (IBS/CBS) e as estratégias de adaptação para empresas durante o ano de 2026.",
+		content: `
+      <p>O ano de 2026 marca o início efetivo da transição para o novo sistema desenhado pela Reforma Tributária brasileira. Com a introdução do <strong>Imposto sobre Valor Agregado (IVA) Dual</strong> — composto pela CBS (Contribuição sobre Bens e Serviços) federal e pelo IBS (Imposto sobre Bens e Serviços) subnacional —, as empresas enfrentam um período crítico de adaptação operacional e financeira.</p>
+      
+      <h3>O Desafio do Sistema Dual</h3>
+      <p>Durante o período de transição, que se estenderá até 2032, os contribuintes precisarão conviver simultaneamente com o sistema antigo (PIS, COFINS, IPI, ICMS, ISS) e o novo modelo. Em 2026, iniciam-se as cobranças da CBS e do IBS com alíquotas-teste (0,9% para CBS e 0,1% para IBS), exigindo que as empresas mantenham controles paralelos de apuração, emissão de notas fiscais e obrigações acessórias.</p>
+      
+      <h3>Impactos no Fluxo de Caixa e Reprecificação</h3>
+      <p>A principal mudança reside no princípio da não cumulatividade plena e na tributação no destino. Essa alteração na sistemática de creditamento afetará diretamente a formação de preços de produtos e serviços. O setor de serviços, historicamente submetido a alíquotas menores de ISS e PIS/COFINS cumulativo, poderá observar um aumento de carga nominal, demandando uma revisão urgente de contratos e margens de lucro.</p>
+      
+      <h3>Preparação Estratégica e Compliance Fiscal</h3>
+      <p>A conformidade neste cenário transitório exigirá pesados investimentos em tecnologia e parametrização de sistemas ERPs. O planejamento tributário deixa de ser um exercício anual para se tornar uma atividade contínua de monitoramento. Contar com uma assessoria jurídica especializada é crucial para mapear os impactos específicos por setor, garantir o correto aproveitamento dos créditos tributários na transição e evitar passivos fiscais decorrentes de erros de interpretação das novas legislações complementares.</p>
+    `,
+		date: "2026-04-02",
+		category: "Direito Tributário",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=tax%20transition&color=black&dpr=2"
+	},
+	{
+		id: "13",
+		slug: "penhora-criptoativos-rastreamento-bens-digitais",
+		title: "Penhora de Criptoativos e Rastreamento de Bens Digitais em Execuções Complexas",
+		excerpt: "A evolução da jurisprudência do STJ e as ferramentas tecnológicas disponíveis para localizar e bloquear criptomoedas e ativos digitais de devedores.",
+		content: `
+      <p>Com a digitalização da economia e o crescimento exponencial do mercado de criptomoedas, devedores têm utilizado ativos virtuais (Bitcoin, Ethereum, stablecoins) e NFTs como um meio sofisticado para blindagem patrimonial e ocultação de bens, desafiando a efetividade das execuções judiciais tradicionais.</p>
+      
+      <h3>A Evolução da Jurisprudência do STJ</h3>
+      <p>O Superior Tribunal de Justiça (STJ) consolidou o entendimento de que os criptoativos possuem natureza de bem imaterial com valor econômico e, portanto, são plenamente passíveis de penhora, enquadrando-se no inciso I do art. 835 do CPC (dinheiro, em espécie ou em depósito ou aplicação em instituição financeira). A dificuldade, contudo, não reside na autorização legal, mas na localização e bloqueio desses ativos.</p>
+      
+      <h3>Ferramentas de Rastreamento e Cooperação Institucional</h3>
+      <p>Nas execuções complexas, a busca de bens digitais exige ferramentas avançadas de <em>blockchain analytics</em> e <em>cyber investigation</em>. Quando os criptoativos estão custodiados em <em>exchanges</em> (corretoras) nacionais ou estrangeiras com representação no Brasil, o juízo pode determinar o bloqueio via ofício direto ou através do sistema Sisbajud (que tem se adaptado para integrar corretoras de criptomoedas).</p>
+      
+      <p>O cenário é mais desafiador quando os ativos estão em carteiras de autocustódia (<em>hard wallets</em> ou <em>cold wallets</em>). Nesses casos, a execução passa a depender de indícios de patrimônio, quebra de sigilo fiscal (Declaração de Criptoativos à Receita Federal - IN 1.888) e telemático para rastrear as chaves privadas ou exigir que o devedor as apresente sob pena de configuração de ato atentatório à dignidade da justiça.</p>
+      
+      <h3>A Atuação Especializada do Credor</h3>
+      <p>A recuperação de crédito na era digital exige que os escritórios de advocacia abandonem as pesquisas patrimoniais padronizadas. É necessário o uso de inteligência jurídica para demonstrar ao juiz a pertinência das medidas atípicas de execução e o emprego de <em>legal hackers</em> e peritos para rastrear as transações na blockchain e efetivar a constrição patrimonial.</p>
+    `,
+		date: "2026-03-30",
+		category: "Direito Digital e Civil",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=cryptocurrency&color=black&dpr=2"
+	},
+	{
+		id: "14",
+		slug: "direito-trabalho-2026-saude-mental-economia-cuidado",
+		title: "Direito do Trabalho 2026: Saúde Mental e a 'Economia do Cuidado' no Ambiente Digital",
+		excerpt: "Os impactos do trabalho híbrido na saúde mental, a consolidação do direito à desconexão e a responsabilidade corporativa em casos de Burnout.",
+		content: `
+      <p>A consolidação do trabalho híbrido, remoto e plataformizado transformou definitivamente as relações laborais. Se por um lado trouxe flexibilidade, por outro inaugurou uma crise sem precedentes de saúde mental ocupacional, com índices alarmantes de <em>Burnout</em> e ansiedade, exigindo uma nova postura do Direito do Trabalho em 2026.</p>
+      
+      <h3>O Direito à Desconexão</h3>
+      <p>O limite entre a vida pessoal e profissional tornou-se turvo devido à hiperconectividade. Ferramentas corporativas instaladas em dispositivos pessoais criaram a expectativa da "disponibilidade constante". A jurisprudência trabalhista tem sido implacável ao reconhecer o <strong>direito à desconexão</strong> como um direito fundamental garantidor da saúde física e mental do trabalhador. A exigência velada de respostas a e-mails e mensagens fora do expediente não apenas gera o pagamento de horas extras ou sobreaviso, mas frequentemente resulta em condenações por dano moral existencial.</p>
+      
+      <h3>Responsabilidade Corporativa pelo Burnout</h3>
+      <p>O reconhecimento da Síndrome de Burnout (esgotamento profissional) como doença ocupacional pela OMS alterou o ônus probatório e as responsabilidades empresariais. As empresas respondem objetivamente quando a cultura organizacional tóxica, as metas inatingíveis ou a ausência de políticas ergonômicas (incluindo ergonomia cognitiva) são o gatilho para o adoecimento. O passivo trabalhista gerado por indenizações e estabilidades acidentárias pode comprometer a viabilidade de negócios desatentos à "economia do cuidado".</p>
+      
+      <h3>Compliance Trabalhista e Gestão de Riscos</h3>
+      <p>O foco preventivo é a única solução viável. A implementação de um compliance trabalhista robusto hoje passa por auditorias de clima, estabelecimento de políticas claras de comunicação assíncrona, bloqueio de servidores fora do horário de expediente e criação de canais de apoio psicológico. Em 2026, investir no bem-estar digital deixou de ser um benefício adicional (<em>perk</em>) para se tornar o núcleo da sustentabilidade legal do negócio.</p>
+    `,
+		date: "2026-03-28",
+		category: "Direito do Trabalho",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=burnout&color=black&dpr=2"
+	},
+	{
+		id: "15",
+		slug: "esg-novo-direito-societario-sustentabilidade",
+		title: "ESG e o Novo Direito Societário: Sustentabilidade como Dever Fiduciário",
+		excerpt: "Como as práticas ambientais, sociais e de governança deixaram de ser opcionais para se tornarem parâmetros obrigatórios de responsabilização de administradores.",
+		content: `
+      <p>A sigla ESG (<em>Environmental, Social, and Governance</em>) transcendeu as campanhas de marketing corporativo para se consolidar como um pilar de mitigação de riscos e atração de investimentos. No entanto, o aspecto mais revolucionário do ESG é a sua assimilação pelo Direito Societário, redefinindo as responsabilidades de administradores, diretores e conselheiros.</p>
+      
+      <h3>Do Opcional ao Dever Fiduciário</h3>
+      <p>Tradicionalmente, o dever de diligência e o dever de lealdade dos administradores (previstos na Lei das S.A. e no Código Civil) concentravam-se na maximização dos lucros para os acionistas (<em>shareholder primacy</em>). Hoje, a doutrina e a regulação de mercado — capitaneadas por normas da CVM (Comissão de Valores Mobiliários) e exigências de bolsas de valores — impõem a adoção da teoria do <em>stakeholder capitalism</em>. O administrador deve considerar os impactos de suas decisões no meio ambiente, na comunidade e nos colaboradores. A sustentabilidade tornou-se, portanto, um autêntico <strong>dever fiduciário</strong>.</p>
+      
+      <h3>Litígios Climáticos e Responsabilidade Civil</h3>
+      <p>A inobservância da agenda ESG não gera apenas o afastamento de investidores, mas também riscos de responsabilização civil severos. A omissão no relato de riscos climáticos relevantes ou a prática de <em>greenwashing</em> (propaganda enganosa sobre sustentabilidade) configuram violação do dever de informar, sujeitando administradores a ações de responsabilidade civil movidas por acionistas minoritários, investidores e órgãos de regulação.</p>
+      
+      <h3>A Governança como Escudo</h3>
+      <p>Para proteger o patrimônio da empresa e o patrimônio pessoal dos gestores, é fundamental a criação de estruturas sólidas de Governança (o "G" do ESG). A estruturação de comitês de sustentabilidade, a adoção de matrizes de materialidade auditadas e a revisão estatutária para prever propósitos ESG são medidas jurídicas essenciais para comprovar a boa-fé e o cumprimento do dever de diligência (<em>business judgment rule</em>) em um cenário corporativo cada vez mais fiscalizado.</p>
+    `,
+		date: "2026-03-27",
+		category: "Direito Societário",
+		imageUrl: "https://img.usecurling.com/p/800/600?q=sustainability%20corporate&color=black&dpr=2"
+	},
+	{
 		id: "9",
 		slug: "como-doar-imoveis-para-os-filhos-e-evitar-o-inventario",
 		title: "Como doar imóveis para os filhos e evitar o inventário",
@@ -29256,4 +29384,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-CYCUbzwi.js.map
+//# sourceMappingURL=index-DtnM664h.js.map
