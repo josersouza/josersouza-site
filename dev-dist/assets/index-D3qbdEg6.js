@@ -24463,136 +24463,233 @@ function FadeIn({ children, delay = 0, direction = "up", fullWidth = false, clas
 	});
 }
 //#endregion
+//#region src/assets/whatsapp-image-2026-02-26-at-12.02.45-12969.jpeg
+var whatsapp_image_2026_02_26_at_12_02_45_12969_default = "/assets/whatsapp-image-2026-02-26-at-12.02.45-12969-DDKIe4UT.jpeg";
+//#endregion
 //#region src/components/sections/Hero.tsx
-function Hero() {
+var Hero = () => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		"data-uid": "src/components/sections/Hero.tsx:7:5",
-		"data-prohibitions": "[]",
-		id: "inicio",
-		className: "relative min-h-screen flex items-center pt-20 overflow-hidden",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/sections/Hero.tsx:8:7",
-			"data-prohibitions": "[]",
-			className: "absolute inset-0 z-0",
-			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					"data-uid": "src/components/sections/Hero.tsx:9:9",
-					"data-prohibitions": "[editContent]",
-					src: "https://img.usecurling.com/p/1920/1080?q=law%20office&color=black&dpr=2",
-					alt: "Office Background",
-					className: "w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105 animate-float"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		"data-uid": "src/components/sections/Hero.tsx:8:5",
+		"data-prohibitions": "[editContent]",
+		className: "relative min-h-[90vh] flex items-center bg-zinc-950 overflow-hidden pt-24 pb-16",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Hero.tsx:10:7",
+				"data-prohibitions": "[editContent]",
+				className: "absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-[0.03]"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Hero.tsx:11:7",
+				"data-prohibitions": "[editContent]",
+				className: "absolute inset-0 bg-gradient-to-br from-zinc-950 via-zinc-900/90 to-zinc-950"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				"data-uid": "src/components/sections/Hero.tsx:13:7",
+				"data-prohibitions": "[editContent]",
+				className: "container mx-auto px-4 sm:px-6 relative z-10",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					"data-uid": "src/components/sections/Hero.tsx:14:9",
 					"data-prohibitions": "[editContent]",
-					className: "absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					"data-uid": "src/components/sections/Hero.tsx:15:9",
-					"data-prohibitions": "[editContent]",
-					className: "absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"
-				})
-			]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			"data-uid": "src/components/sections/Hero.tsx:18:7",
-			"data-prohibitions": "[]",
-			className: "container mx-auto px-4 relative z-10",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				"data-uid": "src/components/sections/Hero.tsx:19:9",
-				"data-prohibitions": "[]",
-				className: "max-w-3xl",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-						"data-uid": "src/components/sections/Hero.tsx:20:11",
+					className: "grid lg:grid-cols-2 gap-12 lg:gap-8 items-center",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+						"data-uid": "src/components/sections/Hero.tsx:15:11",
 						"data-prohibitions": "[]",
-						delay: 100,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/components/sections/Hero.tsx:21:13",
-							"data-prohibitions": "[]",
-							className: "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								"data-uid": "src/components/sections/Hero.tsx:22:15",
-								"data-prohibitions": "[editContent]",
-								className: "w-2 h-2 rounded-full bg-primary animate-pulse"
-							}), "Atendimento Especializado"]
-						})
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-						"data-uid": "src/components/sections/Hero.tsx:27:11",
-						"data-prohibitions": "[]",
-						delay: 300,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-							"data-uid": "src/components/sections/Hero.tsx:28:13",
-							"data-prohibitions": "[]",
-							className: "text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]",
-							children: [
-								"Autoridade Legal em",
-								" ",
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									"data-uid": "src/components/sections/Hero.tsx:30:15",
+						className: "max-w-2xl flex flex-col justify-center text-center lg:text-left mx-auto lg:mx-0",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/components/sections/Hero.tsx:16:13",
+								"data-prohibitions": "[]",
+								className: "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-sm font-medium tracking-wide mb-8 w-fit mx-auto lg:mx-0 shadow-lg backdrop-blur-sm",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scale, {
+									"data-uid": "src/components/sections/Hero.tsx:17:15",
+									"data-prohibitions": "[editContent]",
+									className: "w-4 h-4 text-primary"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"data-uid": "src/components/sections/Hero.tsx:18:15",
 									"data-prohibitions": "[]",
-									className: "text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400",
-									children: "Direito Corporativo"
+									children: "JOSÉ ROBERTO DE SOUZA ADVOGADOS"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+								"data-uid": "src/components/sections/Hero.tsx:21:13",
+								"data-prohibitions": "[]",
+								className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.15] tracking-tight",
+								children: [
+									"Defendendo seus interesses com ",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										"data-uid": "src/components/sections/Hero.tsx:22:46",
+										"data-prohibitions": "[]",
+										className: "text-primary",
+										children: "Excelência"
+									}),
+									" e",
+									" ",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										"data-uid": "src/components/sections/Hero.tsx:23:15",
+										"data-prohibitions": "[]",
+										className: "text-primary",
+										children: "Tradição"
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								"data-uid": "src/components/sections/Hero.tsx:26:13",
+								"data-prohibitions": "[]",
+								className: "text-lg sm:text-xl text-zinc-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed",
+								children: "Atuação jurídica estratégica com foco em resultados concretos. Nossa equipe liderada pelo Dr. José Roberto de Souza oferece assessoria especializada e ética para cada caso."
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/components/sections/Hero.tsx:32:13",
+								"data-prohibitions": "[]",
+								className: "flex flex-col sm:flex-row gap-4 justify-center lg:justify-start",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+									"data-uid": "src/components/sections/Hero.tsx:33:15",
+									"data-prohibitions": "[]",
+									size: "lg",
+									className: "text-base h-14 px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20",
+									children: ["Fale com um Advogado", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
+										"data-uid": "src/components/sections/Hero.tsx:38:17",
+										"data-prohibitions": "[editContent]",
+										className: "ml-2 w-5 h-5"
+									})]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									"data-uid": "src/components/sections/Hero.tsx:40:15",
+									"data-prohibitions": "[]",
+									size: "lg",
+									variant: "outline",
+									className: "text-base h-14 px-8 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white bg-zinc-900/50 backdrop-blur-sm",
+									children: "Nossas Áreas de Atuação"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								"data-uid": "src/components/sections/Hero.tsx:49:13",
+								"data-prohibitions": "[]",
+								className: "mt-14 pt-8 border-t border-zinc-800/50 flex flex-wrap items-center justify-center lg:justify-start gap-8 sm:gap-12 text-sm text-zinc-500",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:50:15",
+										"data-prohibitions": "[]",
+										className: "flex flex-col items-center lg:items-start",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:51:17",
+											"data-prohibitions": "[]",
+											className: "text-3xl font-bold text-zinc-200 mb-1",
+											children: "+20"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:52:17",
+											"data-prohibitions": "[]",
+											className: "font-medium tracking-wide uppercase text-xs",
+											children: "Anos de Experiência"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:56:15",
+										"data-prohibitions": "[editContent]",
+										className: "hidden sm:block w-px h-12 bg-zinc-800"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:57:15",
+										"data-prohibitions": "[]",
+										className: "flex flex-col items-center lg:items-start",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:58:17",
+											"data-prohibitions": "[]",
+											className: "text-3xl font-bold text-zinc-200 mb-1",
+											children: "+5k"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:59:17",
+											"data-prohibitions": "[]",
+											className: "font-medium tracking-wide uppercase text-xs",
+											children: "Casos Resolvidos"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:63:15",
+										"data-prohibitions": "[editContent]",
+										className: "hidden sm:block w-px h-12 bg-zinc-800"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:64:15",
+										"data-prohibitions": "[]",
+										className: "flex flex-col items-center lg:items-start",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:65:17",
+											"data-prohibitions": "[]",
+											className: "text-3xl font-bold text-zinc-200 mb-1",
+											children: "100%"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											"data-uid": "src/components/sections/Hero.tsx:66:17",
+											"data-prohibitions": "[]",
+											className: "font-medium tracking-wide uppercase text-xs",
+											children: "Comprometimento"
+										})]
+									})
+								]
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
+						"data-uid": "src/components/sections/Hero.tsx:71:11",
+						"data-prohibitions": "[editContent]",
+						className: "relative mx-auto w-full max-w-[420px] lg:max-w-[500px] mt-8 lg:mt-0",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							"data-uid": "src/components/sections/Hero.tsx:73:13",
+							"data-prohibitions": "[editContent]",
+							className: "absolute -inset-4 bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent rounded-[2rem] blur-3xl -z-10"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							"data-uid": "src/components/sections/Hero.tsx:75:13",
+							"data-prohibitions": "[]",
+							className: "relative rounded-[2rem] overflow-hidden border border-zinc-800/80 bg-zinc-900/50 shadow-2xl shadow-black/60 aspect-[3/4] group",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+									"data-uid": "src/components/sections/Hero.tsx:76:15",
+									"data-prohibitions": "[editContent]",
+									src: whatsapp_image_2026_02_26_at_12_02_45_12969_default,
+									alt: "Dr. José Roberto de Souza - Sócio Fundador",
+									className: "w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									"data-uid": "src/components/sections/Hero.tsx:81:15",
+									"data-prohibitions": "[editContent]",
+									className: "absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-75"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									"data-uid": "src/components/sections/Hero.tsx:83:15",
+									"data-prohibitions": "[]",
+									className: "absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										"data-uid": "src/components/sections/Hero.tsx:84:17",
+										"data-prohibitions": "[]",
+										className: "bg-zinc-950/80 backdrop-blur-md border border-zinc-800/50 p-6 rounded-2xl shadow-xl",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+											"data-uid": "src/components/sections/Hero.tsx:85:19",
+											"data-prohibitions": "[]",
+											className: "text-2xl font-bold text-white mb-2 tracking-tight",
+											children: "Dr. José Roberto de Souza"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											"data-uid": "src/components/sections/Hero.tsx:88:19",
+											"data-prohibitions": "[]",
+											className: "flex items-center gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												"data-uid": "src/components/sections/Hero.tsx:89:21",
+												"data-prohibitions": "[]",
+												className: "h-1 w-8 bg-primary rounded-full"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+												"data-uid": "src/components/sections/Hero.tsx:90:21",
+												"data-prohibitions": "[]",
+												className: "text-zinc-400 font-medium tracking-wide uppercase text-xs",
+												children: "Sócio Fundador"
+											})]
+										})]
+									})
 								})
 							]
-						})
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-						"data-uid": "src/components/sections/Hero.tsx:36:11",
-						"data-prohibitions": "[]",
-						delay: 500,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							"data-uid": "src/components/sections/Hero.tsx:37:13",
-							"data-prohibitions": "[]",
-							className: "text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed",
-							children: "Compromisso inabalável com a justiça, excelência estratégica e resultados na defesa contundente dos seus interesses."
-						})
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-						"data-uid": "src/components/sections/Hero.tsx:43:11",
-						"data-prohibitions": "[]",
-						delay: 700,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							"data-uid": "src/components/sections/Hero.tsx:44:13",
-							"data-prohibitions": "[]",
-							className: "flex flex-col sm:flex-row gap-4",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								"data-uid": "src/components/sections/Hero.tsx:45:15",
-								"data-prohibitions": "[]",
-								size: "lg",
-								className: "rounded-full text-base h-14 px-8 group",
-								asChild: true,
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									"data-uid": "src/components/sections/Hero.tsx:46:17",
-									"data-prohibitions": "[]",
-									href: "#contato",
-									children: ["Agende uma Consulta", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {
-										"data-uid": "src/components/sections/Hero.tsx:48:19",
-										"data-prohibitions": "[editContent]",
-										className: "ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-									})]
-								})
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								"data-uid": "src/components/sections/Hero.tsx:51:15",
-								"data-prohibitions": "[]",
-								size: "lg",
-								variant: "outline",
-								className: "rounded-full text-base h-14 px-8 border-border hover:bg-secondary",
-								asChild: true,
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									"data-uid": "src/components/sections/Hero.tsx:57:17",
-									"data-prohibitions": "[]",
-									href: "#areas",
-									children: "Nossas Áreas"
-								})
-							})]
-						})
-					})
-				]
+						})]
+					})]
+				})
 			})
-		})]
+		]
 	});
-}
+};
 //#endregion
 //#region src/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe.jpeg
 var whatsapp_image_2026_02_26_at_12_02_46_1_ca4fe_default = "/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe-C2eJlSdb.jpeg";
@@ -29159,4 +29256,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-DvXHty6T.js.map
+//# sourceMappingURL=index-D3qbdEg6.js.map
