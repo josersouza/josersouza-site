@@ -27111,27 +27111,325 @@ Autoplay.globalOptions = void 0;
 //#region src/components/sections/Testimonials.tsx
 var TESTIMONIALS = [
 	{
-		quote: "A atuação do escritório foi decisiva para a reestruturação da nossa empresa. A visão estratégica e a segurança jurídica que transmitem são incomparáveis.",
-		name: "Carlos M.",
-		role: "Diretor Executivo",
+		name: "Anna Consuelo Merege",
+		date: "Há 4 semanas",
 		rating: 5
 	},
 	{
-		quote: "Profissionalismo impecável desde a primeira consulta. A dedicação do Dr. José Roberto ao meu caso me trouxe tranquilidade em um momento muito difícil.",
-		name: "Ana P. Silva",
-		role: "Cliente Civil",
+		name: "paulo alves costa",
+		date: "Há 5 semanas",
 		rating: 5
 	},
 	{
-		quote: "Uma equipe extremamente capacitada e sempre disponível. O trabalho preventivo realizado por eles evitou inúmeros passivos trabalhistas.",
-		name: "Ricardo V.",
-		role: "Sócio Administrador",
+		name: "Renan Stolf Farhat",
+		date: "Há 13 semanas",
+		rating: 5,
+		quote: "Sempre a disposição e sempre entregando excelência no trabalho, considero referência."
+	},
+	{
+		name: "Stephanie Stolf Farhat",
+		date: "Há 13 semanas",
+		rating: 5,
+		quote: "Maravilhosa!100% de dedicação e profissionalismo"
+	},
+	{
+		name: "Selma carvalho rufino Carvalho",
+		date: "Há 13 semanas",
+		rating: 5,
+		quote: "Um excelente profissional super indico !"
+	},
+	{
+		name: "Elson Figueiredo",
+		date: "Há 18 semanas",
+		rating: 5,
+		quote: "Sou diretor da Eletrovital Engenharia e o Dr. José Roberto de Souza é nosso suporte jurídico em todos contratos, já resolveu muitas questões tributárias com ações judiciais."
+	},
+	{
+		name: "Vera Moreno",
+		date: "Há 18 semanas",
+		rating: 5,
+		quote: "Dr José Roberto, muito esclarecedor com conhecimento na área tributária. Tivemos uma excelente consulta de início e tiramos nossas dúvidas de imediato. Obrigada"
+	},
+	{
+		name: "Cassia Maria",
+		date: "Há 19 semanas",
+		rating: 5,
+		quote: "Eu gostaria de deixar aqui meu feedback para o melhor advogado de Campinas, Dr José Roberto, super prestativo em tudo,..."
+	},
+	{
+		name: "Fernanda Coutinho",
+		date: "Há 20 semanas",
+		rating: 5,
+		quote: "Atendimento humano e extremamente competente. Responde as duvidas com agilidade, organizado, sempre posicionando sobre o andamento do caso. Agradeço muito por toda atenção."
+	},
+	{
+		name: "Ricardo Kardel",
+		date: "Há 21 semanas",
+		rating: 5,
+		quote: "Desenrolando como sempre!!"
+	},
+	{
+		name: "Raquel Pereira Santana",
+		date: "Há 21 semanas",
+		rating: 5,
+		quote: "Um excelente profissional, Advogado que transmite confiança e segurança aos seus clientes!..."
+	},
+	{
+		name: "Viviane Almeida",
+		date: "Há 45 semanas",
+		rating: 5,
+		quote: "Advogado extremamente comprometido em resolver os problemas do cliente!! recomendo!!"
+	},
+	{
+		name: "Carolina Doná",
+		date: "Há 45 semanas",
+		rating: 5,
+		quote: "O escritório transmite excelência e comprometimento desde o primeiro contato. Uma equipe preparada, dedicada e com postura ética — é sempre bom ter profissionais assim na rede de contatos. Recomendo!"
+	},
+	{
+		name: "Thayná",
+		date: "Há 45 semanas",
+		rating: 5,
+		quote: "Advogado muito preparado, me atendeu super bem! Recomendo demais!!"
+	},
+	{
+		name: "Sueli Aparecida Araujo",
+		date: "23 de jan. de 2025",
 		rating: 5
 	},
 	{
-		quote: "Excelência técnica rara de se encontrar. Resolveram um litígio societário complexo de forma ágil e extremamente benéfica para as partes.",
-		name: "Juliana T.",
-		role: "Empresária",
+		name: "Elza Rodrigues",
+		date: "21 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Thiago Rodrigues",
+		date: "21 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Eduardo Ramos",
+		date: "21 de jan. de 2025",
+		rating: 5,
+		quote: "Excelentíssimo profissional, de muita confiança, tratou tudo com um profissionalismo inefável. Tudo foi conduzido com muita segurança e me transmitiu grande tranquilidade! Recomendadíssimo!"
+	},
+	{
+		name: "Regiane Hilarioni Hirata",
+		date: "21 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente profissional. Ótimas orientações sobre quaisquer dúvidas que tive. Sempre solícito."
+	},
+	{
+		name: "DR. FÁBIO FREITAS",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Rocha Silveira Advocacia",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Angélica Nobre",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Fernanda Morelli",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente advogado! Extremamente competente e educado."
+	},
+	{
+		name: "Henry Claudio Albertin",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Asotec contabilidade",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "padaria paula souza",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Um dos melhores advogados de Campinas sp"
+	},
+	{
+		name: "Simone Camargo",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente profissional, superou todas as minhas expectativas.."
+	},
+	{
+		name: "Michele Calois",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Estava com prossessos parados ,o dr José Roberto Souza, conseguiu por em andamento , obrigada. Ótimo profissional."
+	},
+	{
+		name: "Luciano Toledo",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente profissional, serviço de qualidade, transmite confiança!"
+	},
+	{
+		name: "Fábio Haltenburg",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "eliane vieira",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Dr. Jose Roberto de Souza est un bon professionnel. Je vous recommande!"
+	},
+	{
+		name: "Barbara Danielly",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente profissional, com ótimas instalações e bem localizado. O atendimento foi muito bom, claro e conciso. Recomendo."
+	},
+	{
+		name: "Antônio Carlos Vasconcellos Zuquim",
+		date: "20 de jan. de 2025",
+		rating: 5,
+		quote: "Prezado Dr. José,..."
+	},
+	{
+		name: "Rone Barbosa",
+		date: "20 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Lucas Maruyama",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Henrique",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "O escritório de advocacia do Dr. José presta um serviço excepcional. O atendimento é altamente profissional, com uma..."
+	},
+	{
+		name: "Malu",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Muito confortável e ótimo profissional. Recomendo!"
+	},
+	{
+		name: "Miguel Lozzardo",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Auxiliar jurídico Anaritafreitas",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Top demais"
+	},
+	{
+		name: "Aparecido dos Reis Coutinho",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Leticia Soares",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Angela Shabakat",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Sempre fui muito bem atendida. Respostas de todas as minhas dúvidas e andamento excepcional no meu processo!"
+	},
+	{
+		name: "andrea camargo",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Atendimento excelente Profissional competente!..."
+	},
+	{
+		name: "Gledson Josua",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Grande Profissional, recomendo sempre!"
+	},
+	{
+		name: "Paulo Macedo",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Ótimo escritório de advocacia. Atendimento personalizado, com profissionais experientes nas diversas áreas do Direito."
+	},
+	{
+		name: "Angela Fiori",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Um excelente advogado, que sempre que preciso resolve todos os meus problemas!!"
+	},
+	{
+		name: "Gislene Micheleto",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Advogado muito competente Ótimo profissional"
+	},
+	{
+		name: "Gustavo Mokarzel",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Renê",
+		date: "19 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Alessandro Altomani",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente Profissional, recomendo!"
+	},
+	{
+		name: "Dulce Santo De Oliveira",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Ótimo profissional, sempre que preciso de seu trabalho, tenho feedback rápido e com preço justo"
+	},
+	{
+		name: "SM MEDICINA&SAUDE",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente advogado, já auxiliou muitas vezes nossa família"
+	},
+	{
+		name: "daniela reysla",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Sempre muito atenciosos! Recomendo."
+	},
+	{
+		name: "Sérgio Pavesi Figuerôa",
+		date: "19 de jan. de 2025",
+		rating: 5,
+		quote: "Dr José Roberto é um grande profissional, recomendo."
+	},
+	{
+		name: "Tony Ribeiro",
+		date: "18 de jan. de 2025",
+		rating: 5,
+		quote: "Excelente, recomendo !!!"
+	},
+	{
+		name: "cury cury",
+		date: "18 de jan. de 2025",
+		rating: 5
+	},
+	{
+		name: "Tedy Henrique",
+		date: "18 de jan. de 2025",
 		rating: 5
 	}
 ];
@@ -27141,43 +27439,43 @@ function Testimonials() {
 		stopOnInteraction: true
 	}));
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		"data-uid": "src/components/sections/Testimonials.tsx:48:5",
+		"data-uid": "src/components/sections/Testimonials.tsx:271:5",
 		"data-prohibitions": "[editContent]",
 		id: "depoimentos",
 		className: "py-24 lg:py-32 bg-background",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			"data-uid": "src/components/sections/Testimonials.tsx:49:7",
+			"data-uid": "src/components/sections/Testimonials.tsx:272:7",
 			"data-prohibitions": "[editContent]",
 			className: "container mx-auto px-4",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				"data-uid": "src/components/sections/Testimonials.tsx:50:9",
+				"data-uid": "src/components/sections/Testimonials.tsx:273:9",
 				"data-prohibitions": "[]",
 				className: "text-center max-w-2xl mx-auto mb-16",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FadeIn, {
-					"data-uid": "src/components/sections/Testimonials.tsx:51:11",
+					"data-uid": "src/components/sections/Testimonials.tsx:274:11",
 					"data-prohibitions": "[]",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						"data-uid": "src/components/sections/Testimonials.tsx:52:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:275:13",
 						"data-prohibitions": "[]",
 						className: "text-sm font-bold tracking-widest text-primary uppercase mb-3",
 						children: "Reconhecimento"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						"data-uid": "src/components/sections/Testimonials.tsx:55:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:278:13",
 						"data-prohibitions": "[]",
 						className: "text-3xl md:text-4xl font-bold text-foreground leading-tight",
 						children: "O Que Dizem Nossos Clientes"
 					})]
 				})
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FadeIn, {
-				"data-uid": "src/components/sections/Testimonials.tsx:61:9",
+				"data-uid": "src/components/sections/Testimonials.tsx:284:9",
 				"data-prohibitions": "[editContent]",
 				delay: 200,
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					"data-uid": "src/components/sections/Testimonials.tsx:62:11",
+					"data-uid": "src/components/sections/Testimonials.tsx:285:11",
 					"data-prohibitions": "[editContent]",
-					className: "max-w-4xl mx-auto px-8 md:px-12",
+					className: "max-w-6xl mx-auto px-8 md:px-12",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Carousel, {
-						"data-uid": "src/components/sections/Testimonials.tsx:63:13",
+						"data-uid": "src/components/sections/Testimonials.tsx:286:13",
 						"data-prohibitions": "[editContent]",
 						plugins: [plugin.current],
 						className: "w-full",
@@ -27187,57 +27485,62 @@ function Testimonials() {
 						},
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselContent, {
-								"data-uid": "src/components/sections/Testimonials.tsx:68:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:291:15",
 								"data-prohibitions": "[editContent]",
 								className: "-ml-4 md:-ml-6",
 								children: TESTIMONIALS.map((testimonial, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselItem, {
-									"data-uid": "src/components/sections/Testimonials.tsx:70:19",
+									"data-uid": "src/components/sections/Testimonials.tsx:293:19",
 									"data-prohibitions": "[editContent]",
-									className: "pl-4 md:pl-6 md:basis-1/2",
+									className: "pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3",
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										"data-uid": "src/components/sections/Testimonials.tsx:71:21",
+										"data-uid": "src/components/sections/Testimonials.tsx:294:21",
 										"data-prohibitions": "[editContent]",
-										className: "bg-card border border-border/50 p-8 rounded-2xl h-full flex flex-col relative",
+										className: "bg-card border border-border/50 p-6 md:p-8 rounded-2xl h-full flex flex-col relative transition-colors hover:border-primary/30",
 										children: [
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Quote, {
-												"data-uid": "src/components/sections/Testimonials.tsx:72:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:295:23",
 												"data-prohibitions": "[editContent]",
-												className: "absolute top-6 right-6 w-10 h-10 text-primary/10"
+												className: "absolute top-6 right-6 w-8 h-8 text-primary/10"
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-												"data-uid": "src/components/sections/Testimonials.tsx:73:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:296:23",
 												"data-prohibitions": "[editContent]",
 												className: "flex gap-1 mb-6",
 												children: Array.from({ length: testimonial.rating }).map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Star, {
-													"data-uid": "src/components/sections/Testimonials.tsx:75:27",
+													"data-uid": "src/components/sections/Testimonials.tsx:298:27",
 													"data-prohibitions": "[editContent]",
 													className: "w-4 h-4 fill-primary text-primary"
 												}, i))
 											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-												"data-uid": "src/components/sections/Testimonials.tsx:78:23",
+											testimonial.quote ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												"data-uid": "src/components/sections/Testimonials.tsx:302:25",
 												"data-prohibitions": "[editContent]",
-												className: "text-muted-foreground italic mb-8 flex-1 leading-relaxed text-lg",
+												className: "text-muted-foreground italic mb-8 flex-1 leading-relaxed text-sm",
 												children: [
 													"\"",
 													testimonial.quote,
 													"\""
 												]
+											}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+												"data-uid": "src/components/sections/Testimonials.tsx:306:25",
+												"data-prohibitions": "[editContent]",
+												className: "flex-1 min-h-[4rem]"
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												"data-uid": "src/components/sections/Testimonials.tsx:81:23",
+												"data-uid": "src/components/sections/Testimonials.tsx:308:23",
 												"data-prohibitions": "[editContent]",
-												className: "mt-auto",
+												className: "mt-auto pt-4 border-t border-border/50",
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-													"data-uid": "src/components/sections/Testimonials.tsx:82:25",
+													"data-uid": "src/components/sections/Testimonials.tsx:309:25",
 													"data-prohibitions": "[editContent]",
-													className: "text-foreground font-bold",
+													className: "text-foreground font-bold text-sm truncate",
+													title: testimonial.name,
 													children: testimonial.name
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-													"data-uid": "src/components/sections/Testimonials.tsx:83:25",
+													"data-uid": "src/components/sections/Testimonials.tsx:315:25",
 													"data-prohibitions": "[editContent]",
-													className: "text-primary text-sm font-medium",
-													children: testimonial.role
+													className: "text-primary text-xs font-medium mt-1",
+													children: testimonial.date
 												})]
 											})
 										]
@@ -27245,12 +27548,12 @@ function Testimonials() {
 								}, idx))
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselPrevious, {
-								"data-uid": "src/components/sections/Testimonials.tsx:89:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:321:15",
 								"data-prohibitions": "[editContent]",
 								className: "-left-4 md:-left-12 border-border/50 bg-background hover:bg-primary hover:text-white"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselNext, {
-								"data-uid": "src/components/sections/Testimonials.tsx:90:15",
+								"data-uid": "src/components/sections/Testimonials.tsx:322:15",
 								"data-prohibitions": "[editContent]",
 								className: "-right-4 md:-right-12 border-border/50 bg-background hover:bg-primary hover:text-white"
 							})
@@ -29384,4 +29687,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-DtnM664h.js.map
+//# sourceMappingURL=index-DBs7DP0O.js.map
