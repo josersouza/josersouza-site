@@ -82,7 +82,7 @@ export const Hero = () => {
 
               <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500">
                 <div className="bg-zinc-950/80 backdrop-blur-md border border-zinc-800/50 p-6 rounded-2xl shadow-xl">
-                  <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
+                  <h3 className="text-2xl font-bold text-primary mb-2 tracking-tight">
                     Dr. José Roberto de Souza
                   </h3>
                   <div className="flex items-center gap-2">

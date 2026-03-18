@@ -24663,7 +24663,7 @@ var Hero = () => {
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 											"data-uid": "src/components/sections/Hero.tsx:85:19",
 											"data-prohibitions": "[]",
-											className: "text-2xl font-bold text-white mb-2 tracking-tight",
+											className: "text-2xl font-bold text-primary mb-2 tracking-tight",
 											children: "Dr. José Roberto de Souza"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 											"data-uid": "src/components/sections/Hero.tsx:88:19",
@@ -29256,4 +29256,4 @@ var App = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BrowserRouter, {
 }));
 //#endregion
 
-//# sourceMappingURL=index-D3qbdEg6.js.map
+//# sourceMappingURL=index-CYCUbzwi.js.map
