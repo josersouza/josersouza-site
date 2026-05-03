@@ -165,7 +165,7 @@ export function Footer() {
               Privacidade
             </a>
             <Link to="/login" className="hover:text-foreground transition-colors">
-              Admin
+              Área Administrativa
             </Link>
           </div>
         </div>

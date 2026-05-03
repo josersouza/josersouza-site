@@ -25,13 +25,13 @@ export default function AdminLayout() {
           <Link to="/admin">
             <Button variant={isArtigos ? 'secondary' : 'ghost'} className="w-full justify-start">
               <FileText className="mr-2 h-4 w-4" />
-              Artigos
+              Gerenciar Artigos
             </Button>
           </Link>
           <Link to="/admin/equipe">
             <Button variant={isEquipe ? 'secondary' : 'ghost'} className="w-full justify-start">
               <Users className="mr-2 h-4 w-4" />
-              Membros da Equipe
+              Gerenciar Equipe
             </Button>
           </Link>
         </nav>

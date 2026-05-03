@@ -11,8 +11,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { Plus, Edit, Trash2 } from 'lucide-react'
+import { Plus, Edit, Trash2, User as UserIcon } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import pb from '@/lib/pocketbase/client'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -74,6 +75,7 @@ export default function TeamMembersList() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-16">Ordem</TableHead>
+              <TableHead className="w-16">Foto</TableHead>
               <TableHead>Nome</TableHead>
               <TableHead>Cargo</TableHead>
               <TableHead className="text-right">Ações</TableHead>
@@ -90,6 +92,19 @@ export default function TeamMembersList() {
               members.map((member) => (
                 <TableRow key={member.id}>
                   <TableCell>{member.Ordem ?? '-'}</TableCell>
+                  <TableCell>
+                    {member.Foto ? (
+                      <img
+                        src={pb.files.getURL(member, member.Foto)}
+                        alt={member.Nome}
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                        <UserIcon className="w-5 h-5 text-muted-foreground" />
+                      </div>
+                    )}
+                  </TableCell>
                   <TableCell className="font-medium">{member.Nome}</TableCell>
                   <TableCell>{member.Cargo}</TableCell>
                   <TableCell className="text-right">
