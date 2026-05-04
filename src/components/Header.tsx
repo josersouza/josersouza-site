@@ -76,15 +76,23 @@ export function Header() {
               ))}
             </ul>
             <div className="flex items-center gap-6 border-l border-border/50 pl-6">
-              <a
-                href="https://wa.me/5519994691494"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
-              >
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="tracking-widest">19 99469.1494</span>
-              </a>
+              {pathname === '/' ? (
+                <a
+                  href={contactHref}
+                  className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="tracking-widest">19 99469.1494</span>
+                </a>
+              ) : (
+                <Link
+                  to={contactHref}
+                  className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="tracking-widest">19 99469.1494</span>
+                </Link>
+              )}
               <Button
                 className="rounded-none uppercase tracking-widest text-xs font-bold px-8 h-12"
                 asChild
@@ -124,15 +132,25 @@ export function Header() {
           </ul>
 
           <div className="flex flex-col items-center gap-4 pt-4 border-t border-border/50">
-            <a
-              href="https://wa.me/5519994691494"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2"
-            >
-              <Phone className="w-4 h-4 text-primary" />
-              <span className="tracking-widest">19 99469.1494</span>
-            </a>
+            {pathname === '/' ? (
+              <a
+                href={contactHref}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="tracking-widest">19 99469.1494</span>
+              </a>
+            ) : (
+              <Link
+                to={contactHref}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors mb-2"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="tracking-widest">19 99469.1494</span>
+              </Link>
+            )}
             <Button
               className="w-full rounded-none uppercase tracking-widest text-xs font-bold h-12"
               size="lg"
