@@ -33,16 +33,20 @@ export const Hero = () => {
               <Button
                 size="lg"
                 className="text-base h-14 px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
+                asChild
               >
-                Fale com um Advogado
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <a href="#contato">
+                  Fale com um Advogado
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-base h-14 px-8 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white bg-zinc-900/50 backdrop-blur-sm"
+                asChild
               >
-                Nossas Áreas de Atuação
+                <a href="#areas">Nossas Áreas de Atuação</a>
               </Button>
             </div>
 
