@@ -27,3 +27,14 @@ export const getArtigos = () =>
 
 export const getArtigoBySlug = (slug: string) =>
   pb.collection<Artigo>('Artigos').getFirstListItem(`slug="${slug}"`, { expand: 'autor' })
+
+export const getArtigo = (id: string) =>
+  pb.collection<Artigo>('Artigos').getOne(id, { expand: 'autor' })
+
+export const createArtigo = (data: FormData | Partial<Artigo>) =>
+  pb.collection<Artigo>('Artigos').create(data)
+
+export const updateArtigo = (id: string, data: FormData | Partial<Artigo>) =>
+  pb.collection<Artigo>('Artigos').update(id, data)
+
+export const deleteArtigo = (id: string) => pb.collection('Artigos').delete(id)
