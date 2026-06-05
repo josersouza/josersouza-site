@@ -97,7 +97,7 @@ export function Team() {
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-foreground">
-              Nossa Equipe
+              Conheça os Especialistas que Defenderão Você
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
             <p className="text-muted-foreground max-w-2xl text-lg">

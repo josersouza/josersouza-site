@@ -45,35 +45,44 @@ export function About() {
           <FadeIn delay={200}>
             <div className="flex flex-col space-y-8">
               <div className="space-y-4">
-                <h2 className="text-sm font-bold tracking-widest text-primary uppercase">
-                  Sobre o Escritório
+                <span className="text-sm font-bold tracking-widest text-primary uppercase">
+                  Quem Somos
+                </span>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100 leading-tight">
+                  Por que escolher o <br />
+                  <span className="text-primary">JOSÉ ROBERTO DE SOUZA Advogados Associados</span>?
                 </h2>
-                <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-100 leading-tight">
-                  Tradição, Excelência e <br />
-                  <span className="text-primary">Compromisso Ético</span>
-                </h3>
                 <div className="h-1 w-20 bg-primary rounded-full" />
               </div>
 
               <div className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                 <p>
-                  O escritório <strong>JOSÉ ROBERTO DE SOUZA Advogados Associados</strong> possui
-                  uma trajetória marcada pela defesa incansável e intransigente dos direitos de seus
-                  clientes.
+                  <strong>A solução inteligente para Empresas e Pessoas Físicas.</strong> Nosso
+                  escritório oferece respostas diretas para quem busca segurança jurídica, redução
+                  de passivos e defesa patrimonial.
                 </p>
-                <p>
-                  Fundado pelo Dr. José Roberto de Souza, nosso escritório se destaca pela
-                  excelência técnica e pelo compromisso ético inabalável. Atuamos em casos de alta
-                  complexidade, oferecendo soluções jurídicas sofisticadas, eficientes e
-                  personalizadas.
-                </p>
+                <ul className="space-y-3">
+                  <li>
+                    <strong>Nosso Público:</strong> Empresários, corporações de diversos setores, e
+                    indivíduos que necessitam de proteção em casos de alta complexidade.
+                  </li>
+                  <li>
+                    <strong>Expertise:</strong> Destacamo-nos no Direito Empresarial, Tributário,
+                    Civil e Trabalhista, estruturando negócios e combatendo abusos legais.
+                  </li>
+                  <li>
+                    <strong>O Nosso Diferencial:</strong> Atuação ágil e focada no resultado
+                    financeiro e na paz de espírito do cliente, combinando mais de 20 anos de
+                    experiência com estratégias inovadoras.
+                  </li>
+                </ul>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-zinc-800/50">
                 {values.map((value, index) => (
                   <div key={index} className="flex flex-col space-y-2">
                     <div className="p-3 bg-zinc-800/50 rounded-lg w-fit">{value.icon}</div>
-                    <h4 className="text-zinc-100 font-semibold">{value.title}</h4>
+                    <h3 className="text-zinc-100 font-semibold">{value.title}</h3>
                     <p className="text-zinc-500 text-sm">{value.description}</p>
                   </div>
                 ))}

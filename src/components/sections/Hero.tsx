@@ -19,14 +19,14 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.15] tracking-tight">
-              Defendendo seus interesses com <span className="text-primary">Excelência</span> e{' '}
-              <span className="text-primary">Tradição</span>
+              Precisando de soluções jurídicas seguras para seus negócios e patrimônio?{' '}
+              <span className="text-primary">Nós Resolvemos.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Atuação jurídica estratégica com foco em resultados concretos. Nossa equipe liderada
-              pelo Dr. José Roberto de Souza oferece assessoria especializada e ética para cada
-              caso.
+              A resposta direta para suas necessidades legais. Atuamos com estratégia e foco em
+              resultados concretos para proteger empresas e pessoas físicas contra riscos e perdas
+              financeiras.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -86,9 +86,9 @@ export const Hero = () => {
 
               <div className="absolute bottom-0 left-0 right-0 p-8 transform transition-transform duration-500">
                 <div className="bg-zinc-950/80 backdrop-blur-md border border-zinc-800/50 p-6 rounded-2xl shadow-xl">
-                  <h3 className="text-2xl font-bold text-primary mb-2 tracking-tight">
+                  <div className="text-2xl font-bold text-primary mb-2 tracking-tight">
                     Dr. José Roberto de Souza
-                  </h3>
+                  </div>
                   <div className="flex items-center gap-2">
                     <div className="h-1 w-8 bg-primary rounded-full"></div>
                     <p className="text-zinc-400 font-medium tracking-wide uppercase text-xs">

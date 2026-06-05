@@ -27,12 +27,12 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn direction="right">
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">
+              <span className="text-sm font-bold tracking-widest text-primary uppercase mb-3 block">
                 Fale Conosco
-              </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
                 Agende uma Consulta Estratégica
-              </h3>
+              </h2>
               <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
                 Nossa equipe está pronta para avaliar seu caso com total sigilo e dedicação.
                 Preencha o formulário ou utilize nossos canais diretos.
@@ -109,7 +109,7 @@ export function Contact() {
 
           <FadeIn direction="left" delay={200}>
             <div className="bg-card border border-border/50 p-8 md:p-10 rounded-2xl shadow-xl">
-              <h4 className="text-2xl font-bold text-foreground mb-6">Envie sua Mensagem</h4>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Envie sua Mensagem</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nome Completo</Label>

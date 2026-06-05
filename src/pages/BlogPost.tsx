@@ -1,11 +1,12 @@
 import { FadeIn } from '@/components/ui/fade-in'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Link, useParams, Navigate } from 'react-router-dom'
-import { blogPosts } from '@/data/blog'
-import { ArrowLeft, Calendar, Tag, Link2 } from 'lucide-react'
-import { useEffect } from 'react'
+import { Link, useParams, Navigate, useNavigate } from 'react-router-dom'
+import { ArrowLeft, Calendar, Link2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { useToast } from '@/hooks/use-toast'
+import { getArtigoBySlug, type Artigo } from '@/services/artigos'
+import { SEO } from '@/components/SEO'
+import pb from '@/lib/pocketbase/client'
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -87,20 +88,32 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
-  const post = blogPosts.find((p) => p.slug === slug)
+  const navigate = useNavigate()
+  const [post, setPost] = useState<Artigo | null>(null)
+  const [loading, setLoading] = useState(true)
   const { toast } = useToast()
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [slug])
+    if (slug) {
+      getArtigoBySlug(slug)
+        .then(setPost)
+        .catch(() => {
+          navigate('/404', { replace: true })
+        })
+        .finally(() => setLoading(false))
+    }
+  }, [slug, navigate])
 
-  if (!post) {
-    return <Navigate to="/404" replace />
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center">Carregando...</div>
   }
+
+  if (!post) return null
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
   const encodedUrl = encodeURIComponent(shareUrl)
-  const encodedTitle = encodeURIComponent(post.title)
+  const encodedTitle = encodeURIComponent(post.titulo)
 
   const shareLinks = {
     whatsapp: `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`,
@@ -116,8 +129,26 @@ export default function BlogPost() {
     })
   }
 
+  const imageUrl = post.imagem_capa
+    ? pb.files.getURL(post, post.imagem_capa)
+    : post.imagem_url || ''
+
+  const legalServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LegalService',
+    name: 'JOSÉ ROBERTO DE SOUZA Advogados Associados',
+    description: post.resumo,
+    url: shareUrl,
+    image: imageUrl,
+  }
+
   return (
     <article className="pt-32 pb-24 min-h-screen bg-background">
+      <SEO
+        title={post.seo_titulo || `${post.titulo} | JOSÉ ROBERTO DE SOUZA Advogados`}
+        description={post.seo_descricao || post.resumo}
+        schema={[legalServiceSchema]}
+      />
       <div className="container mx-auto px-4 max-w-4xl">
         <FadeIn>
           <Button
@@ -132,44 +163,48 @@ export default function BlogPost() {
           </Button>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 rounded-full border-none px-3 py-1">
-              {post.category}
-            </Badge>
             <div className="flex items-center gap-1.5 font-medium">
               <Calendar className="w-4 h-4" />
-              <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
+              <span>
+                {new Date(post.data_publicacao).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}
+              </span>
             </div>
+            {post.expand?.autor && (
+              <span className="font-medium text-foreground">Por {post.expand.autor.Nome}</span>
+            )}
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
-            {post.title}
+            {post.titulo}
           </h1>
         </FadeIn>
       </div>
 
-      <FadeIn delay={200}>
-        <div className="w-full max-w-5xl mx-auto my-12 px-4">
-          <div className="aspect-[21/9] overflow-hidden rounded-xl bg-muted border border-border/50">
-            <img
-              src={post.imageUrl}
-              alt={post.title}
-              className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-            />
+      {imageUrl && (
+        <FadeIn delay={200}>
+          <div className="w-full max-w-5xl mx-auto my-12 px-4">
+            <div className="aspect-[21/9] overflow-hidden rounded-xl bg-muted border border-border/50">
+              <img
+                src={imageUrl}
+                alt={post.titulo}
+                className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+              />
+            </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      )}
 
       <div className="container mx-auto px-4 max-w-3xl">
         <FadeIn delay={400}>
           <div
             className="prose prose-invert prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary hover:prose-a:text-orange-400 prose-strong:text-foreground prose-li:text-muted-foreground prose-blockquote:border-l-primary prose-blockquote:bg-secondary/30 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-blockquote:font-normal prose-blockquote:not-italic"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: post.conteudo }}
           />
 
           <div className="mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="text-lg font-semibold tracking-tight text-foreground">
+            <h2 className="text-lg font-semibold tracking-tight text-foreground">
               Compartilhe este artigo
-            </div>
+            </h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button
                 variant="outline"
@@ -243,11 +278,7 @@ export default function BlogPost() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
-              <Tag className="w-4 h-4" />
-              <span>Publicado em: {post.category}</span>
-            </div>
+          <div className="mt-12 pt-8 border-t border-border/50 flex justify-center">
             <Button
               asChild
               className="rounded-full px-8 uppercase tracking-widest text-xs font-bold h-12"

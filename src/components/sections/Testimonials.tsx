@@ -392,12 +392,12 @@ export function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <FadeIn>
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">
+            <span className="text-sm font-bold tracking-widest text-primary uppercase mb-3 block">
               Reconhecimento
-            </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               O Que Dizem Nossos Clientes
-            </h3>
+            </h2>
           </FadeIn>
         </div>
 

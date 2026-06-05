@@ -24,7 +24,7 @@ export function Stats() {
               <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-orange-400 mb-2">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
-              <h4 className="text-foreground font-semibold text-lg mb-1">{stat.label}</h4>
+              <h3 className="text-foreground font-semibold text-lg mb-1">{stat.label}</h3>
               <p className="text-muted-foreground text-sm">{stat.description}</p>
             </FadeIn>
           ))}
