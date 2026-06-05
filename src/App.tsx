@@ -7,6 +7,7 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import NotFound from './pages/NotFound'
 import Layout from './components/Layout'
+import { GTMTracker } from './components/GTMTracker'
 
 import { AuthProvider } from '@/hooks/use-auth'
 import Login from './pages/admin/Login'
@@ -18,6 +19,7 @@ import TeamMemberForm from './pages/admin/TeamMemberForm'
 
 const App = () => (
   <BrowserRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
+    <GTMTracker />
     <AuthProvider>
       <TooltipProvider>
         <Toaster />
