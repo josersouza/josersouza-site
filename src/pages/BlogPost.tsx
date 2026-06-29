@@ -129,17 +129,35 @@ export default function BlogPost() {
     })
   }
 
-  const imageUrl = post.imagem_capa
+  const internalImageUrl = post.imagem_capa
     ? pb.files.getURL(post, post.imagem_capa)
     : post.imagem_url || ''
 
-  const legalServiceSchema = {
+  const imageUrl = internalImageUrl.replace(
+    import.meta.env.VITE_POCKETBASE_URL,
+    'https://www.josersouza.com.br',
+  )
+
+  const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LegalService',
-    name: 'JOSÉ ROBERTO DE SOUZA Advogados Associados',
-    description: post.resumo,
-    url: shareUrl,
+    '@type': 'BlogPosting',
+    headline: post.titulo,
+    description: post.seo_descricao || post.resumo,
+    datePublished: post.data_publicacao,
+    author: {
+      '@type': 'Person',
+      name: post.expand?.autor?.Nome || 'JOSÉ ROBERTO DE SOUZA Advogados Associados',
+    },
     image: imageUrl,
+    url: shareUrl,
+    publisher: {
+      '@type': 'LegalService',
+      name: 'JOSÉ ROBERTO DE SOUZA Advogados Associados',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.josersouza.com.br/logo.png',
+      },
+    },
   }
 
   return (
@@ -147,7 +165,7 @@ export default function BlogPost() {
       <SEO
         title={post.seo_titulo || `${post.titulo} | JOSÉ ROBERTO DE SOUZA Advogados`}
         description={post.seo_descricao || post.resumo}
-        schema={[legalServiceSchema]}
+        schema={[articleSchema]}
       />
       <div className="container mx-auto px-4 max-w-4xl">
         <FadeIn>

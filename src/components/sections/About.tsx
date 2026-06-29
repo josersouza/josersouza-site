@@ -57,9 +57,10 @@ export function About() {
 
               <div className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                 <p>
-                  <strong>A solução inteligente para Empresas e Pessoas Físicas.</strong> Nosso
-                  escritório oferece respostas diretas para quem busca segurança jurídica, redução
-                  de passivos e defesa patrimonial.
+                  <strong>JOSÉ ROBERTO DE SOUZA Advogados Associados</strong> é a solução
+                  inteligente para Empresas e Pessoas Físicas. Nosso escritório oferece respostas
+                  diretas para quem busca segurança jurídica, redução de passivos e defesa
+                  patrimonial.
                 </p>
                 <ul className="space-y-3">
                   <li>

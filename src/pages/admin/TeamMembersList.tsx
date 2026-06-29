@@ -95,7 +95,12 @@ export default function TeamMembersList() {
                   <TableCell>
                     {member.Foto ? (
                       <img
-                        src={pb.files.getURL(member, member.Foto)}
+                        src={pb.files
+                          .getURL(member, member.Foto)
+                          .replace(
+                            import.meta.env.VITE_POCKETBASE_URL,
+                            'https://www.josersouza.com.br',
+                          )}
                         alt={member.Nome}
                         className="w-10 h-10 rounded-full object-cover"
                       />

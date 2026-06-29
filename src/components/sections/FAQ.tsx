@@ -44,9 +44,34 @@ export function FAQ() {
     })),
   }
 
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'O que fazer se for vítima de fraude bancária (Pix, Consignado)?',
+    description:
+      'Passo a passo sobre como agir em caso de fraudes financeiras para garantir a responsabilização do banco e buscar restituição.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Notifique o banco',
+        text: 'Entre em contato imediatamente com a instituição financeira e informe a fraude ocorrida para bloqueio de transações e contas envolvidas.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Registre um B.O.',
+        text: 'Faça um Boletim de Ocorrência na polícia civil (pode ser online) detalhando os fatos, os valores e os dados dos fraudadores.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Contate um advogado',
+        text: 'Busque assessoria jurídica especializada para acionar o banco judicialmente, exigindo a restituição integral dos valores subtraídos e a devida indenização.',
+      },
+    ],
+  }
+
   return (
     <section id="faq" className="py-24 bg-background border-t border-border/10">
-      <SEO schema={[faqSchema]} />
+      <SEO schema={[faqSchema, howToSchema]} />
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <FadeIn>

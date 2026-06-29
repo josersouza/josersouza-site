@@ -49,9 +49,14 @@ export default function Blog() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, idx) => {
-              const imageUrl = post.imagem_capa
+              const internalImageUrl = post.imagem_capa
                 ? pb.files.getURL(post, post.imagem_capa)
                 : post.imagem_url || ''
+
+              const imageUrl = internalImageUrl.replace(
+                import.meta.env.VITE_POCKETBASE_URL,
+                'https://www.josersouza.com.br',
+              )
 
               return (
                 <FadeIn key={post.id} delay={idx * 150}>

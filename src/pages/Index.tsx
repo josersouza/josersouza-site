@@ -35,7 +35,7 @@ export default function Index() {
     telephone: '+5519994691494',
     image: 'https://www.josersouza.com.br/logo.png',
     description:
-      'Escritório de advocacia em Campinas/SP especializado em Direito Empresarial, Tributário e Civil.',
+      'A resposta direta para suas necessidades legais. Atuamos com estratégia e foco em resultados concretos para proteger empresas e pessoas físicas contra riscos e perdas financeiras.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rua Conceição, 233, Sala 709',
@@ -44,6 +44,11 @@ export default function Index() {
       postalCode: '13010-050',
       addressCountry: 'BR',
     },
+    sameAs: [
+      'https://www.linkedin.com/company/josersouzaadvogados',
+      'https://www.instagram.com/josersouzaadvogados',
+      'https://www.facebook.com/josersouzaadvogados',
+    ],
   }
 
   const websiteSchema = {
