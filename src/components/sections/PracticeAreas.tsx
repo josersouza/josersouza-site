@@ -4,38 +4,56 @@ import { Scale, Briefcase, ShieldAlert, Building2, Users, FileText } from 'lucid
 const AREAS = [
   {
     title: 'Como blindar seu patrimônio? (Direito Civil)',
+    shortTitle: 'Direito Civil',
     description:
       'Proteção e segurança imediatas. Oferecemos assessoria assertiva em contratos, responsabilidade civil, posse e propriedade para assegurar seus direitos.',
+    focus: 'Contratos, responsabilidade civil, posse e propriedade',
+    benefit: 'Segurança patrimonial imediata',
     icon: Scale,
   },
   {
     title: 'Como reduzir o passivo da sua empresa? (Trabalhista)',
+    shortTitle: 'Trabalhista',
     description:
       'Prevenção inteligente e defesa eficaz. Atuamos com foco na mitigação de riscos e na defesa corporativa perante a Justiça do Trabalho.',
+    focus: 'Mitigação de riscos e defesa corporativa',
+    benefit: 'Redução de passivo trabalhista',
     icon: Briefcase,
   },
   {
     title: 'Proteção contra acusações corporativas (Penal Empresarial)',
+    shortTitle: 'Penal Empresarial',
     description:
       'Defesa estratégica e sigilosa. Atuação especializada em crimes financeiros, tributários e ambientais para preservar a reputação do seu negócio.',
+    focus: 'Crimes financeiros, tributários e ambientais',
+    benefit: 'Preservação da reputação empresarial',
     icon: ShieldAlert,
   },
   {
     title: 'Como estruturar melhor seu negócio? (Empresarial)',
+    shortTitle: 'Empresarial',
     description:
       'Bases sólidas para o crescimento. Orientamos em governança corporativa, fusões e aquisições, ideal para empresas de todos os portes.',
+    focus: 'Governança corporativa, fusões e aquisições',
+    benefit: 'Crescimento seguro e estruturado',
     icon: Building2,
   },
   {
     title: 'Como organizar a sucessão familiar? (Família)',
+    shortTitle: 'Família e Sucessões',
     description:
       'Planejamento seguro e ágil. Conduzimos inventários (judiciais e extrajudiciais), divórcios e proteção patrimonial com técnica e sensibilidade.',
+    focus: 'Inventários, divórcios e proteção patrimonial',
+    benefit: 'Transição patrimonial sem conflitos',
     icon: Users,
   },
   {
     title: 'Como pagar menos impostos legalmente? (Tributário)',
+    shortTitle: 'Tributário',
     description:
       'Recuperação de créditos e defesas fiscais. Consultoria preventiva e contencioso administrativo para aliviar o fluxo de caixa de empresas e pessoas físicas.',
+    focus: 'Recuperação de créditos e defesas fiscais',
+    benefit: 'Redução legal da carga tributária',
     icon: FileText,
   },
 ]
@@ -61,7 +79,7 @@ export function PracticeAreas() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {AREAS.map((area, idx) => (
             <FadeIn key={area.title} delay={idx * 100}>
-              <div className="group relative bg-card border border-border/50 p-8 rounded-2xl hover:bg-secondary transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 h-full overflow-hidden">
+              <article className="group relative bg-card border border-border/50 p-8 rounded-2xl hover:bg-secondary transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 h-full overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-500" />
                 <div className="mb-6 w-14 h-14 rounded-xl bg-background border border-border flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors">
                   <area.icon className="w-7 h-7 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -70,9 +88,40 @@ export function PracticeAreas() {
                   {area.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-              </div>
+              </article>
             </FadeIn>
           ))}
+        </div>
+
+        <div className="mt-16 max-w-5xl mx-auto">
+          <FadeIn>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-2">
+              Comparativo de Áreas de Atuação
+            </h2>
+            <p className="text-muted-foreground text-center mb-8">
+              Visão estruturada das nossas especialidades jurídicas
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border/50">
+              <table className="scaler-aeo-table w-full">
+                <thead>
+                  <tr>
+                    <th>Área de Atuação</th>
+                    <th>Foco Principal</th>
+                    <th>Benefício para o Cliente</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {AREAS.map((area) => (
+                    <tr key={area.shortTitle}>
+                      <td data-label="Área de Atuação">{area.shortTitle}</td>
+                      <td data-label="Foco Principal">{area.focus}</td>
+                      <td data-label="Benefício para o Cliente">{area.benefit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

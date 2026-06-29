@@ -161,10 +161,15 @@ export default function BlogPost() {
   }
 
   return (
-    <article className="pt-32 pb-24 min-h-screen bg-background">
+    <article className="pt-32 pb-24 min-h-screen bg-background" aria-labelledby="article-title">
       <SEO
         title={post.seo_titulo || `${post.titulo} | JOSÉ ROBERTO DE SOUZA Advogados`}
         description={post.seo_descricao || post.resumo}
+        ogTitle={post.seo_titulo || post.titulo}
+        ogDescription={post.seo_descricao || post.resumo}
+        ogImage={imageUrl || 'https://www.josersouza.com.br/og-image.png'}
+        ogUrl={shareUrl}
+        ogType="article"
         schema={[articleSchema]}
       />
       <div className="container mx-auto px-4 max-w-4xl">
@@ -192,7 +197,10 @@ export default function BlogPost() {
             )}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
+          <h1
+            id="article-title"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]"
+          >
             {post.titulo}
           </h1>
         </FadeIn>

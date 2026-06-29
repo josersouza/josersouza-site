@@ -68,6 +68,11 @@ export default function Index() {
       <SEO
         title="JOSÉ ROBERTO DE SOUZA Advogados | Assessoria Jurídica Especializada"
         description="A resposta direta para suas necessidades legais. Atuamos com estratégia e foco em resultados concretos para proteger empresas e pessoas físicas contra riscos e perdas financeiras."
+        ogTitle="JOSÉ ROBERTO DE SOUZA Advogados | Assessoria Jurídica Especializada"
+        ogDescription="A resposta direta para suas necessidades legais. Atuamos com estratégia e foco em resultados concretos para proteger empresas e pessoas físicas contra riscos e perdas financeiras."
+        ogImage="https://www.josersouza.com.br/og-image.png"
+        ogUrl="https://www.josersouza.com.br"
+        ogType="website"
         schema={[organizationSchema, websiteSchema]}
       />
       <Hero />

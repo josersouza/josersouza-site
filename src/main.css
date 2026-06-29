@@ -55,3 +55,48 @@
     @apply bg-background/80 backdrop-blur-md border-b border-border/50;
   }
 }
+
+@layer components {
+  .scaler-aeo-table {
+    @apply border-collapse text-sm text-left text-muted-foreground;
+
+    thead {
+      @apply bg-secondary text-foreground;
+
+      th {
+        @apply px-6 py-4 font-bold text-sm uppercase tracking-wider whitespace-nowrap;
+      }
+    }
+
+    tbody {
+      tr {
+        @apply border-t border-border/50 transition-colors hover:bg-secondary/50;
+      }
+
+      td {
+        @apply px-6 py-4 align-top;
+      }
+    }
+
+    @media (max-width: 640px) {
+      thead {
+        @apply hidden;
+      }
+
+      tbody {
+        tr {
+          @apply block border-t border-border/50 py-3 my-2 rounded-lg;
+        }
+
+        td {
+          @apply block text-right py-1 px-4;
+
+          &::before {
+            content: attr(data-label);
+            @apply float-left font-bold text-foreground;
+          }
+        }
+      }
+    }
+  }
+}

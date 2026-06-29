@@ -25,6 +25,11 @@ export default function Blog() {
       <SEO
         title="Blog Jurídico | JOSÉ ROBERTO DE SOUZA Advogados"
         description="Artigos, atualizações e insights estratégicos sobre Direito Corporativo, Tributário e Empresarial. Encontre respostas claras para os seus desafios jurídicos."
+        ogTitle="Blog Jurídico | JOSÉ ROBERTO DE SOUZA Advogados"
+        ogDescription="Artigos, atualizações e insights estratégicos sobre Direito Corporativo, Tributário e Empresarial. Encontre respostas claras para os seus desafios jurídicos."
+        ogImage="https://www.josersouza.com.br/og-image.png"
+        ogUrl="https://www.josersouza.com.br/blog"
+        ogType="website"
       />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mb-16">

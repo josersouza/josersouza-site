@@ -11,22 +11,22 @@ const FAQS = [
   {
     question: 'Como funciona o inventário extrajudicial?',
     answer:
-      'A forma mais rápida e menos burocrática de partilhar bens. O inventário extrajudicial é realizado em cartório quando todos os herdeiros são maiores, capazes e há consenso. A presença de um advogado é obrigatória por lei para assinar a escritura e garantir a legalidade do processo.',
+      'O inventário extrajudicial é a forma mais rápida e menos burocrática de partilhar bens, realizado em cartório quando todos os herdeiros são maiores, capazes e há consenso. A presença de um advogado é obrigatória por lei para assinar a escritura e garantir a legalidade do processo, que se conclui em poucas semanas.',
   },
   {
     question: 'Qual o papel de um advogado no planejamento tributário?',
     answer:
-      'A redução legal dos impostos da sua empresa. Analisamos a estrutura do seu negócio para enquadrá-lo no regime tributário mais vantajoso, aproveitando isenções e créditos fiscais de forma 100% legal, melhorando o fluxo de caixa imediato.',
+      'O advogado especializado analisa a estrutura do seu negócio para enquadrá-lo no regime tributário mais vantajoso, aproveitando isenções e créditos fiscais de forma totalmente legal. Isso reduz a carga de impostos, melhora o fluxo de caixa imediato e previne autuações fiscais futuras, protegendo a empresa contra riscos financeiros.',
   },
   {
     question: 'Como a assessoria trabalhista preventiva ajuda minha empresa?',
     answer:
-      'Evitando processos e condenações custosas. Adequamos as rotinas de RH e contratos de trabalho à legislação vigente, reduzindo significativamente o passivo trabalhista e criando um ambiente seguro e previsível para o crescimento do negócio.',
+      'A assessoria trabalhista preventiva adequa as rotinas de RH e contratos de trabalho à legislação vigente, reduzindo significativamente o passivo trabalhista. Isso evita processos e condenações custosas, criando um ambiente corporativo seguro e previsível para o crescimento sustentável do negócio sem surpresas judiciais.',
   },
   {
     question: 'Fui vítima de fraude bancária (ex: Pix, Consignado). O que fazer?',
     answer:
-      'A primeira ação é notificar o banco imediatamente e registrar um boletim de ocorrência. Em seguida, contate um advogado especializado. Atuamos na responsabilização da instituição financeira por falha de segurança para buscar a restituição integral dos valores subtraídos e indenização por danos morais.',
+      'A primeira ação é notificar o banco imediatamente e registrar um boletim de ocorrência. Em seguida, contate um advogado especializado. Atuamos na responsabilização da instituição financeira por falha de segurança para buscar a restituição integral dos valores subtraídos e indenização por danos morais, com atuação ágil e estratégica.',
   },
 ]
 
@@ -81,6 +81,10 @@ export function FAQ() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               Respostas Diretas para Suas Dúvidas
             </h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              Esclarecimentos objetivos sobre os serviços jurídicos do escritório, com respostas
+              diretas para apoiar suas decisões.
+            </p>
           </FadeIn>
         </div>
 
@@ -93,10 +97,10 @@ export function FAQ() {
                 className="bg-card border border-border/50 rounded-lg px-6"
               >
                 <AccordionTrigger className="text-left font-bold text-lg hover:text-primary transition-colors py-6">
-                  {faq.question}
+                  <h2 className="text-lg font-bold">{faq.question}</h2>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6 text-base">
-                  {faq.answer}
+                  <p>{faq.answer}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}
