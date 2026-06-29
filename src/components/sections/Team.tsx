@@ -10,11 +10,7 @@ function MemberCard({ member, index }: { member: any; index: number }) {
   const [imgError, setImgError] = useState(false)
   const [showBio, setShowBio] = useState(false)
 
-  const internalImageUrl = member.Foto && !imgError ? pb.files.getURL(member, member.Foto) : ''
-  const imageUrl = internalImageUrl.replace(
-    import.meta.env.VITE_POCKETBASE_URL,
-    'https://www.josersouza.com.br',
-  )
+  const imageUrl = member.Foto && !imgError ? pb.files.getURL(member, member.Foto) : ''
 
   return (
     <FadeIn delay={index * 150} className="h-full">
