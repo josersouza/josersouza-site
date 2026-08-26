@@ -1,24 +1,69 @@
+import { useState } from 'react'
 import { FadeIn } from '@/components/ui/fade-in'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { useToast } from '@/hooks/use-toast'
-import { MapPin, Phone, Mail, MessageSquare, Map } from 'lucide-react'
+import { MapPin, Phone, Mail, MessageSquare, Map, Loader2 } from 'lucide-react'
+import { sendLeadToSabio } from '@/services/sabio'
+
+const PRACTICE_AREAS = [
+  'Direito Civil',
+  'Trabalhista',
+  'Penal Empresarial',
+  'Empresarial',
+  'Família e Sucessões',
+  'Tributário',
+  'Outro Assunto',
+]
 
 export function Contact() {
   const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [areaInteresse, setAreaInteresse] = useState<string>('')
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Mock form submission
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+    const nome = String(formData.get('name') || '').trim()
+    const email = String(formData.get('email') || '').trim()
+    const phone = String(formData.get('phone') || '').trim()
+    const subject = String(formData.get('subject') || '').trim()
+    const message = String(formData.get('message') || '').trim()
+
+    // Disparar envio assíncrono para o CRM Sábio Adv (não bloqueia o feedback caso ocorra falha)
+    sendLeadToSabio({
+      nome,
+      telefone: phone,
+      email,
+      assunto: subject,
+      mensagem: message,
+      area_interesse: areaInteresse,
+    }).catch((err) => {
+      console.error('Erro silencioso ao enviar lead:', err)
+    })
+
+    // Feedback imediato e positivo ao usuário
     toast({
       title: 'Mensagem Enviada com Sucesso!',
-      description: 'Nossa equipe entrará em contato em breve.',
+      description: 'Nossa equipe jurídica analisará sua mensagem e entrará em contato em breve.',
       duration: 5000,
     })
-    const form = e.target as HTMLFormElement
+
+    const form = e.currentTarget
     form.reset()
+    setAreaInteresse('')
+    setIsSubmitting(false)
   }
 
   return (
@@ -115,6 +160,7 @@ export function Contact() {
                   <Label htmlFor="name">Nome Completo</Label>
                   <Input
                     id="name"
+                    name="name"
                     required
                     placeholder="Ex: João da Silva"
                     className="bg-background h-12"
@@ -126,6 +172,7 @@ export function Contact() {
                     <Label htmlFor="email">E-mail</Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       required
                       placeholder="exemplo@email.com"
@@ -133,38 +180,71 @@ export function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone</Label>
+                    <Label htmlFor="phone">Telefone / WhatsApp</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
-                      placeholder="(19) 90000-0000"
+                      required
+                      placeholder="(19) 99469-1494"
+                      className="bg-background h-12"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="area">Área de Interesse</Label>
+                    <Select value={areaInteresse} onValueChange={setAreaInteresse}>
+                      <SelectTrigger id="area" className="bg-background h-12">
+                        <SelectValue placeholder="Selecione a especialidade" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {PRACTICE_AREAS.map((area) => (
+                          <SelectItem key={area} value={area}>
+                            {area}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Assunto</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      required
+                      placeholder="Sobre o que deseja falar?"
                       className="bg-background h-12"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Assunto</Label>
-                  <Input
-                    id="subject"
-                    required
-                    placeholder="Sobre o que deseja falar?"
-                    className="bg-background h-12"
-                  />
-                </div>
-
-                <div className="space-y-2">
                   <Label htmlFor="message">Mensagem</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     required
                     placeholder="Descreva brevemente o seu caso..."
                     className="bg-background min-h-[150px] resize-y"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full rounded-md text-base h-14">
-                  Enviar Mensagem
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting}
+                  className="w-full rounded-md text-base h-14"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                      Enviando...
+                    </>
+                  ) : (
+                    'Enviar Mensagem'
+                  )}
                 </Button>
               </form>
             </div>
