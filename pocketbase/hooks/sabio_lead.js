@@ -9,6 +9,8 @@
  * - Sends to https://api.sabioadv.com/functions/v1/create-lead-api
  */
 
+console.log('[sabio_lead] Initializing hook...')
+
 routerAdd('POST', '/api/sabio/create-lead', (e) => {
   try {
     const rawBody = e.requestInfo().body || {}
