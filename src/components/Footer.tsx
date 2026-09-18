@@ -109,6 +109,11 @@ export function Footer() {
                 </NavLink>
               </li>
               <li>
+                <NavLink href="/#equipe" className="hover:text-primary transition-colors">
+                  Especialistas
+                </NavLink>
+              </li>
+              <li>
                 <Link to="/blog" className="hover:text-primary transition-colors">
                   Blog
                 </Link>

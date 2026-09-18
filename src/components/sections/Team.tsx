@@ -5,12 +5,56 @@ import { Linkedin, Mail, User } from 'lucide-react'
 import { getTeamMembers } from '@/services/team_members'
 import pb from '@/lib/pocketbase/client'
 import { cn } from '@/lib/utils'
+import drJosePhoto from '@/assets/whatsapp-image-2026-02-26-at-12.02.46-1-ca4fe.jpeg'
+
+const DEFAULT_MEMBERS = [
+  {
+    id: 'jose-roberto',
+    Nome: 'Dr. José Roberto de Souza',
+    Cargo: 'Sócio Fundador',
+    Bio: 'Com vasta experiência no mercado jurídico, lidera a equipe com foco em excelência, ética e resultados expressivos para nossos clientes. Advogado, Mestre e Doutor em Direito Público e Privado. Especialista em Direito Empresarial e Planejamento Patrimonial.',
+    LinkedIn: 'https://linkedin.com/in/josé-roberto-de-souza-1a1574228',
+    Email: 'contato@josersouza.com.br',
+    localPhoto: drJosePhoto,
+    Ordem: 1,
+  },
+  {
+    id: 'valdomiro-medeiros',
+    Nome: 'Dr. Valdomiro Gomes de Medeiros',
+    Cargo: 'Advogado Associado',
+    Bio: 'Advogado, Auditor Fiscal e Contador especializado em consultoria jurídica, otimização tributária e gestão contábil para empresas. Ofereço soluções integradas que combinam segurança legal, conformidade fiscal e eficiência econômico-financeira.',
+    LinkedIn: 'https://linkedin.com/in/valdomiro',
+    Email: 'contato@josersouza.com.br',
+    Foto: '',
+    Ordem: 2,
+  },
+  {
+    id: 'emanuel-silva',
+    Nome: 'Dr. Emanuel Rodolpho Santana da Silva',
+    Cargo: 'Advogado Associado',
+    Bio: 'Advogado especializado em Direito do Consumidor e Processos de Posse. Ajudo consumidores a se protegerem contra práticas abusivas e conduzo processos possessórios com clareza estratégica. Também atuo com excelência no contencioso civil.',
+    LinkedIn: 'https://linkedin.com/in/emanuel',
+    Email: 'contato@josersouza.com.br',
+    Foto: '',
+    Ordem: 3,
+  },
+]
 
 function MemberCard({ member, index }: { member: any; index: number }) {
   const [imgError, setImgError] = useState(false)
   const [showBio, setShowBio] = useState(false)
 
-  const imageUrl = member.Foto && !imgError ? pb.files.getURL(member, member.Foto) : ''
+  // Resolve image: pocketbase file URL first (if available and not error), otherwise fallback local photo
+  let imageUrl = ''
+  if (member.Foto && !imgError && member.collectionId) {
+    try {
+      imageUrl = pb.files.getURL(member, member.Foto)
+    } catch (_) {
+      imageUrl = member.localPhoto || ''
+    }
+  } else if (member.localPhoto && !imgError) {
+    imageUrl = member.localPhoto
+  }
 
   return (
     <FadeIn delay={index * 150} className="h-full">
@@ -85,10 +129,35 @@ function MemberCard({ member, index }: { member: any; index: number }) {
 }
 
 export function Team() {
-  const [teamMembers, setTeamMembers] = useState<any[]>([])
+  const [teamMembers, setTeamMembers] = useState<any[]>(DEFAULT_MEMBERS)
 
   useEffect(() => {
-    getTeamMembers().then(setTeamMembers).catch(console.error)
+    let isMounted = true
+    getTeamMembers()
+      .then((records) => {
+        if (isMounted && records && records.length > 0) {
+          // Merge database records with fallback images/bios if missing
+          const merged = records.map((record) => {
+            const fallback = DEFAULT_MEMBERS.find(
+              (m) =>
+                m.Nome.toLowerCase().includes(record.Nome.toLowerCase().split(' ')[0]) ||
+                record.Nome.toLowerCase().includes(m.Nome.toLowerCase().split(' ')[0]),
+            )
+            return {
+              ...fallback,
+              ...record,
+              Foto: record.Foto || fallback?.Foto,
+            }
+          })
+          setTeamMembers(merged)
+        }
+      })
+      .catch((err) => {
+        console.error('Erro ao carregar membros da equipe:', err)
+      })
+    return () => {
+      isMounted = false
+    }
   }, [])
 
   return (

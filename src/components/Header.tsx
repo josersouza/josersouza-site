@@ -22,6 +22,7 @@ export function Header() {
     { name: 'Início', href: '/#inicio' },
     { name: 'O Escritório', href: '/#sobre' },
     { name: 'Áreas de Atuação', href: '/#areas' },
+    { name: 'Especialistas', href: '/#equipe' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contato', href: '/#contato' },
   ]
