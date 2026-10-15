@@ -8,6 +8,8 @@
     "start": "vite dev",
     "dev": "vite",
     "build": "vite build",
+    "postinstall": "node -e 'const fs=require(\"fs\");try{const p=\"tsconfig.app.json\";let c=fs.readFileSync(p,\"utf8\");if(c.includes(\"*/*\")){c=c.replace(/\"\\*\\/\\*\":\\s*\\[\"\\.\\/\\*\"\\],?\\r?\\n?/g,\"\");fs.writeFileSync(p,c);}}catch(e){}' && node scripts/generate-og-image.cjs",
+    "gen:og": "node scripts/generate-og-image.cjs",
     "build:dev": "vite build --mode development",
     "lint": "oxlint src",
     "lint:fix": "oxlint src --fix",

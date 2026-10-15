@@ -18,7 +18,7 @@ import TeamMembersList from './pages/admin/TeamMembersList'
 import TeamMemberForm from './pages/admin/TeamMemberForm'
 
 const App = () => (
-  <BrowserRouter future={{ v7_startTransition: false, v7_relativeSplatPath: false }}>
+  <BrowserRouter>
     <GTMTracker />
     <AuthProvider>
       <TooltipProvider>
